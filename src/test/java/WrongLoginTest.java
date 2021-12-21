@@ -12,19 +12,18 @@ public class WrongLoginTest {
     SoftAssertions softAssertions = new SoftAssertions();
     Routes routes = new Routes();
     ErrorCode errorCode = new ErrorCode();
-    Methods methods = new Methods();
     JSONObject requestBody = new JSONObject();
     RequestSpecification request = RestAssured.given();
 
-    String wrongEmail1 = methods.generateRandomHexString(5);
-    String wrongEmail2 = methods.generateRandomHexString(5) + "@";
-    String wrongEmail3 = methods.generateRandomHexString(5) + "@email";
-    String wrongEmail4 = methods.generateRandomHexString(5) + "@email.";
-    String wrongEmail5 = methods.generateRandomHexString(5) + "@email.c";
-    String correctEmail = methods.generateRandomHexString(5) + "@email.com";
+    String wrongEmail1 = Methods.generateRandomHexString(5);
+    String wrongEmail2 = Methods.generateRandomHexString(5) + "@";
+    String wrongEmail3 = Methods.generateRandomHexString(5) + "@email";
+    String wrongEmail4 = Methods.generateRandomHexString(5) + "@email.";
+    String wrongEmail5 = Methods.generateRandomHexString(5) + "@email.c";
+    String correctEmail = Methods.generateRandomHexString(5) + "@email.com";
     String emptyEmail = "";
     String emptyPassword = "";
-    String password = methods.generateRandomHexString(6);
+    String password = Methods.generateRandomHexString(6);
 
     @Test
     public void incorrectEmail1() {
@@ -35,11 +34,11 @@ public class WrongLoginTest {
       request.body(requestBody.toString());
 
       Response response = request
-              .post(routes.postLogin)
+              .post(Routes.login)
               .then()
               .contentType(ContentType.JSON).extract().response();
 
-      methods.showBodyPostLogin(request, routes);
+      Methods.showBodyPostLogin(request, routes);
 
       int statusCode = response.getStatusCode();
       String success = response.jsonPath().getString("success");
@@ -63,7 +62,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(Routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -91,7 +90,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(Routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -119,7 +118,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(Routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -147,7 +146,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -175,7 +174,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -203,7 +202,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -231,7 +230,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -259,7 +258,7 @@ public class WrongLoginTest {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(routes.postLogin)
+                .post(routes.login)
                 .then()
                 .contentType(ContentType.JSON).extract().response();
 
@@ -287,7 +286,7 @@ public class WrongLoginTest {
             request.body(requestBody.toString());
 
             Response response = request
-                    .post(routes.postLogin)
+                    .post(routes.login)
                     .then()
                     .contentType(ContentType.JSON).extract().response();
 

@@ -1,7 +1,6 @@
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
-import static io.restassured.RestAssured.*;
 
 public class SuccessRegistrationTest {
     String correctEmail = Methods.generateRandomHexString(5) + "@gmail.com";
@@ -11,12 +10,11 @@ public class SuccessRegistrationTest {
     String correctRole = "user";
 
     SoftAssertions softAssertions = new SoftAssertions();
-    Methods methods = new Methods();
 
     @Test
-    public void registrationPostTest() {
+    public void registrationTest() {
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
-        Response response = methods.registration(user);
+        Response response = Methods.registration(user);
 
         int customStatusCode = response.jsonPath().getInt("statusCode");
         String success = response.jsonPath().getString("success");

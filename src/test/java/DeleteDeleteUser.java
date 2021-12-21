@@ -10,20 +10,15 @@ public class DeleteDeleteUser {
     String correctName = Methods.generateRandomHexString(5);
     String correctRole = "user";
 
-    Methods methods = new Methods();
     SoftAssertions softAssertions = new SoftAssertions();
 
     @Test
     public void deleteUser() {
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
-        Response response = methods.registration(user);
-        response.prettyPrint();
-        System.out.println(user.getPassword());
+        Response response = Methods.registration(user);
 
         String token = response.jsonPath().getString("data.token");
-        System.out.println(token);
-        Response responseDelete = methods.deleteUser(token);
-
+        Response responseDelete = Methods.deleteUser(token);
         int customStatusCode = responseDelete.jsonPath().getInt("statusCode");
         String success = responseDelete.jsonPath().getString("success");
 
