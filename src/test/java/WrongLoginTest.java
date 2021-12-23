@@ -1,5 +1,4 @@
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.SoftAssertions;
@@ -8,7 +7,6 @@ import org.junit.Test;
 import java.util.List;
 
 public class WrongLoginTest {
-
     SoftAssertions softAssertions = new SoftAssertions();
     Routes routes = new Routes();
     ErrorCode errorCode = new ErrorCode();
@@ -27,57 +25,39 @@ public class WrongLoginTest {
 
     @Test
     public void incorrectEmail1() {
-      requestBody.put("email", wrongEmail1);
-      requestBody.put("password", password);
-
-      request.header("Content-Type", "application/json");
-      request.body(requestBody.toString());
-
-      Response response = request
-              .post(Routes.login)
-              .then()
-              .contentType(ContentType.JSON).extract().response();
-
-      Methods.showBodyPostLogin(request, routes);
-
-      int statusCode = response.getStatusCode();
-      String success = response.jsonPath().getString("success");
-      int customStatusCode = response.jsonPath().getInt("statusCode");
-      List<String> codes = response.jsonPath().getList("codes");
-
-      softAssertions.assertThat(400).isEqualTo(statusCode);
-      softAssertions.assertThat("true").isEqualTo(success);
-      softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(customStatusCode);
-      softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(codes);
-
-      softAssertions.assertAll();
+        requestBody.put("email", wrongEmail1);
+        requestBody.put("password", password);
+        request.header("Content-Type", "application/json");
+        request.body(requestBody.toString());
+        Response response = request
+                .post(Routes.login)
+                .then()
+                .assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
+        String success = response.jsonPath().getString("success");
+        int customStatusCode = response.jsonPath().getInt("statusCode");
+        List<Integer> codes = response.jsonPath().getList("codes");
+        softAssertions.assertThat("true").isEqualTo(success);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_VALID);
+        softAssertions.assertAll();
     }
 
     @Test
     public void incorrectEmail2() {
         requestBody.put("email", wrongEmail2);
         requestBody.put("password", password);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
                 .post(Routes.login)
                 .then()
-                .contentType(ContentType.JSON).extract().response();
-
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
+                .assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
-
-        softAssertions.assertThat(400).isEqualTo(statusCode);
+        List<Integer> codes = response.jsonPath().getList("codes");
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(codes);
-
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_VALID);
         softAssertions.assertAll();
     }
 
@@ -85,27 +65,20 @@ public class WrongLoginTest {
     public void incorrectEmail3() {
         requestBody.put("email", wrongEmail3);
         requestBody.put("password", password);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
                 .post(Routes.login)
                 .then()
-                .contentType(ContentType.JSON).extract().response();
+                .assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(codes);
-
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_VALID);
         softAssertions.assertAll();
     }
 
@@ -119,20 +92,15 @@ public class WrongLoginTest {
 
         Response response = request
                 .post(Routes.login)
-                .then()
-                .contentType(ContentType.JSON).extract().response();
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(codes);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_VALID);
 
         softAssertions.assertAll();
     }
@@ -141,27 +109,19 @@ public class WrongLoginTest {
     public void incorrectEmail5() {
         requestBody.put("email", wrongEmail5);
         requestBody.put("password", password);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
-                .post(routes.login)
-                .then()
-                .contentType(ContentType.JSON).extract().response();
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(codes);
-
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_VALID);
         softAssertions.assertAll();
     }
 
@@ -169,27 +129,19 @@ public class WrongLoginTest {
     public void userDoesNotExist() {
         requestBody.put("email", correctEmail);
         requestBody.put("password", password);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
-                .post(routes.login)
-                .then()
-                .contentType(ContentType.JSON).extract().response();
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_NOT_FOUND).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_NOT_FOUND).isEqualTo(codes.get(0));
-
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_NOT_FOUND);
         softAssertions.assertAll();
     }
 
@@ -197,27 +149,19 @@ public class WrongLoginTest {
     public void emptyEmail() {
         requestBody.put("email", emptyEmail);
         requestBody.put("password", password);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
-                .post(routes.login)
-                .then()
-                .contentType(ContentType.JSON).extract().response();
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_NULL).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_NULL).isEqualTo(codes);
-
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_NULL);
         softAssertions.assertAll();
     }
 
@@ -225,27 +169,19 @@ public class WrongLoginTest {
     public void emptyPassword() {
         requestBody.put("email", correctEmail);
         requestBody.put("password", emptyPassword);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
-                .post(routes.login)
-                .then()
-                .contentType(ContentType.JSON).extract().response();
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_PASSWORD_NULL).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_PASSWORD_NULL).isEqualTo(codes);
-
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertThat(codes).contains(errorCode.USER_PASSWORD_NULL);
         softAssertions.assertAll();
     }
 
@@ -253,56 +189,76 @@ public class WrongLoginTest {
     public void emptyEmailAndPassword() {
         requestBody.put("email", emptyEmail);
         requestBody.put("password", emptyPassword);
-
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
-
         Response response = request
-                .post(routes.login)
-                .then()
-                .contentType(ContentType.JSON).extract().response();
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-        Methods.showBodyPostLogin(request, routes);
-
-        int statusCode = response.getStatusCode();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        List<String> codes = response.jsonPath().getList("codes");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssertions.assertThat(400).isEqualTo(statusCode);
         softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_NULL).isEqualTo(customStatusCode);
-        softAssertions.assertThat(errorCode.USER_EMAIL_NOT_NULL).isEqualTo(codes.get(0));
-        softAssertions.assertThat(errorCode.USER_PASSWORD_NULL).isEqualTo(codes.get(1));
-
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_NULL, errorCode.USER_PASSWORD_NULL);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
         softAssertions.assertAll();
     }
 
-        @Test
-        public void correctEmailWithoutPassword() {
-            requestBody.put("email", wrongEmail1);
+    @Test
+    public void correctEmailWithoutPassword() {
+        requestBody.put("email", correctEmail);
+        request.header("Content-Type", "application/json");
+        request.body(requestBody.toString());
+        Response response = request
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-            request.header("Content-Type", "application/json");
-            request.body(requestBody.toString());
+        String success = response.jsonPath().getString("success");
+        int customStatusCode = response.jsonPath().getInt("statusCode");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-            Response response = request
-                    .post(routes.login)
-                    .then()
-                    .contentType(ContentType.JSON).extract().response();
+        softAssertions.assertThat("true").isEqualTo(success);
+        softAssertions.assertThat(codes).contains(errorCode.PASSWORD_NOT_NULL);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertAll();
+    }
 
-            Methods.showBodyPostLogin(request, routes);
+    @Test
+    public void WithoutEmail() {
+        requestBody.put("password", password);
+        request.header("Content-Type", "application/json");
+        request.body(requestBody.toString());
+        Response response = request
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
-            int statusCode = response.getStatusCode();
-            String success = response.jsonPath().getString("success");
-            int customStatusCode = response.jsonPath().getInt("statusCode");
-            List<String> codes = response.jsonPath().getList("codes");
+        String success = response.jsonPath().getString("success");
+        int customStatusCode = response.jsonPath().getInt("statusCode");
+        List<Integer> codes = response.jsonPath().getList("codes");
 
-            softAssertions.assertThat(400).isEqualTo(statusCode);
-            softAssertions.assertThat("true").isEqualTo(success);
-            softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(customStatusCode);
-            softAssertions.assertThat(errorCode.PASSWORD_NOT_NULL).isEqualTo(codes.get(0));
-            softAssertions.assertThat(errorCode.USER_EMAIL_NOT_VALID).isEqualTo(codes.get(1));
+        softAssertions.assertThat("true").isEqualTo(success);
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_NULL);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertAll();
+    }
 
-            softAssertions.assertAll();
+    @Test
+    public void withoutEmailAndPassword() {
+        requestBody.put("password", password);
+        request.header("Content-Type", "application/json");
+        request.body(requestBody.toString());
+        Response response = request
+                .post(Routes.login)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
+
+        String success = response.jsonPath().getString("success");
+        int customStatusCode = response.jsonPath().getInt("statusCode");
+        List<Integer> codes = response.jsonPath().getList("codes");
+
+        softAssertions.assertThat("true").isEqualTo(success);
+        softAssertions.assertThat(codes).contains(errorCode.USER_EMAIL_NOT_NULL, errorCode.PASSWORD_NOT_NULL);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertAll();
     }
 }

@@ -32,7 +32,7 @@ public class SuccessRegistrationTest {
         softAssertions.assertThat("true").isEqualTo(success);
         softAssertions.assertThat(correctEmail).isEqualTo(email);
         softAssertions.assertThat(correctName).isEqualTo(name);
-        softAssertions.assertThat(1).isEqualTo(customStatusCode);
+        softAssertions.assertThat(customStatusCode).isEqualTo(1);
         softAssertions.assertAll();
     }
 }

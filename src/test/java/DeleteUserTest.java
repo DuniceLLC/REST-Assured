@@ -2,7 +2,7 @@ import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 
-public class DeleteDeleteUser {
+public class DeleteUserTest {
 
     String correctEmail = Methods.generateRandomHexString(5) + "@gmail.com";
     String correctPassword = Methods.generateRandomHexString(5);

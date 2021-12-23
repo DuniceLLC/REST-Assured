@@ -1,0 +1,15 @@
+UploadFileTest.class
+GetUserInfoTest.class
+DeleteUserTest.class
+LoginPageGetTest.class
+RegistrationPageGetTest.class
+GetPostTest.class
+CreatePostTest.class
+ChangePostTest.class
+SuccessAuthorizationTest.class
+WrongLoginTest.class
+DeletePostTest.class
+GetFileTest.class
+AllNewsPageGetTest.class
+ChangeUserInfoTest.class
+SuccessRegistrationTest.class

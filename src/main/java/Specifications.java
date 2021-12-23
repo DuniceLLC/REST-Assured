@@ -12,6 +12,13 @@ public class Specifications {
                 build();
     }
 
+    public static ResponseSpecification checkStatusCode400AndContentType() {
+        return new ResponseSpecBuilder().
+                expectStatusCode(400).
+                expectContentType(ContentType.JSON).
+                build();
+    }
+
     public static RequestSpecification setContentType() {
         return new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)

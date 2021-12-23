@@ -2,6 +2,8 @@ import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.*;
 
 public class GetUserInfoTest extends SetUp {
@@ -35,6 +37,24 @@ public class GetUserInfoTest extends SetUp {
         softAssertions.assertThat(roleInfo).isEqualTo(role);
         softAssertions.assertThat(customStatusCodeInfo).isEqualTo(1);
         softAssertions.assertThat(successInfo).isEqualTo("true");
+        softAssertions.assertAll();
+    }
+
+    @Test
+    public void getUsers() {
+        Response response =given()
+                .header("Authorization", token)
+                .get(Routes.user)
+                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
+                .extract().response();
+
+        String success = response.jsonPath().getString("success");
+        int customStatusCode = response.jsonPath().getInt("statusCode");
+        List<Object> users = response.jsonPath().getList("data");
+
+        softAssertions.assertThat(customStatusCode).isEqualTo(1);
+        softAssertions.assertThat(success).isEqualTo("true");
+        softAssertions.assertThat(users).isNotNull();
         softAssertions.assertAll();
     }
 }

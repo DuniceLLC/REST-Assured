@@ -1,6 +1,5 @@
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.*;
 
 public class GetFileTest {
@@ -12,7 +11,7 @@ public class GetFileTest {
         Response response = given()
                 .when()
                 .get(Routes.getFile + fileName)
-                .then().assertThat().statusCode(200)
+                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
         response.prettyPrint();
     }

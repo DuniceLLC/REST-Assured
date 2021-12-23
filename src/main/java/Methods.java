@@ -42,6 +42,17 @@ public class Methods {
                 .extract().response();
     }
 
+    public static Response wrongRegistration(Object obj) {
+        return given()
+                .spec(Specifications.setContentType())
+                .body(obj)
+                .when()
+                .post(Routes.registration)
+                .then().assertThat()
+                .spec(Specifications.checkStatusCode400AndContentType())
+                .extract().response();
+    }
+
     public static Response login(Object obj) {
         return given()
                 .spec(Specifications.setContentType())
@@ -59,6 +70,16 @@ public class Methods {
                 .queryParam("perPage", perPage)
                 .queryParam("tags", tags)
                 .get(Routes.news + "/find")
+                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
+                .extract().response();
+    }
+
+    public static Response getUserPost(int page, int perPage, String userId,String token) {
+        return given()
+                .header("Authorization", token)
+                .queryParam("page", page)
+                .queryParam("perPage", perPage)
+                .get(Routes.news + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
@@ -81,4 +102,37 @@ public class Methods {
                 .extract().response();
     }
 
+    public static Response changePost(String token, String id, Object obj) {
+        return given()
+                .header("Authorization", token)
+                .spec(Specifications.setContentType())
+                .body(obj)
+                .when().put(Routes.news + "/" + id)
+                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
+                .extract().response();
+    }
+
+    public static Response changeUserInfo(String token, Object obj) {
+        return given()
+                .header("Authorization", token)
+                .spec(Specifications.setContentType())
+                .body(obj)
+                .when()
+                .put(Routes.user)
+                .then().assertThat()
+                .spec(Specifications.checkStatusCode200AndContentType())
+                .extract().response();
+    }
+
+    public static Response wrongChangeUserInfo(String token, Object obj) {
+        return given()
+                .header("Authorization", token)
+                .spec(Specifications.setContentType())
+                .body(obj)
+                .when()
+                .put(Routes.user)
+                .then().assertThat()
+                .spec(Specifications.checkStatusCode400AndContentType())
+                .extract().response();
+    }
 }

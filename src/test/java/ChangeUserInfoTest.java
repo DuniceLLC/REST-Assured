@@ -6,6 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class ChangeUserInfoTest extends SetUp {
     String avatarPathForChange = "src/main/resources/avatar-2.jpeg";
+    String avatar = Methods.uploadFile(avatarPathForChange).jsonPath().getString("data");
     SoftAssertions softAssertions = new SoftAssertions();
 
     @Test
@@ -16,21 +17,13 @@ public class ChangeUserInfoTest extends SetUp {
         String newName = Methods.generateRandomHexString(5);
 
         Register userNewData = Register.builder()
-                .avatar(avatarPathForChange)
+                .avatar(avatar)
                 .email(newEmail)
                 .name(newName)
                 .role(correctRole)
                 .build();
 
-        Response responseChange = given()
-                .header("Authorization", token)
-                .spec(Specifications.setContentType())
-                .body(userNewData)
-                .when()
-                .put(Routes.user)
-                .then().assertThat()
-                .spec(Specifications.checkStatusCode200AndContentType())
-                .extract().response();
+        Response responseChange = Methods.changeUserInfo(token, userNewData);
 
         String success = responseChange.jsonPath().getString("success");
         String avatar = responseChange.jsonPath().getString("data.avatar");
@@ -45,7 +38,7 @@ public class ChangeUserInfoTest extends SetUp {
         softAssertions.assertThat(name).isEqualTo(newName);
         softAssertions.assertThat(id).isEqualTo(idReg);
         softAssertions.assertThat(email).isEqualTo(newEmail);
-        softAssertions.assertThat(avatar).isEqualTo(avatarPathForChange);
+        softAssertions.assertThat(avatar).isEqualTo(avatar);
         softAssertions.assertThat(success).isEqualTo("true");
         softAssertions.assertAll();
     }
