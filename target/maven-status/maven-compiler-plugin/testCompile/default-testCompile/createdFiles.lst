@@ -1,3 +1,4 @@
+WrongGetUserInfo.class
 UploadFileTest.class
 GetUserInfoTest.class
 DeleteUserTest.class
@@ -5,6 +6,8 @@ LoginPageGetTest.class
 RegistrationPageGetTest.class
 GetPostTest.class
 CreatePostTest.class
+WrongChangeUserInfo.class
+WrongRegistrationTest.class
 ChangePostTest.class
 SuccessAuthorizationTest.class
 WrongLoginTest.class

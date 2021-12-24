@@ -12,6 +12,8 @@ public class ChangePostTest extends SetUp {
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image1, tags, title);
 
+
+
     SoftAssertions softAssertions = new SoftAssertions();
 
     @Test

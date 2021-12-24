@@ -5,6 +5,7 @@ import io.restassured.specification.RequestSpecification;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Random;
+
 import static io.restassured.RestAssured.*;
 
 public class Methods {
@@ -23,7 +24,7 @@ public class Methods {
     }
 
     public static Response deleteUser(String token) {
-       return given()
+        return given()
                 .header("Authorization", token)
                 .when()
                 .delete(Routes.user)
@@ -74,7 +75,15 @@ public class Methods {
                 .extract().response();
     }
 
-    public static Response getUserPost(int page, int perPage, String userId,String token) {
+    public static Response getPostsWithPagination(int page, int perPage) {
+        return given()
+                .queryParam("page", page)
+                .queryParam("perPage", perPage)
+                .get(Routes.news)
+                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType()).extract().response();
+    }
+
+    public static Response getUserPost(int page, int perPage, String userId, String token) {
         return given()
                 .header("Authorization", token)
                 .queryParam("page", page)
@@ -102,12 +111,30 @@ public class Methods {
                 .extract().response();
     }
 
+    public static Response wrongCreatePost(String token, Object obj) {
+        return given()
+                .header("Authorization", token)
+                .spec(Specifications.setContentType())
+                .body(obj)
+                .when().post(Routes.news)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
+                .extract().response();
+    }
+
     public static Response changePost(String token, String id, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
                 .when().put(Routes.news + "/" + id)
+                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
+                .extract().response();
+    }
+
+    public static Response deletePost(String token, int postId) {
+        return given()
+                .header("Authorization", token)
+                .when().delete(Routes.news + "/" + postId)
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }

@@ -1,4 +1,5 @@
 /Users/dunice/Projects/RestAssured/src/test/java/ChangeUserInfoTest.java
+/Users/dunice/Projects/RestAssured/src/test/java/WrongGetUserInfo.java
 /Users/dunice/Projects/RestAssured/src/test/java/SuccessAuthorizationTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/GetPostTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/WrongLoginTest.java
@@ -8,7 +9,9 @@
 /Users/dunice/Projects/RestAssured/src/test/java/SuccessRegistrationTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/CreatePostTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/AllNewsPageGetTest.java
+/Users/dunice/Projects/RestAssured/src/test/java/WrongRegistrationTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/GetFileTest.java
+/Users/dunice/Projects/RestAssured/src/test/java/WrongChangeUserInfo.java
 /Users/dunice/Projects/RestAssured/src/test/java/LoginPageGetTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/GetUserInfoTest.java
 /Users/dunice/Projects/RestAssured/src/test/java/RegistrationPageGetTest.java

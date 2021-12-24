@@ -7,7 +7,7 @@ public final class ErrorCode {
     int MUST_NOT_BE_NULL = 4;
     int USER_NOT_FOUND = 5;
     int TOKEN_NOT_PROVIDED = 6;
-    int UNAUTHORISED = 7;
+    int UNAUTHORIZED = 7;
     int USER_EMAIL_NOT_NULL = 8;
     int USER_PASSWORD_NULL = 9;
     int USER_ROLE_NOT_NULL = 10;

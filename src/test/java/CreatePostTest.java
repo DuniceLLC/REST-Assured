@@ -1,9 +1,6 @@
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
-
 import org.junit.jupiter.api.Test;
-
-import static io.restassured.RestAssured.*;
 
 public class CreatePostTest extends SetUp {
     SoftAssertions softAssertions = new SoftAssertions();

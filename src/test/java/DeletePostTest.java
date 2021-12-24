@@ -2,8 +2,6 @@ import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.*;
-
 public class DeletePostTest extends SetUp {
     String imagePath = "src/main/resources/postPicture.jpeg";
     String image = Methods.uploadFile(imagePath).jsonPath().getString("data");
@@ -20,12 +18,8 @@ public class DeletePostTest extends SetUp {
         Methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
         Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
-        String postId = responseAfterGetPost.jsonPath().getString("content[0].id");
-        Response responseAfterDeletePost = given()
-                .header("Authorization", token)
-                .when().delete(Routes.news + "/" + postId)
-                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
-                .extract().response();
+        int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
+        Response responseAfterDeletePost = Methods.deletePost(token, postId);
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
 

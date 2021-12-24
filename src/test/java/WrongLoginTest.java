@@ -8,7 +8,6 @@ import java.util.List;
 
 public class WrongLoginTest {
     SoftAssertions softAssertions = new SoftAssertions();
-    Routes routes = new Routes();
     ErrorCode errorCode = new ErrorCode();
     JSONObject requestBody = new JSONObject();
     RequestSpecification request = RestAssured.given();

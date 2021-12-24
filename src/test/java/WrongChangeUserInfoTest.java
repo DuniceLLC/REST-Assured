@@ -1,10 +1,11 @@
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
-public class WrongChangeUserInfo extends SetUp {
+import static io.restassured.RestAssured.given;
+
+public class WrongChangeUserInfoTest extends SetUp {
     SoftAssertions softAssertions = new SoftAssertions();
     ErrorCode errorCode = new ErrorCode();
 
@@ -19,6 +20,27 @@ public class WrongChangeUserInfo extends SetUp {
 
     String emptyEmail = "";
     String emptyName = "";
+
+    @Test
+    public void withoutToken() {
+        Register userNewData = Register.builder().avatar(avatar).email(correctEmail).name(correctName).role(correctRole).build();
+        Response response = given()
+                .spec(Specifications.setContentType())
+                .body(userNewData)
+                .when()
+                .put(Routes.user)
+                .then().assertThat()
+                .spec(Specifications.checkStatusCode401AndContentType())
+                .extract().response();
+        response.prettyPrint();
+        String success = response.jsonPath().getString("success");
+        int customStatusCode = response.jsonPath().getInt("statusCode");
+        List<Integer> codes = response.jsonPath().getList("codes");
+        softAssertions.assertThat(success).isEqualTo("true");
+        softAssertions.assertThat(codes).contains(errorCode.UNAUTHORIZED, errorCode.TOKEN_NOT_PROVIDED);
+        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
+        softAssertions.assertAll();
+    }
 
     @Test
     public void withWrongEmail() {

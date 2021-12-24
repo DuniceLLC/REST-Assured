@@ -6,7 +6,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.*;
 
-public class WrongGetUserInfo {
+public class WrongGetUserInfoTest {
     SoftAssertions softAssertions = new SoftAssertions();
     ErrorCode errorCode = new ErrorCode();
     String wrongUserId = Methods.generateRandomHexString(8) + "-" +
