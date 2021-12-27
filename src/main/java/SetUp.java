@@ -1,10 +1,12 @@
 import io.restassured.response.*;
 import lombok.Getter;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 
 @Getter
 public class SetUp {
+    SoftAssert softAssert = new SoftAssert();
     String correctEmail = Methods.generateRandomHexString(5) + "@gmail.com";
     String correctPassword = Methods.generateRandomHexString(5);
     String avatarPath = "src/main/resources/avatar.jpeg";
@@ -15,13 +17,13 @@ public class SetUp {
     Register user = new Register(avatar, correctEmail, correctName, correctPassword, correctRole);
     Response response;
 
-    @BeforeEach
+    @BeforeMethod
     public void reg() {
         response = Methods.registration(user);
         token = response.jsonPath().getString("data.token");
     }
 
-    @AfterEach
+    @AfterMethod
     public void delete() {
         Methods.deleteUser(token);
     }

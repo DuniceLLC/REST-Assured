@@ -1,12 +1,12 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class WrongChangePostTest extends SetUp {
     ErrorCode errorCode = new ErrorCode();
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
     String emptyField = "";
     String[] emptyTags = {emptyField};
     int wrongId = 0;
@@ -37,10 +37,11 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_DESCRIPTION_NOT_NULL);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_DESCRIPTION_NOT_NULL));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -56,10 +57,11 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_IMAGE_HAS_TO_BE_PRESENT);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_IMAGE_HAS_TO_BE_PRESENT));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -75,10 +77,10 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_TITLE_NOT_NULL);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_TITLE_NOT_NULL));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -100,10 +102,10 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.UNAUTHORIZED);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -116,10 +118,11 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_NOT_FOUND);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_NOT_FOUND));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -135,10 +138,11 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_DESCRIPTION_SIZE);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_DESCRIPTION_SIZE));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -154,10 +158,11 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_TITLE_SIZE);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_TITLE_SIZE));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -173,9 +178,10 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.TAGS_NOT_VALID);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.TAGS_NOT_VALID));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 }

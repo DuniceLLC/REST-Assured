@@ -1,10 +1,9 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class SuccessAuthorizationTest extends SetUp {
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void successAuthorizationTest() {
@@ -31,14 +30,14 @@ public class SuccessAuthorizationTest extends SetUp {
         String loginRole = responseLogin.jsonPath().getString("data.role");
         String loginAvatar = responseLogin.jsonPath().getString("data.avatar");
 
-        softAssertions.assertThat(id).isEqualTo(loginId);
-        softAssertions.assertThat(avatar).isEqualTo(loginAvatar);
-        softAssertions.assertThat(loginSuccess).isEqualTo("true");
-        softAssertions.assertThat(loginEmail).isEqualTo(email);
-        softAssertions.assertThat(loginName).isEqualTo(name);
-        softAssertions.assertThat(loginToken).isEqualTo(token);
-        softAssertions.assertThat(loginRole).isEqualTo(role);
-        softAssertions.assertThat(1).isEqualTo(loginCustomStatusCode);
-        softAssertions.assertAll();
+        softAssert.assertEquals(id,loginId);
+        softAssert.assertEquals(avatar,loginAvatar);
+        softAssert.assertEquals(loginSuccess,"true");
+        softAssert.assertEquals(loginEmail,email);
+        softAssert.assertEquals(loginName,name);
+        softAssert.assertEquals(loginToken,token);
+        softAssert.assertEquals(loginRole,role);
+        softAssert.assertEquals(1,loginCustomStatusCode);
+        softAssert.assertAll();
     }
 }

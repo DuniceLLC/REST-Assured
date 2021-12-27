@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="0" failures="0" name="TestSuite" time="0" errors="0" skipped="0">
+<testsuite tests="78" failures="37" name="TestSuite" time="13.678" errors="0" skipped="24">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.1+0"/>
@@ -61,4 +61,2110 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
+  <testcase classname="SuccessAuthorizationTest" name="successAuthorizationTest" time="0.006">
+    <failure message="Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null
+	at SuccessAuthorizationTest.successAuthorizationTest(SuccessAuthorizationTest.java:11)
+</failure>
+    <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@4c203ea1
+</system-out>
+  </testcase>
+  <testcase classname="GetFileTest" name="getFileTest" time="4.424"/>
+  <testcase classname="CreatePostTest" name="createPostTest" time="0.001">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at CreatePostTest.createPostTest(CreatePostTest.java:17)
+</failure>
+  </testcase>
+  <testcase classname="GetUserInfoTest" name="getUserInfoByIdTest" time="0">
+    <failure message="Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null
+	at GetUserInfoTest.getUserInfoByIdTest(GetUserInfoTest.java:12)
+</failure>
+  </testcase>
+  <testcase classname="GetUserInfoTest" name="getUsers" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at GetUserInfoTest.getUsers(GetUserInfoTest.java:44)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="WithoutEmail" time="0.001">
+    <failure message="
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.WithoutEmail(WrongLoginTest.java:242)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="correctEmailWithoutPassword" time="0">
+    <failure message="
+Multiple Failures (2 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (2 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:223)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="emptyEmail" time="0">
+    <failure message="
+Multiple Failures (3 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (3 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.emptyEmail(WrongLoginTest.java:164)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="emptyEmailAndPassword" time="0">
+    <failure message="
+Multiple Failures (4 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (4 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:204)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="emptyPassword" time="0.001">
+    <failure message="
+Multiple Failures (5 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (5 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.emptyPassword(WrongLoginTest.java:184)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="incorrectEmail1" time="0">
+    <failure message="
+Multiple Failures (6 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (6 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:41)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="incorrectEmail2" time="0">
+    <failure message="
+Multiple Failures (7 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (7 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:60)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="incorrectEmail3" time="0.024">
+    <failure message="
+Multiple Failures (8 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (8 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:81)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="incorrectEmail4" time="0.23">
+    <failure message="
+Multiple Failures (9 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (9 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:104)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="incorrectEmail5" time="0.199">
+    <failure message="
+Multiple Failures (10 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+-- failure 10 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:123)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (10 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+-- failure 10 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:123)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:124)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="userDoesNotExist" time="0.22">
+    <failure message="
+Multiple Failures (10 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+-- failure 10 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:123)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (10 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+-- failure 10 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:123)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:144)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="withoutEmailAndPassword" time="0.215">
+    <failure message="
+Multiple Failures (11 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+-- failure 10 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+
+at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:123)
+-- failure 11 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[8, 26]&gt;
+but could not find the following element(s):
+ &lt;[8, 26]&gt;
+
+at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:259)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (11 failures)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[4]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.WithoutEmail(WrongLoginTest.java:240)
+-- failure 2 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[26]&gt;
+but could not find the following element(s):
+ &lt;[26]&gt;
+at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:221)
+-- failure 3 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8]&gt;
+but could not find the following element(s):
+ &lt;[8]&gt;
+at WrongLoginTest.emptyEmail(WrongLoginTest.java:163)
+-- failure 4 --
+Expecting ArrayList:
+ &lt;[3]&gt;
+to contain:
+ &lt;[8, 9]&gt;
+but could not find the following element(s):
+ &lt;[8, 9]&gt;
+at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:202)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[9]&gt;
+but could not find the following element(s):
+ &lt;[9]&gt;
+at WrongLoginTest.emptyPassword(WrongLoginTest.java:183)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:40)
+-- failure 7 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:59)
+-- failure 8 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:80)
+-- failure 9 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:102)
+-- failure 10 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[17]&gt;
+but could not find the following element(s):
+ &lt;[17]&gt;
+at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:123)
+-- failure 11 --
+Expecting ArrayList:
+ &lt;[5]&gt;
+to contain:
+ &lt;[8, 26]&gt;
+but could not find the following element(s):
+ &lt;[8, 26]&gt;
+at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:259)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:261)
+</failure>
+  </testcase>
+  <testcase classname="AllNewsPageGetTest" name="allNewsPageGetTest" time="0.386"/>
+  <testcase classname="DeletePostTest" name="deletePostTest" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at DeletePostTest.deletePostTest(DeletePostTest.java:18)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0.008">
+    <failure message="Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null
+	at GetPostTest.createPost(GetPostTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPageEqual0" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPerPageEqual0" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutPage" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutPerPage" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="createPost" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutToken" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetFileTest" name="getFileWithoutFileNameTest" time="0.46"/>
+  <testcase classname="WrongDeletePostTest" name="deletePostTestWithWrongId" time="0.001">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongDeletePostTest.deletePostTestWithWrongId(WrongDeletePostTest.java:26)
+</failure>
+  </testcase>
+  <testcase classname="WrongDeletePostTest" name="deletePostTestWithoutToken" time="0.001">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongDeletePostTest.deletePostTestWithoutToken(WrongDeletePostTest.java:44)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetPostTest" name="getPostWithPageEqual0" time="0.208">
+    <failure message="Cannot invoke &quot;java.util.List.get(int)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.get(int)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:64)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetPostTest" name="getPostWithPerPageEqual0" time="0.208">
+    <failure message="Cannot invoke &quot;java.util.List.get(int)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.get(int)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:82)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetPostTest" name="getPostWithoutPage" time="0.197">
+    <failure message="
+Multiple Failures (5 failures)
+-- failure 1 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:62)
+-- failure 2 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:63)
+-- failure 3 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:80)
+-- failure 4 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:81)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[40]&gt;
+but could not find the following element(s):
+ &lt;[40]&gt;
+
+at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:28)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (5 failures)
+-- failure 1 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:62)
+-- failure 2 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:63)
+-- failure 3 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:80)
+-- failure 4 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:81)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[40]&gt;
+but could not find the following element(s):
+ &lt;[40]&gt;
+at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:28)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:30)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetPostTest" name="getPostWithoutPerPage" time="0.216">
+    <failure message="
+Multiple Failures (6 failures)
+-- failure 1 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:62)
+-- failure 2 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:63)
+-- failure 3 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:80)
+-- failure 4 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:81)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[40]&gt;
+but could not find the following element(s):
+ &lt;[40]&gt;
+
+at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:28)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[41]&gt;
+but could not find the following element(s):
+ &lt;[41]&gt;
+
+at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:45)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (6 failures)
+-- failure 1 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:62)
+-- failure 2 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:63)
+-- failure 3 --
+Expecting:
+ &lt;&quot;false&quot;&gt;
+to be equal to:
+ &lt;&quot;true&quot;&gt;
+but was not.
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:80)
+-- failure 4 --
+Expecting actual not to be null
+at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:81)
+-- failure 5 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[40]&gt;
+but could not find the following element(s):
+ &lt;[40]&gt;
+at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:28)
+-- failure 6 --
+Expecting ArrayList:
+ &lt;[0]&gt;
+to contain:
+ &lt;[41]&gt;
+but could not find the following element(s):
+ &lt;[41]&gt;
+at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:45)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:47)
+</failure>
+  </testcase>
+  <testcase classname="WrongRegistrationTest" name="regWithEmptyAllFields" time="0.507"/>
+  <testcase classname="WrongRegistrationTest" name="regWithExistingEmail" time="0.506"/>
+  <testcase classname="WrongRegistrationTest" name="regWithNullAllFields" time="0.205"/>
+  <testcase classname="WrongRegistrationTest" name="regWithWrongName" time="0.203"/>
+  <testcase classname="WrongRegistrationTest" name="regWithWrongRole" time="0.204"/>
+  <testcase classname="WrongRegistrationTest" name="regWithoutEmail" time="0.197"/>
+  <testcase classname="WrongRegistrationTest" name="regWithoutName" time="0.199"/>
+  <testcase classname="WrongRegistrationTest" name="regWithoutPassword" time="0.199">
+    <failure message="
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[30]&gt;
+to contain:
+ &lt;[25]&gt;
+but could not find the following element(s):
+ &lt;[25]&gt;
+
+at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:84)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[30]&gt;
+to contain:
+ &lt;[25]&gt;
+but could not find the following element(s):
+ &lt;[25]&gt;
+at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:84)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:86)
+</failure>
+  </testcase>
+  <testcase classname="WrongRegistrationTest" name="regWithoutRole" time="0.557">
+    <failure message="
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[30]&gt;
+to contain:
+ &lt;[25]&gt;
+but could not find the following element(s):
+ &lt;[25]&gt;
+
+at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:84)" type="org.assertj.core.error.AssertJMultipleFailuresError">org.assertj.core.error.AssertJMultipleFailuresError: 
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting ArrayList:
+ &lt;[30]&gt;
+to contain:
+ &lt;[25]&gt;
+but could not find the following element(s):
+ &lt;[25]&gt;
+at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:84)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:99)
+</failure>
+  </testcase>
+  <testcase classname="WrongUploadFileTest" name="uploadFileWithNonFormDataTest" time="1.21"/>
+  <testcase classname="UploadFileTest" name="uploadFileTest" time="0.223"/>
+  <testcase classname="DeleteUserTest" name="deleteUser" time="0.515"/>
+  <testcase classname="DeleteUserTest" name="deleteWithEmptyToken" time="0.678"/>
+  <testcase classname="DeleteUserTest" name="deleteWithoutToken" time="0.646"/>
+  <testcase classname="WrongGetUserInfoTest" name="withWrongUserId" time="0.202"/>
+  <testcase classname="ChangePostTest" name="changePostTest" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at ChangePostTest.changePostTest(ChangePostTest.java:19)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="createPost" time="0.001">
+    <failure message="Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null
+	at GetPostTest.createPost(GetPostTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="getPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="createPost" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="getUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="createPost" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPageTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="createPost" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPerPageTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="GetPostTest" name="createPost" time="0.003">
+    <skipped/>
+  </testcase>
+  <testcase classname="GetPostTest" name="getPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="GetPostTest" name="createPost" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="GetPostTest" name="getUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="SuccessRegistrationTest" name="registrationTest" time="0.4"/>
+  <testcase classname="ChangeUserInfoTest" name="changeUserInfoSuccess" time="0">
+    <failure message="Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.jsonPath()&quot; because &quot;this.response&quot; is null
+	at ChangeUserInfoTest.changeUserInfoSuccess(ChangeUserInfoTest.java:12)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyDescription" time="0.012">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithEmptyDescription(WrongChangePostTest.java:130)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTags" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithEmptyTags(WrongChangePostTest.java:170)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTitle" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithEmptyTitle(WrongChangePostTest.java:150)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithWrongId" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithWrongId(WrongChangePostTest.java:113)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutDescription" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithoutDescription(WrongChangePostTest.java:29)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutImage" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithoutImage(WrongChangePostTest.java:49)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutTitle" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithoutTitle(WrongChangePostTest.java:69)
+</failure>
+  </testcase>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutToken" time="0">
+    <failure message="Header value cannot be null" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Header value cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:843)
+	at Methods.createPost(Methods.java:106)
+	at WrongChangePostTest.wrongChangePostTestWithoutToken(WrongChangePostTest.java:88)
+</failure>
+  </testcase>
 </testsuite>

@@ -1,6 +1,6 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class SuccessRegistrationTest {
     String correctEmail = Methods.generateRandomHexString(5) + "@gmail.com";
@@ -9,7 +9,7 @@ public class SuccessRegistrationTest {
     String correctName = Methods.generateRandomHexString(5);
     String correctRole = "user";
 
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void registrationTest() {
@@ -25,14 +25,14 @@ public class SuccessRegistrationTest {
         String role = response.jsonPath().getString("data.role");
         String avatar = response.jsonPath().getString("data.avatar");
 
-        softAssertions.assertThat(id).isNotNull();
-        softAssertions.assertThat(token).isNotNull();
-        softAssertions.assertThat(avatar).isNotNull();
-        softAssertions.assertThat(correctRole).isEqualTo(role);
-        softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(correctEmail).isEqualTo(email);
-        softAssertions.assertThat(correctName).isEqualTo(name);
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertAll();
+        softAssert.assertNotNull(id);
+        softAssert.assertNotNull(token);
+        softAssert.assertNotNull(avatar);
+        softAssert.assertEquals(correctRole,role);
+        softAssert.assertEquals("true",success);
+        softAssert.assertEquals(correctEmail,email);
+        softAssert.assertEquals(correctName,name);
+        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertAll();
     }
 }

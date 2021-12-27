@@ -1,6 +1,7 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import java.util.List;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.is;
@@ -10,7 +11,7 @@ public class AllNewsPageGetTest {
     int perPage = 7;
 
     Routes routes = new Routes();
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void allNewsPageGetTest() {
@@ -30,12 +31,12 @@ public class AllNewsPageGetTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         int numberOfElements = response.jsonPath().getInt("data.numberOfElements");
 
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(numberOfElements).isNotNull();
-        softAssertions.assertThat(content).isNotEmpty();
-        softAssertions.assertThat(content).hasSize(perPage);
-        softAssertions.assertAll();
+        softAssert.assertEquals(customStatusCode, 1);
+        softAssert.assertEquals(success,"true");
+        softAssert.assertNotNull(numberOfElements);
+        softAssert.assertFalse(content.isEmpty());
+        softAssert.assertEquals(content.size(), perPage);
+        softAssert.assertAll();
     }
 
 }

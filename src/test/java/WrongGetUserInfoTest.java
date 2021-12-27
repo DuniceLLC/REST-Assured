@@ -1,9 +1,7 @@
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
-
+import org.testng.annotations.Test;
 import java.util.List;
-
 import static io.restassured.RestAssured.*;
 
 public class WrongGetUserInfoTest {

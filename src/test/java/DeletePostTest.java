@@ -1,6 +1,6 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class DeletePostTest extends SetUp {
     String imagePath = "src/main/resources/postPicture.jpeg";
@@ -11,7 +11,7 @@ public class DeletePostTest extends SetUp {
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image, tags, title);
 
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void deletePostTest() {
@@ -23,8 +23,8 @@ public class DeletePostTest extends SetUp {
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
 
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertAll();
     }
 }

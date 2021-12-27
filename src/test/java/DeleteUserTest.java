@@ -1,9 +1,8 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
-
 import static io.restassured.RestAssured.*;
 
 public class DeleteUserTest {
@@ -15,7 +14,7 @@ public class DeleteUserTest {
     String correctRole = "user";
     String emptyToken = "";
 
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode =new ErrorCode();
 
     @Test
@@ -28,9 +27,9 @@ public class DeleteUserTest {
         int customStatusCode = responseDelete.jsonPath().getInt("statusCode");
         String success = responseDelete.jsonPath().getString("success");
 
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertAll();
     }
 
     @Test
@@ -47,10 +46,10 @@ public class DeleteUserTest {
         String success = responseDelete.jsonPath().getString("success");
         List<Integer> codes = responseDelete.jsonPath().getList("codes");
 
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.UNAUTHORIZED);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
         Methods.deleteUser(token);
     }
 
@@ -67,10 +66,10 @@ public class DeleteUserTest {
         String success = responseDelete.jsonPath().getString("success");
         List<Integer> codes = responseDelete.jsonPath().getList("codes");
 
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.UNAUTHORIZED);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
         Methods.deleteUser(token);
     }
 }

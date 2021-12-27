@@ -1,10 +1,11 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 
 public class GetPostTest extends SetUp {
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
     String description = Methods.generateRandomHexString(5);
     String imagePath = "src/main/resources/postPicture.jpeg";
     String image = Methods.uploadFile(imagePath).jsonPath().getString("data");
@@ -15,7 +16,7 @@ public class GetPostTest extends SetUp {
     String userId;
     String userName;
 
-    @BeforeEach
+    @BeforeMethod
     public void createPost() {
         author = response.jsonPath().getString("data.name");
         userId = response.jsonPath().getString("data.id");
@@ -36,15 +37,15 @@ public class GetPostTest extends SetUp {
         String tagsIdGetPost = responseGetPost.jsonPath().getString("content[0].tags[0].id");
         String tagsTitleGetPost = responseGetPost.jsonPath().getString("content[0].tags[0].title");
 
-        softAssertions.assertThat(id).isNotNull();
-        softAssertions.assertThat(titleGetPost).isEqualTo(title);
-        softAssertions.assertThat(userIdGetPost).isEqualTo(userId);
-        softAssertions.assertThat(userNameGetPost).isEqualTo(userName);
-        softAssertions.assertThat(imageGetPost).isEqualTo(image);
-        softAssertions.assertThat(descriptionGetPost).isEqualTo(description);
-        softAssertions.assertThat(tagsIdGetPost).isNotNull();
-        softAssertions.assertThat(tagsTitleGetPost).contains(tags);
-        softAssertions.assertAll();
+        softAssert.assertNotNull(id);
+        softAssert.assertEquals(titleGetPost, title);
+        softAssert.assertEquals(userIdGetPost, userId);
+        softAssert.assertEquals(userNameGetPost, userName);
+        softAssert.assertEquals(imageGetPost, image);
+        softAssert.assertEquals(descriptionGetPost, description);
+        softAssert.assertNotNull(tagsIdGetPost);
+        softAssert.assertEquals(tagsTitleGetPost, this.tags[0]);
+        softAssert.assertAll();
     }
 
     @Test
@@ -63,17 +64,17 @@ public class GetPostTest extends SetUp {
         int customStatusCode = responseGetUserPost.jsonPath().getInt("statusCode");
         String success = responseGetUserPost.jsonPath().getString("success");
 
-        softAssertions.assertThat(description).isEqualTo(this.description);
-        softAssertions.assertThat(id).isNotNull();
-        softAssertions.assertThat(image).isEqualTo(this.image);
-        softAssertions.assertThat(tagsTitle).isEqualTo(this.tags[0]);
-        softAssertions.assertThat(tagsId).isNotNull();
-        softAssertions.assertThat(title).isEqualTo(this.title);
-        softAssertions.assertThat(userId).isEqualTo(this.userId);
-        softAssertions.assertThat(userName).isEqualTo(this.userName);
-        softAssertions.assertThat(numberOfElements).isNotNull();
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertAll();
+        softAssert.assertEquals(description, this.description);
+        softAssert.assertNotNull(id);
+        softAssert.assertEquals(image, this.image);
+        softAssert.assertEquals(tagsTitle, this.tags[0]);
+        softAssert.assertNotNull(tagsId);
+        softAssert.assertEquals(title, this.title);
+        softAssert.assertEquals(userId, this.userId);
+        softAssert.assertEquals(userName, this.userName);
+        softAssert.assertNotNull(numberOfElements);
+        softAssert.assertEquals(customStatusCode, 1);
+        softAssert.assertEquals(success, "true");
+        softAssert.assertAll();
     }
 }

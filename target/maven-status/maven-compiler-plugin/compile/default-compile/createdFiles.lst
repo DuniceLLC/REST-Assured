@@ -2,6 +2,7 @@ Login.class
 SetUp.class
 Register$RegisterBuilder.class
 Register.class
+Post$PostBuilder.class
 ErrorCode.class
 Specifications.class
 Post.class

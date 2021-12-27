@@ -1,6 +1,7 @@
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class WrongDeletePostTest extends SetUp {
     Post newsDto = new Post(description, image, tags, title);
 
     SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
     @Test
@@ -31,10 +33,10 @@ public class WrongDeletePostTest extends SetUp {
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterDeletePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.NEWS_NOT_FOUND);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_NOT_FOUND));
+        softAssert.assertEquals(customStatusCode, codes.get(0).intValue());
+        softAssert.assertAll();
     }
 
     @Test
@@ -51,9 +53,9 @@ public class WrongDeletePostTest extends SetUp {
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterDeletePost.jsonPath().getList("codes");
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(codes).contains(errorCode.UNAUTHORIZED);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
+        softAssert.assertEquals(customStatusCode, codes.get(0).intValue());
+        softAssert.assertAll();
     }
 }

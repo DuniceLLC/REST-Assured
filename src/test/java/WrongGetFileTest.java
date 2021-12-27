@@ -1,6 +1,7 @@
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 
 import static io.restassured.RestAssured.given;
 
@@ -17,6 +18,6 @@ public class WrongGetFileTest {
                 .extract().response();
 
         int ststusCode = response.statusCode();
-        Assertions.assertEquals(404, ststusCode);
+        Assert.assertEquals(404, ststusCode);
     }
 }

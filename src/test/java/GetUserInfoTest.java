@@ -1,13 +1,11 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
-
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import java.util.List;
-
 import static io.restassured.RestAssured.*;
 
 public class GetUserInfoTest extends SetUp {
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void getUserInfoByIdTest() {
@@ -30,14 +28,14 @@ public class GetUserInfoTest extends SetUp {
         int customStatusCodeInfo = responseInfo.jsonPath().getInt("statusCode");
         String successInfo = responseInfo.jsonPath().getString("success");
 
-        softAssertions.assertThat(avatarInfo).isEqualTo(avatar);
-        softAssertions.assertThat(emailInfo).isEqualTo(email);
-        softAssertions.assertThat(nameInfo).isEqualTo(name);
-        softAssertions.assertThat(idInfo).isEqualTo(id);
-        softAssertions.assertThat(roleInfo).isEqualTo(role);
-        softAssertions.assertThat(customStatusCodeInfo).isEqualTo(1);
-        softAssertions.assertThat(successInfo).isEqualTo("true");
-        softAssertions.assertAll();
+        softAssert.assertEquals(avatarInfo,avatar);
+        softAssert.assertEquals(emailInfo,email);
+        softAssert.assertEquals(nameInfo,name);
+        softAssert.assertEquals(idInfo,id);
+        softAssert.assertEquals(roleInfo,role);
+        softAssert.assertEquals(customStatusCodeInfo,1);
+        softAssert.assertEquals(successInfo,"true");
+        softAssert.assertAll();
     }
 
     @Test
@@ -52,9 +50,9 @@ public class GetUserInfoTest extends SetUp {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Object> users = response.jsonPath().getList("data");
 
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertThat(users).isNotNull();
-        softAssertions.assertAll();
+        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertEquals(success,"true");
+        softAssert.assertNotNull(users);
+        softAssert.assertAll();
     }
 }

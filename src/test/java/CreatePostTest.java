@@ -1,9 +1,9 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class CreatePostTest extends SetUp {
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void createPostTest() {
@@ -19,8 +19,8 @@ public class CreatePostTest extends SetUp {
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
         String success = responseAfterCreatePost.jsonPath().getString("success");
 
-        softAssertions.assertThat(customStatusCode).isEqualTo(1);
-        softAssertions.assertThat(success).isEqualTo("true");
-        softAssertions.assertAll();
+        softAssert.assertEquals(customStatusCode, 1);
+        softAssert.assertEquals(success, "true");
+        softAssert.assertAll();
     }
 }

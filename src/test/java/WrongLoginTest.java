@@ -3,7 +3,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.SoftAssertions;
 import org.json.JSONObject;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import java.util.List;
 
 public class WrongLoginTest {
