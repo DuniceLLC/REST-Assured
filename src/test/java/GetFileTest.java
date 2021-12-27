@@ -7,7 +7,6 @@ public class GetFileTest {
     public void getFileTest() {
         String imagePath = "src/main/resources/postPicture.jpeg";
         String fileName = Methods.uploadFile(imagePath).jsonPath().getString("data").split("/")[6];
-        System.out.println(fileName);
         Response response = given()
                 .when()
                 .get(Routes.getFile + fileName)

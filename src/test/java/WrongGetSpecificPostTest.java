@@ -1,9 +1,7 @@
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 
 public class WrongGetSpecificPostTest extends GetPostTest {
@@ -49,8 +47,6 @@ public class WrongGetSpecificPostTest extends GetPostTest {
         softAssertions.assertThat(success).isEqualTo("true");
         softAssertions.assertThat(codes).contains(errorCode.REQUIRED_INT_PARAM_PER_PAGE_IS_NOT_PRESENT);
         softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertAll();
-
         softAssertions.assertAll();
     }
 }

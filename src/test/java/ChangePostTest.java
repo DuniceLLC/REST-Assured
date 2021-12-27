@@ -12,8 +12,6 @@ public class ChangePostTest extends SetUp {
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image1, tags, title);
 
-
-
     SoftAssertions softAssertions = new SoftAssertions();
 
     @Test
@@ -22,7 +20,7 @@ public class ChangePostTest extends SetUp {
         String image2 = Methods.uploadFile(imagePathForChange).jsonPath().getString("data");
         String author = response.jsonPath().getString("data.name");
         Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
-        String postId = responseAfterGetPost.jsonPath().getString("content[0].id");
+        int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
         String newDescription = Methods.generateRandomHexString(5);
         String[] newTags = {Methods.generateRandomHexString(5)};
         String mewTitle = Methods.generateRandomHexString(5);

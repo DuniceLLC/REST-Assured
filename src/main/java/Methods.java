@@ -121,13 +121,23 @@ public class Methods {
                 .extract().response();
     }
 
-    public static Response changePost(String token, String id, Object obj) {
+    public static Response changePost(String token, int id, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
                 .when().put(Routes.news + "/" + id)
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
+                .extract().response();
+    }
+
+    public static Response wrongChangePost(String token, int id, Object obj) {
+        return given()
+                .header("Authorization", token)
+                .spec(Specifications.setContentType())
+                .body(obj)
+                .when().put(Routes.news + "/" + id)
+                .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
     }
 
