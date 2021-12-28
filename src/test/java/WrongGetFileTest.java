@@ -16,7 +16,7 @@ public class WrongGetFileTest {
                 .then()
                 .extract().response();
 
-        int ststusCode = response.statusCode();
-        Assert.assertEquals(404, ststusCode);
+        int statusCode = response.statusCode();
+        Assert.assertEquals(404, statusCode);
     }
 }

@@ -1,9 +1,7 @@
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 
 public class WrongGetUserPostTest extends GetPostTest {
@@ -25,9 +23,9 @@ public class WrongGetUserPostTest extends GetPostTest {
         int customStatusCode = responseAfterGetPost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterGetPost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.REQUIRED_INT_PARAM_PAGE_IS_NOT_PRESENT));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.REQUIRED_INT_PARAM_PAGE_IS_NOT_PRESENT), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -44,9 +42,9 @@ public class WrongGetUserPostTest extends GetPostTest {
         int customStatusCode = responseAfterGetPost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterGetPost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.REQUIRED_INT_PARAM_PER_PAGE_IS_NOT_PRESENT));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.REQUIRED_INT_PARAM_PER_PAGE_IS_NOT_PRESENT), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -63,9 +61,9 @@ public class WrongGetUserPostTest extends GetPostTest {
         int customStatusCode = responseAfterGetPost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterGetPost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -83,9 +81,9 @@ public class WrongGetUserPostTest extends GetPostTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.PARAM_PAGE_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.PARAM_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -103,9 +101,9 @@ public class WrongGetUserPostTest extends GetPostTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.PARAM_PER_PAGE_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.PARAM_PER_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

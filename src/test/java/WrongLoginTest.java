@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
-public class WrongLoginTest {
+public class WrongLoginTest extends SetUp {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
     JSONObject requestBody = new JSONObject();
@@ -18,10 +18,10 @@ public class WrongLoginTest {
     String wrongEmail3 = Methods.generateRandomHexString(5) + "@email";
     String wrongEmail4 = Methods.generateRandomHexString(5) + "@email.";
     String wrongEmail5 = Methods.generateRandomHexString(5) + "@email.c";
-    String correctEmail = Methods.generateRandomHexString(5) + "@email.com";
     String emptyEmail = "";
     String emptyPassword = "";
     String password = Methods.generateRandomHexString(6);
+    String randomEmail = Methods.generateRandomHexString(5) + "@gmail.com";
 
     @Test
     public void incorrectEmail1() {
@@ -37,9 +37,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -57,9 +57,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -78,9 +78,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -100,9 +100,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -120,15 +120,15 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
     @Test
     public void userDoesNotExist() {
-        requestBody.put("email", correctEmail);
+        requestBody.put("email", randomEmail);
         requestBody.put("password", password);
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
@@ -140,9 +140,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_NOT_FOUND));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_NOT_FOUND), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -160,9 +160,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.EMAIL_SIZE_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -179,10 +179,11 @@ public class WrongLoginTest {
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
+        System.out.println(codes);
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_PASSWORD_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -200,10 +201,10 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_NULL));
-        softAssert.assertTrue(codes.contains(errorCode.USER_PASSWORD_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.EMAIL_SIZE_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -220,9 +221,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -239,9 +240,9 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -258,10 +259,10 @@ public class WrongLoginTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_NULL));
-        softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

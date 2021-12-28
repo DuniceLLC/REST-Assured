@@ -38,9 +38,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_DESCRIPTION_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_DESCRIPTION_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -58,9 +58,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_IMAGE_HAS_TO_BE_PRESENT));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_IMAGE_HAS_TO_BE_PRESENT), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -77,9 +77,10 @@ public class WrongChangePostTest extends SetUp {
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_TITLE_NOT_NULL));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_TITLE_NOT_NULL), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -102,9 +103,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -119,9 +120,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_NOT_FOUND));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_NOT_FOUND), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -139,9 +140,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_DESCRIPTION_SIZE));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_DESCRIPTION_SIZE), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -159,9 +160,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_TITLE_SIZE));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_TITLE_SIZE), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -179,9 +180,9 @@ public class WrongChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterChangePost.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.TAGS_NOT_VALID));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.TAGS_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

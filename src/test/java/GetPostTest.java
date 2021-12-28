@@ -36,8 +36,6 @@ public class GetPostTest extends SetUp {
         String descriptionGetPost = responseGetPost.jsonPath().getString("content[0].description");
         String tagsIdGetPost = responseGetPost.jsonPath().getString("content[0].tags[0].id");
         String tagsTitleGetPost = responseGetPost.jsonPath().getString("content[0].tags[0].title");
-        int customStatusCode = responseGetPost.jsonPath().getInt("statusCode");
-        String success = responseGetPost.jsonPath().getString("success");
 
         softAssert.assertNotNull(id, "id is null");
         softAssert.assertEquals(titleGetPost, title,"Wrong \"title\"");
@@ -47,8 +45,6 @@ public class GetPostTest extends SetUp {
         softAssert.assertEquals(descriptionGetPost, description,"Wrong \"description\"");
         softAssert.assertNotNull(tagsIdGetPost, "tags id is null");
         softAssert.assertEquals(tagsTitleGetPost, this.tags[0], "Wrong tags title");
-        softAssert.assertEquals(customStatusCode, 1, "Wrong \"statusCode\"");
-        softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertAll();
     }
 

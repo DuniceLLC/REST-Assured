@@ -1,9 +1,7 @@
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
 
 public class WrongDeletePostTest extends SetUp {
@@ -31,9 +29,9 @@ public class WrongDeletePostTest extends SetUp {
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterDeletePost.jsonPath().getList("codes");
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_NOT_FOUND));
-        softAssert.assertEquals(customStatusCode, codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.NEWS_NOT_FOUND), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -51,9 +49,9 @@ public class WrongDeletePostTest extends SetUp {
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
         List<Integer> codes = responseAfterDeletePost.jsonPath().getList("codes");
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
-        softAssert.assertEquals(customStatusCode, codes.get(0).intValue());
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }
