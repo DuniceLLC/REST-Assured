@@ -25,14 +25,14 @@ public class SuccessRegistrationTest {
         String role = response.jsonPath().getString("data.role");
         String avatar = response.jsonPath().getString("data.avatar");
 
-        softAssert.assertNotNull(id);
-        softAssert.assertNotNull(token);
-        softAssert.assertNotNull(avatar);
-        softAssert.assertEquals(correctRole,role);
-        softAssert.assertEquals("true",success);
-        softAssert.assertEquals(correctEmail,email);
-        softAssert.assertEquals(correctName,name);
-        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertNotNull(id, "\"id\" is null");
+        softAssert.assertNotNull(token, "\"token\" is null");
+        softAssert.assertNotNull(avatar, "\"avatar\" is null");
+        softAssert.assertEquals(correctRole,role, "Wrong \"role\"");
+        softAssert.assertEquals("true",success, "Wrong \"success\"");
+        softAssert.assertEquals(correctEmail,email, "Wrong \"email\"");
+        softAssert.assertEquals(correctName,name, "Wrong \"name\"");
+        softAssert.assertEquals(customStatusCode,1, "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

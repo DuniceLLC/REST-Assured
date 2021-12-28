@@ -11,9 +11,9 @@ public class UploadFileTest {
         String image = response.jsonPath().getString("data");
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
-        softAssert.assertNotNull(image);
-        softAssert.assertEquals(success,"true");
-        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertNotNull(image, "\"image\" is null");
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertEquals(customStatusCode,1, "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

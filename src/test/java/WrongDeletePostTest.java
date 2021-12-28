@@ -1,5 +1,4 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -17,7 +16,6 @@ public class WrongDeletePostTest extends SetUp {
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image, tags, title);
 
-    SoftAssertions softAssertions = new SoftAssertions();
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 

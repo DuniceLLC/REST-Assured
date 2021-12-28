@@ -10,7 +10,6 @@ public class ChangeUserInfoTest extends SetUp {
     @Test
     public void changeUserInfoSuccess() {
         String idReg = response.jsonPath().getString("data.id");
-
         String newEmail = Methods.generateRandomHexString(5) + "@gmail.com";
         String newName = Methods.generateRandomHexString(5);
 
@@ -31,13 +30,13 @@ public class ChangeUserInfoTest extends SetUp {
         String role = responseChange.jsonPath().getString("data.role");
         int customStatusCode = responseChange.jsonPath().getInt("statusCode");
 
-        softAssert.assertEquals(customStatusCode,1);
-        softAssert.assertEquals(role,correctRole);
-        softAssert.assertEquals(name,newName);
-        softAssert.assertEquals(id,idReg);
-        softAssert.assertEquals(email,newEmail);
-        softAssert.assertEquals(avatar,this.avatar);
-        softAssert.assertEquals(success,"true");
+        softAssert.assertEquals(customStatusCode,1, "Wrong \"statusCode\"");
+        softAssert.assertEquals(role,correctRole, "Wrong \"role\"");
+        softAssert.assertEquals(name,newName, "Wrong \"name\"");
+        softAssert.assertEquals(id,idReg,"Wrong \"id\"");
+        softAssert.assertEquals(email,newEmail,"Wrong \"email\"");
+        softAssert.assertEquals(avatar,this.avatar,"Wrong \"avatar\"");
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
         softAssert.assertAll();
     }
 }

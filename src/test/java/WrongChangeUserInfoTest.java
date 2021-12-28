@@ -1,10 +1,9 @@
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import java.util.List;
-
 import static io.restassured.RestAssured.given;
+
 public class WrongChangeUserInfoTest extends SetUp {
 
     SoftAssert softAssert = new SoftAssert();

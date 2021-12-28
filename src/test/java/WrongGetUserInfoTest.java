@@ -1,11 +1,12 @@
 import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import java.util.List;
 import static io.restassured.RestAssured.*;
 
 public class WrongGetUserInfoTest {
-    SoftAssertions softAssertions = new SoftAssertions();
+    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
     String wrongUserId = Methods.generateRandomHexString(8) + "-" +
             Methods.generateRandomHexString(4) + "-" +
@@ -21,9 +22,10 @@ public class WrongGetUserInfoTest {
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
-        softAssertions.assertThat("true").isEqualTo(success);
-        softAssertions.assertThat(customStatusCode).isEqualTo(codes.get(0));
-        softAssertions.assertThat(codes).contains(errorCode.USER_NOT_FOUND);
-        softAssertions.assertAll();
+        
+        softAssert.assertEquals(success,"true");
+        softAssert.assertTrue(codes.contains(errorCode.USER_NOT_FOUND));
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertAll();
     }
 }

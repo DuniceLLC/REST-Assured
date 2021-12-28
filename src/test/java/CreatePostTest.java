@@ -19,8 +19,8 @@ public class CreatePostTest extends SetUp {
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
         String success = responseAfterCreatePost.jsonPath().getString("success");
 
-        softAssert.assertEquals(customStatusCode, 1);
-        softAssert.assertEquals(success, "true");
+        softAssert.assertEquals(customStatusCode, 1,"Wrong \"statusCode\"");
+        softAssert.assertEquals(success, "true","Wrong \"success\"");
         softAssert.assertAll();
     }
 }

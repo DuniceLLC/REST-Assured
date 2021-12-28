@@ -27,8 +27,8 @@ public class DeleteUserTest {
         int customStatusCode = responseDelete.jsonPath().getInt("statusCode");
         String success = responseDelete.jsonPath().getString("success");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertEquals(customStatusCode,1,"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -46,9 +46,9 @@ public class DeleteUserTest {
         String success = responseDelete.jsonPath().getString("success");
         List<Integer> codes = responseDelete.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
         Methods.deleteUser(token);
     }
@@ -66,9 +66,9 @@ public class DeleteUserTest {
         String success = responseDelete.jsonPath().getString("success");
         List<Integer> codes = responseDelete.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED));
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue());
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
+        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
         softAssert.assertAll();
         Methods.deleteUser(token);
     }

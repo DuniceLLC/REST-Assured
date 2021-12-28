@@ -23,8 +23,8 @@ public class DeletePostTest extends SetUp {
         String success = responseAfterDeletePost.jsonPath().getString("success");
         int customStatusCode = responseAfterDeletePost.jsonPath().getInt("statusCode");
 
-        softAssert.assertEquals(success,"true");
-        softAssert.assertEquals(customStatusCode,1);
+        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertEquals(customStatusCode,1,"Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

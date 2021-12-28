@@ -30,14 +30,14 @@ public class SuccessAuthorizationTest extends SetUp {
         String loginRole = responseLogin.jsonPath().getString("data.role");
         String loginAvatar = responseLogin.jsonPath().getString("data.avatar");
 
-        softAssert.assertEquals(id,loginId);
-        softAssert.assertEquals(avatar,loginAvatar);
-        softAssert.assertEquals(loginSuccess,"true");
-        softAssert.assertEquals(loginEmail,email);
-        softAssert.assertEquals(loginName,name);
-        softAssert.assertEquals(loginToken,token);
-        softAssert.assertEquals(loginRole,role);
-        softAssert.assertEquals(1,loginCustomStatusCode);
+        softAssert.assertEquals(id,loginId, "Wrong \"id\"");
+        softAssert.assertEquals(avatar,loginAvatar, "Wrong \"avatar\"");
+        softAssert.assertEquals(loginSuccess,"true", "Wrong \"success\"");
+        softAssert.assertEquals(loginEmail,email, "Wrong \"email\"");
+        softAssert.assertEquals(loginName,name, "Wrong \"name\"");
+        softAssert.assertEquals(loginToken,token, "Wrong \"token\"");
+        softAssert.assertEquals(loginRole,role, "Wrong \"role\"");
+        softAssert.assertEquals(1,loginCustomStatusCode, "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 }

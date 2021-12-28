@@ -1,7 +1,6 @@
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
 import static io.restassured.RestAssured.given;
 

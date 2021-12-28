@@ -30,8 +30,8 @@ public class ChangePostTest extends SetUp {
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         String success = responseAfterChangePost.jsonPath().getString("success");
 
-        softAssert.assertEquals(customStatusCode, 1);
-        softAssert.assertEquals(success, "true");
+        softAssert.assertEquals(customStatusCode, 1, "Wrong \"statusCode\"");
+        softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertAll();
     }
 }

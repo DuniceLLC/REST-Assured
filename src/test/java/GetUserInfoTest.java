@@ -28,13 +28,13 @@ public class GetUserInfoTest extends SetUp {
         int customStatusCodeInfo = responseInfo.jsonPath().getInt("statusCode");
         String successInfo = responseInfo.jsonPath().getString("success");
 
-        softAssert.assertEquals(avatarInfo,avatar);
-        softAssert.assertEquals(emailInfo,email);
-        softAssert.assertEquals(nameInfo,name);
-        softAssert.assertEquals(idInfo,id);
-        softAssert.assertEquals(roleInfo,role);
-        softAssert.assertEquals(customStatusCodeInfo,1);
-        softAssert.assertEquals(successInfo,"true");
+        softAssert.assertEquals(avatarInfo,avatar, "Wrong \"avatar\"");
+        softAssert.assertEquals(emailInfo,email, "Wrong \"email\"");
+        softAssert.assertEquals(nameInfo,name, "Wrong \"name\"");
+        softAssert.assertEquals(idInfo,id, "Wrong \"id\"");
+        softAssert.assertEquals(roleInfo,role, "Wrong \"role\"");
+        softAssert.assertEquals(customStatusCodeInfo,1, "Wrong \"statusCode\"");
+        softAssert.assertEquals(successInfo,"true", "Wrong \"success\"");
         softAssert.assertAll();
     }
 
@@ -50,9 +50,9 @@ public class GetUserInfoTest extends SetUp {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Object> users = response.jsonPath().getList("data");
 
-        softAssert.assertEquals(customStatusCode,1);
-        softAssert.assertEquals(success,"true");
-        softAssert.assertNotNull(users);
+        softAssert.assertEquals(customStatusCode,1, "Wrong \"statusCode\"");
+        softAssert.assertEquals(success,"true", "Wrong \"success\"");
+        softAssert.assertNotNull(users, "\"data\" is null");
         softAssert.assertAll();
     }
 }

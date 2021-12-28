@@ -36,15 +36,19 @@ public class GetPostTest extends SetUp {
         String descriptionGetPost = responseGetPost.jsonPath().getString("content[0].description");
         String tagsIdGetPost = responseGetPost.jsonPath().getString("content[0].tags[0].id");
         String tagsTitleGetPost = responseGetPost.jsonPath().getString("content[0].tags[0].title");
+        int customStatusCode = responseGetPost.jsonPath().getInt("statusCode");
+        String success = responseGetPost.jsonPath().getString("success");
 
-        softAssert.assertNotNull(id);
-        softAssert.assertEquals(titleGetPost, title);
-        softAssert.assertEquals(userIdGetPost, userId);
-        softAssert.assertEquals(userNameGetPost, userName);
-        softAssert.assertEquals(imageGetPost, image);
-        softAssert.assertEquals(descriptionGetPost, description);
-        softAssert.assertNotNull(tagsIdGetPost);
-        softAssert.assertEquals(tagsTitleGetPost, this.tags[0]);
+        softAssert.assertNotNull(id, "id is null");
+        softAssert.assertEquals(titleGetPost, title,"Wrong \"title\"");
+        softAssert.assertEquals(userIdGetPost, userId,"Wrong \"userId\"");
+        softAssert.assertEquals(userNameGetPost, userName,"Wrong \"username\"");
+        softAssert.assertEquals(imageGetPost, image,"Wrong \"image\"");
+        softAssert.assertEquals(descriptionGetPost, description,"Wrong \"description\"");
+        softAssert.assertNotNull(tagsIdGetPost, "tags id is null");
+        softAssert.assertEquals(tagsTitleGetPost, this.tags[0], "Wrong tags title");
+        softAssert.assertEquals(customStatusCode, 1, "Wrong \"statusCode\"");
+        softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertAll();
     }
 
@@ -64,17 +68,17 @@ public class GetPostTest extends SetUp {
         int customStatusCode = responseGetUserPost.jsonPath().getInt("statusCode");
         String success = responseGetUserPost.jsonPath().getString("success");
 
-        softAssert.assertEquals(description, this.description);
-        softAssert.assertNotNull(id);
-        softAssert.assertEquals(image, this.image);
-        softAssert.assertEquals(tagsTitle, this.tags[0]);
-        softAssert.assertNotNull(tagsId);
-        softAssert.assertEquals(title, this.title);
-        softAssert.assertEquals(userId, this.userId);
-        softAssert.assertEquals(userName, this.userName);
-        softAssert.assertNotNull(numberOfElements);
-        softAssert.assertEquals(customStatusCode, 1);
-        softAssert.assertEquals(success, "true");
+        softAssert.assertEquals(description, this.description,"Wrong \"description\"");
+        softAssert.assertNotNull(id, "id is null");
+        softAssert.assertEquals(image, this.image,"Wrong \"image\"");
+        softAssert.assertEquals(tagsTitle, this.tags[0], "Wrong tags title");
+        softAssert.assertNotNull(tagsId, "tags id is null");
+        softAssert.assertEquals(title, this.title,"Wrong \"title\"");
+        softAssert.assertEquals(userId, this.userId,"Wrong \"userId\"");
+        softAssert.assertEquals(userName, this.userName,"Wrong \"username\"");
+        softAssert.assertNotNull(numberOfElements, "\"numberOfElements\" is null");
+        softAssert.assertEquals(customStatusCode, 1, "Wrong \"statusCode\"");
+        softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertAll();
     }
 }
