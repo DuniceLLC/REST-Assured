@@ -6,6 +6,8 @@ import java.util.Random;
 import static io.restassured.RestAssured.*;
 
 public class Methods {
+    Routes routes = new Routes();
+
     public static String generateRandomHexString(int length) {
         Random r = new Random();
         StringBuffer sb = new StringBuffer();

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class ChangePostTest extends SetUp {
+
     String imagePath = "src/main/resources/postPicture.jpeg";
     String imagePathForChange = "src/main/resources/postPicture-2.jpeg";
     String image1 = Methods.uploadFile(imagePath).jsonPath().getString("data");

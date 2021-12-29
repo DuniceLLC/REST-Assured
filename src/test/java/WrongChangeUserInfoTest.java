@@ -188,7 +188,6 @@ public class WrongChangeUserInfoTest extends SetUp {
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
-        System.out.println(success);
 
         softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertTrue(codes.contains(errorCode.USER_ROLE_NOT_NULL), "\"codes\" does not contain correct error code");

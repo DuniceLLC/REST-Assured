@@ -26,7 +26,7 @@ public class AllNewsPageGetTest {
                 .queryParam("page", page)
                 .queryParam("perPage", perPage)
                 .when()
-                .get(routes.getNews)
+                .get(Routes.news)
                 .then().assertThat().statusCode(200)
                 .and().body("success", is(true))
                 .and().body("statusCode", is(1))
