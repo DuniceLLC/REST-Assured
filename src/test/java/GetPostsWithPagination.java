@@ -1,5 +1,8 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -7,6 +10,10 @@ public class GetPostsWithPagination {
     SoftAssert softAssert = new SoftAssert();
     int perPage = 7;
 
+    @Epic("News-controller")
+    @Feature("Get news with pagination")
+    @Story("Correct request")
+    @Description(value = "Get news with pagination check")
     @Test
     public void getPostTest() {
         Response response = Methods.getPostsWithPagination(1, perPage);

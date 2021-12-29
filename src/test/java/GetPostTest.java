@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,6 +28,10 @@ public class GetPostTest extends SetUp {
         Methods.createPost(token, newsDto);
     }
 
+    @Epic("News-controller")
+    @Feature("Get news")
+    @Story("Correct request")
+    @Description(value = "Get news check")
     @Test
     public void getPostTest() {
         Response responseGetPost = Methods.getPost(author, description, 1, 1, tags);
@@ -48,6 +56,10 @@ public class GetPostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Get user news")
+    @Story("Correct request")
+    @Description(value = "Get user news check")
     @Test
     public void getUserPostTest() {
         Response responseGetUserPost = Methods.getUserPost(1, 1, userId, token);

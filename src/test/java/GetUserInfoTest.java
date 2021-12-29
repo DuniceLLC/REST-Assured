@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -7,6 +11,10 @@ import static io.restassured.RestAssured.*;
 public class GetUserInfoTest extends SetUp {
     SoftAssert softAssert = new SoftAssert();
 
+    @Epic("User-controller")
+    @Feature("Get user info")
+    @Story("Correct request")
+    @Description(value = "Get user info by ID check")
     @Test
     public void getUserInfoByIdTest() {
         String id = response.jsonPath().getString("data.id");
@@ -38,6 +46,10 @@ public class GetUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Get users")
+    @Story("Correct request")
+    @Description(value = "Get users check")
     @Test
     public void getUsers() {
         Response response =given()

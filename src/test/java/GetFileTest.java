@@ -1,8 +1,18 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 public class GetFileTest {
+
+    @Epic("File-controller")
+    @Feature("Get file")
+    @Story("Correct request")
+    @Description(value = "File get check")
     @Test
     public void getFileTest() {
         String imagePath = "src/main/resources/postPicture.jpeg";
@@ -10,8 +20,11 @@ public class GetFileTest {
         Response response = given()
                 .when()
                 .get(Routes.getFile + fileName)
-                .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
+                .then().assertThat()
                 .extract().response();
-        response.prettyPrint();
+
+        int statusCode = response.statusCode();
+
+        Assert.assertEquals(statusCode, 200, "Wrong status code");
     }
 }

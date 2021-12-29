@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -13,6 +17,10 @@ public class DeletePostTest extends SetUp {
 
     SoftAssert softAssert = new SoftAssert();
 
+    @Epic("News-controller")
+    @Feature("Delete news")
+    @Story("Correct request")
+    @Description(value = "Checking news deletion")
     @Test
     public void deletePostTest() {
         Methods.createPost(token, newsDto);

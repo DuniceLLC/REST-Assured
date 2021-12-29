@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -11,6 +15,10 @@ public class SuccessRegistrationTest {
 
     SoftAssert softAssert = new SoftAssert();
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("Correct request")
+    @Description(value = "Registration check")
     @Test
     public void registrationTest() {
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);

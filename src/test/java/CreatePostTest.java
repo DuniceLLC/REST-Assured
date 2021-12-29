@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -5,6 +9,10 @@ import org.testng.asserts.SoftAssert;
 public class CreatePostTest extends SetUp {
     SoftAssert softAssert = new SoftAssert();
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("Correct request")
+    @Description(value = "Checking news creation")
     @Test
     public void createPostTest() {
         String imagePath = "src/main/resources/postPicture.jpeg";
