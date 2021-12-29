@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.asserts.SoftAssert;
 import org.testng.annotations.*;
@@ -17,6 +21,10 @@ public class WrongCreatePostTest extends SetUp {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("Without token")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithoutToken() {
         Post newsDto = new Post(description, image, tags, title);
@@ -37,6 +45,10 @@ public class WrongCreatePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("With empty description")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithEmptyDescription() {
         Post newsDto = new Post(emptyField, image, tags, title);
@@ -52,6 +64,10 @@ public class WrongCreatePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("With empty title")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithEmptyTitle() {
         Post newsDto = new Post(description, image, tags, emptyField);
@@ -67,6 +83,10 @@ public class WrongCreatePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("With empty image")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithEmptyImage() {
         Post newsDto = new Post(description, emptyField, tags, title);
@@ -82,6 +102,10 @@ public class WrongCreatePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("Without description")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithoutDescription() {
         Post newsDto = Post.builder().image(image).title(title).tags(tags).build();
@@ -97,6 +121,10 @@ public class WrongCreatePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("Without image")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithoutImage() {
         Post newsDto = Post.builder().description(description).title(title).tags(tags).build();
@@ -112,6 +140,10 @@ public class WrongCreatePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Create news")
+    @Story("Without title")
+    @Description(value = "Checking the correct server response")
     @Test
     public void createPostWithoutTitle() {
         Post newsDto = Post.builder().description(description).image(image).tags(tags).build();

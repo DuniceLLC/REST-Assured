@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -17,6 +21,10 @@ public class WrongDeletePostTest extends SetUp {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
+    @Epic("News-controller")
+    @Feature("Delete news")
+    @Story("With wrong ID")
+    @Description(value = "Checking the correct server response")
     @Test
     public void deletePostTestWithWrongId() {
         Methods.createPost(token, newsDto);
@@ -35,6 +43,10 @@ public class WrongDeletePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Delete news")
+    @Story("Without token")
+    @Description(value = "Checking the correct server response")
     @Test
     public void deletePostTestWithoutToken() {
         Methods.createPost(token, newsDto);

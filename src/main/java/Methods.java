@@ -1,9 +1,6 @@
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Random;
 
 import static io.restassured.RestAssured.*;
@@ -16,11 +13,6 @@ public class Methods {
             sb.append(Integer.toHexString(r.nextInt()));
         }
         return sb.toString().substring(0, length);
-    }
-
-    public static void showBodyPostLogin(RequestSpecification request, Routes routes) {
-        request.post(Routes.login).then().
-                contentType(ContentType.JSON).extract().response().prettyPrint();
     }
 
     public static Response deleteUser(String token) {

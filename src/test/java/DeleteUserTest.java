@@ -64,7 +64,7 @@ public class DeleteUserTest {
         Methods.deleteUser(token);
     }
 
-    @Epic("DELETE")
+    @Epic("User-controller")
     @Feature("Delete user")
     @Story("Without token")
     @Description(value = "Checking correct response")

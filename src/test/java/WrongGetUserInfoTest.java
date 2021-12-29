@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -13,6 +17,10 @@ public class WrongGetUserInfoTest {
             Methods.generateRandomHexString(4) + "-" +
             Methods.generateRandomHexString(12);
 
+    @Epic("User-controller")
+    @Feature("Get user info")
+    @Story("With wrong user ID")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withWrongUserId() {
         Response response = get(Routes.user + "/" + wrongUserId)

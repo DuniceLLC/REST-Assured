@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -8,6 +12,10 @@ public class WrongUploadFileTest {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
+    @Epic("File-controller")
+    @Feature("Upload file")
+    @Story("With non form data")
+    @Description(value = "Checking the correct server response")
     @Test
     public void uploadFileWithNonFormDataTest() {
         Response response = given()

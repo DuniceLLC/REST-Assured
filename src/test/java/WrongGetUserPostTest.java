@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -10,6 +14,10 @@ public class WrongGetUserPostTest extends GetPostTest {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
+    @Epic("News-controller")
+    @Feature("Get user news")
+    @Story("Without page")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getUserPostWithoutPage() {
         Response responseAfterGetPost = given()
@@ -29,6 +37,10 @@ public class WrongGetUserPostTest extends GetPostTest {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Get user news")
+    @Story("Without perPage")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getUserPostWithoutPerPage() {
         Response responseAfterGetPost = given()
@@ -48,6 +60,10 @@ public class WrongGetUserPostTest extends GetPostTest {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Get user news")
+    @Story("Without token")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getUserPostWithoutToken() {
         Response responseAfterGetPost = given()
@@ -67,6 +83,10 @@ public class WrongGetUserPostTest extends GetPostTest {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Get user news")
+    @Story("With page = 0")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getUserPostWithPageEqual0() {
         Response response = given()
@@ -87,6 +107,10 @@ public class WrongGetUserPostTest extends GetPostTest {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Get user news")
+    @Story("With perPage = 0")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getUserPostWithPerPageEqual0() {
         Response response = given()

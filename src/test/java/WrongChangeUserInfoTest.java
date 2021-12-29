@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -21,6 +25,10 @@ public class WrongChangeUserInfoTest extends SetUp {
     String emptyEmail = "";
     String emptyName = "";
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("Without token")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withoutToken() {
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(newCorrectName).role(newCorrectRole).build();
@@ -43,6 +51,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("With wrong email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withWrongEmail() {
         Register userNewData = Register.builder().avatar(newAvatar).email(wrongEmail).name(newCorrectName).role(newCorrectRole).build();
@@ -57,6 +69,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("With wrong name")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withWrongName() {
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(wrongName).role(newCorrectRole).build();
@@ -71,6 +87,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("With empty email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withEmptyEmail() {
         Register userNewData = Register.builder().avatar(newAvatar).email(emptyEmail).name(newCorrectName).role(newCorrectRole).build();
@@ -85,6 +105,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("With empty name")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withEmptyName() {
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(emptyName).role(newCorrectRole).build();
@@ -99,6 +123,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("Without avatar")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withoutAvatar() {
         Register userNewData = Register.builder().email(newCorrectEmail).name(newCorrectName).role(newCorrectRole).build();
@@ -113,6 +141,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("Without name")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withoutName() {
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).role(newCorrectRole).build();
@@ -127,6 +159,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("Without email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withoutEmail() {
         Register userNewData = Register.builder().avatar(newAvatar).name(newCorrectName).role(newCorrectRole).build();
@@ -141,6 +177,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("Without role")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withoutRole() {
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(newCorrectName).build();
@@ -156,6 +196,10 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("User-controller")
+    @Feature("Change user info")
+    @Story("With empty name and empty email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withEmptyEmailName() {
         Register userNewData = Register.builder().avatar(newAvatar).email(emptyEmail).name(emptyName).role(newCorrectRole).build();
@@ -170,5 +214,4 @@ public class WrongChangeUserInfoTest extends SetUp {
         softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
-
 }

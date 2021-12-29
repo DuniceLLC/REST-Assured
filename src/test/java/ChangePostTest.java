@@ -19,7 +19,7 @@ public class ChangePostTest extends SetUp {
     SoftAssert softAssert = new SoftAssert();
 
     @Epic("News-controller")
-    @Feature("Change post")
+    @Feature("Change news")
     @Story("Correct request")
     @Description(value = "Checking change news")
     @Test

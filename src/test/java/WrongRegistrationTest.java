@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -21,6 +25,10 @@ public class WrongRegistrationTest {
     String wrongName = Methods.generateRandomHexString(101);
     String wrongRole = Methods.generateRandomHexString(2);
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("With empty all fields")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithEmptyAllFields() {
         Register user = new Register(emptyAvatar, emptyEmail, emptyName, emptyPassword, emptyRole);
@@ -37,6 +45,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("With null all fields")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithNullAllFields() {
         Register user = new Register(null, null, null, null, null);
@@ -54,6 +66,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("Without email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithoutEmail() {
         Register user = new Register(avatar, emptyEmail, correctName, correctPassword, correctRole);
@@ -68,6 +84,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("Without name")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithoutName() {
         Register user = new Register(avatar, correctEmail, emptyName, correctPassword, correctRole);
@@ -83,6 +103,10 @@ public class WrongRegistrationTest {
 
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("Without password")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithoutPassword() {
         Register user = new Register(avatar, correctEmail, correctName, emptyPassword, correctRole);
@@ -97,6 +121,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("Without role")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithoutRole() {
         Register user = new Register(avatar, correctEmail, correctName, correctPassword, emptyRole);
@@ -111,6 +139,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("With existing email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithExistingEmail() {
         Register user = new Register(avatar, correctEmail, correctName, correctPassword, correctRole);
@@ -126,6 +158,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("With wrong name")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithWrongName() {
         Register user = new Register(avatar, correctEmail, wrongName, correctPassword, correctRole);
@@ -140,6 +176,10 @@ public class WrongRegistrationTest {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Registration")
+    @Story("With wrong role")
+    @Description(value = "Checking the correct server response")
     @Test
     public void regWithWrongRole() {
         Register user = new Register(avatar, correctEmail, correctName, correctPassword, wrongRole);

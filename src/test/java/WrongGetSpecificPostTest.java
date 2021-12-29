@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -10,6 +14,10 @@ public class WrongGetSpecificPostTest extends GetPostTest {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
+    @Epic("News-controller")
+    @Feature("Get specific news")
+    @Story("Without page")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getPostWithoutPageTest() {
         Response responseGetPost = given()
@@ -30,6 +38,10 @@ public class WrongGetSpecificPostTest extends GetPostTest {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Get specific news")
+    @Story("Without perPage")
+    @Description(value = "Checking the correct server response")
     @Test
     public void getPostWithoutPerPageTest() {
         Response responseGetPost = given()

@@ -3,67 +3,6 @@
 <suite name="Failed suite [Command line suite]" verbose="0">
   <test thread-count="5" name="Command line test(failed)" verbose="0">
     <classes>
-      <class name="CreatePostTest">
-        <methods>
-          <include name="createPostTest"/>
-        </methods>
-      </class> <!-- CreatePostTest -->
-      <class name="WrongRegistrationTest">
-        <methods>
-          <include name="regWithoutPassword"/>
-          <include name="regWithoutRole"/>
-        </methods>
-      </class> <!-- WrongRegistrationTest -->
-      <class name="DeletePostTest">
-        <methods>
-          <include name="deletePostTest"/>
-        </methods>
-      </class> <!-- DeletePostTest -->
-      <class name="WrongChangePostTest">
-        <methods>
-          <include name="wrongChangePostTestWithoutDescription"/>
-          <include name="wrongChangePostTestWithEmptyTags"/>
-          <include name="wrongChangePostTestWithoutImage"/>
-          <include name="wrongChangePostTestWithWrongId"/>
-          <include name="wrongChangePostTestWithoutTitle"/>
-          <include name="wrongChangePostTestWithoutToken"/>
-          <include name="wrongChangePostTestWithEmptyDescription"/>
-          <include name="wrongChangePostTestWithEmptyTitle"/>
-        </methods>
-      </class> <!-- WrongChangePostTest -->
-      <class name="ChangePostTest">
-        <methods>
-          <include name="changePostTest"/>
-        </methods>
-      </class> <!-- ChangePostTest -->
-      <class name="WrongGetUserPostTest">
-        <methods>
-          <include name="getUserPostWithPageEqual0"/>
-          <include name="getUserPostTest"/>
-          <include name="getUserPostWithPerPageEqual0"/>
-          <include name="getPostTest"/>
-          <include name="getUserPostWithoutToken"/>
-          <include name="createPost"/>
-          <include name="getUserPostWithoutPage"/>
-          <include name="getUserPostWithoutPerPage"/>
-        </methods>
-      </class> <!-- WrongGetUserPostTest -->
-      <class name="WrongGetSpecificPostTest">
-        <methods>
-          <include name="getUserPostTest"/>
-          <include name="getPostWithoutPageTest"/>
-          <include name="getPostTest"/>
-          <include name="getPostWithoutPerPageTest"/>
-          <include name="createPost"/>
-        </methods>
-      </class> <!-- WrongGetSpecificPostTest -->
-      <class name="GetPostTest">
-        <methods>
-          <include name="getUserPostTest"/>
-          <include name="getPostTest"/>
-          <include name="createPost"/>
-        </methods>
-      </class> <!-- GetPostTest -->
       <class name="WrongLoginTest">
         <methods>
           <include name="incorrectEmail2"/>
@@ -73,24 +12,67 @@
           <include name="incorrectEmail4"/>
           <include name="userDoesNotExist"/>
           <include name="incorrectEmail1"/>
-          <include name="withoutEmailAndPassword"/>
+          <include name="reg"/>
           <include name="emptyPassword"/>
+          <include name="correctEmailWithoutPassword"/>
+          <include name="delete"/>
+          <include name="withoutEmailAndPassword"/>
           <include name="incorrectEmail5"/>
           <include name="WithoutEmail"/>
-          <include name="correctEmailWithoutPassword"/>
         </methods>
       </class> <!-- WrongLoginTest -->
-      <class name="WrongDeletePostTest">
+      <class name="WrongRegistrationTest">
         <methods>
-          <include name="deletePostTestWithoutToken"/>
-          <include name="deletePostTestWithWrongId"/>
+          <include name="regWithoutPassword"/>
+          <include name="regWithoutRole"/>
         </methods>
-      </class> <!-- WrongDeletePostTest -->
-      <class name="SuccessAuthorizationTest">
+      </class> <!-- WrongRegistrationTest -->
+      <class name="WrongGetUserPostTest">
         <methods>
-          <include name="successAuthorizationTest"/>
+          <include name="getUserPostWithPageEqual0"/>
+          <include name="delete"/>
+          <include name="getUserPostWithPerPageEqual0"/>
+          <include name="getUserPostWithoutToken"/>
+          <include name="reg"/>
+          <include name="createPost"/>
+          <include name="getUserPostWithoutPage"/>
+          <include name="getUserPostWithoutPerPage"/>
         </methods>
-      </class> <!-- SuccessAuthorizationTest -->
+      </class> <!-- WrongGetUserPostTest -->
+      <class name="WrongChangeUserInfoTest">
+        <methods>
+          <include name="withoutToken"/>
+          <include name="delete"/>
+          <include name="withoutEmail"/>
+          <include name="withoutRole"/>
+          <include name="withWrongName"/>
+          <include name="reg"/>
+          <include name="withoutName"/>
+          <include name="withWrongEmail"/>
+          <include name="withoutAvatar"/>
+        </methods>
+      </class> <!-- WrongChangeUserInfoTest -->
+      <class name="WrongCreatePostTest">
+        <methods>
+          <include name="delete"/>
+          <include name="createPostWithEmptyTitle"/>
+          <include name="createPostWithEmptyImage"/>
+          <include name="createPostWithoutImage"/>
+          <include name="reg"/>
+          <include name="createPostWithoutDescription"/>
+          <include name="createPostWithoutTitle"/>
+          <include name="createPostWithoutToken"/>
+        </methods>
+      </class> <!-- WrongCreatePostTest -->
+      <class name="WrongGetSpecificPostTest">
+        <methods>
+          <include name="delete"/>
+          <include name="getPostWithoutPageTest"/>
+          <include name="reg"/>
+          <include name="getPostWithoutPerPageTest"/>
+          <include name="createPost"/>
+        </methods>
+      </class> <!-- WrongGetSpecificPostTest -->
       <class name="WrongGetPostTest">
         <methods>
           <include name="getPostWithPerPageEqual0"/>
@@ -99,17 +81,6 @@
           <include name="getPostWithoutPage"/>
         </methods>
       </class> <!-- WrongGetPostTest -->
-      <class name="ChangeUserInfoTest">
-        <methods>
-          <include name="changeUserInfoSuccess"/>
-        </methods>
-      </class> <!-- ChangeUserInfoTest -->
-      <class name="GetUserInfoTest">
-        <methods>
-          <include name="getUserInfoByIdTest"/>
-          <include name="getUsers"/>
-        </methods>
-      </class> <!-- GetUserInfoTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

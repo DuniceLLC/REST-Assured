@@ -1,3 +1,7 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -24,6 +28,10 @@ public class WrongChangePostTest extends SetUp {
     String title = Methods.generateRandomHexString(6);
     Post newsDto = new Post(description, image1, tags, title);
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("Without description")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutDescription() {
         Methods.createPost(token, newsDto);
@@ -44,6 +52,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("Without image")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutImage() {
         Methods.createPost(token, newsDto);
@@ -64,6 +76,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("Without title")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutTitle() {
         Methods.createPost(token, newsDto);
@@ -84,6 +100,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("Without token")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutToken() {
         Methods.createPost(token, newsDto);
@@ -109,6 +129,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("With wrong ID")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithWrongId() {
         Methods.createPost(token, newsDto);
@@ -126,6 +150,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("With empty description")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithEmptyDescription() {
         Methods.createPost(token, newsDto);
@@ -146,6 +174,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("With empty title")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithEmptyTitle() {
         Methods.createPost(token, newsDto);
@@ -166,6 +198,10 @@ public class WrongChangePostTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("News-controller")
+    @Feature("Change news")
+    @Story("With empty tags")
+    @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithEmptyTags() {
         Methods.createPost(token, newsDto);

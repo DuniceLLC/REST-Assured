@@ -1,10 +1,13 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import java.util.List;
 
 public class WrongLoginTest extends SetUp {
@@ -23,6 +26,10 @@ public class WrongLoginTest extends SetUp {
     String password = Methods.generateRandomHexString(6);
     String randomEmail = Methods.generateRandomHexString(5) + "@gmail.com";
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With wrong email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void incorrectEmail1() {
         requestBody.put("email", wrongEmail1);
@@ -43,6 +50,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With wrong email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void incorrectEmail2() {
         requestBody.put("email", wrongEmail2);
@@ -63,6 +74,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With wrong email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void incorrectEmail3() {
         requestBody.put("email", wrongEmail3);
@@ -84,6 +99,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With wrong email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void incorrectEmail4() {
         requestBody.put("email", wrongEmail4);
@@ -106,6 +125,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With wrong email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void incorrectEmail5() {
         requestBody.put("email", wrongEmail5);
@@ -126,6 +149,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With non-existent email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void userDoesNotExist() {
         requestBody.put("email", randomEmail);
@@ -146,6 +173,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With empty email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void emptyEmail() {
         requestBody.put("email", emptyEmail);
@@ -166,6 +197,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With empty password")
+    @Description(value = "Checking the correct server response")
     @Test
     public void emptyPassword() {
         requestBody.put("email", correctEmail);
@@ -179,7 +214,6 @@ public class WrongLoginTest extends SetUp {
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
-        System.out.println(codes);
 
         softAssert.assertEquals(success,"true","Wrong \"success\"");
         softAssert.assertTrue(codes.contains(errorCode.PASSWORD_NOT_VALID), "\"codes\" does not contain correct error code");
@@ -187,6 +221,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With empty email and empty password")
+    @Description(value = "Checking the correct server response")
     @Test
     public void emptyEmailAndPassword() {
         requestBody.put("email", emptyEmail);
@@ -208,6 +246,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("With correct email and without password")
+    @Description(value = "Checking the correct server response")
     @Test
     public void correctEmailWithoutPassword() {
         requestBody.put("email", correctEmail);
@@ -227,6 +269,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("Without email")
+    @Description(value = "Checking the correct server response")
     @Test
     public void WithoutEmail() {
         requestBody.put("password", password);
@@ -246,6 +292,10 @@ public class WrongLoginTest extends SetUp {
         softAssert.assertAll();
     }
 
+    @Epic("Auth-controller")
+    @Feature("Login")
+    @Story("Without email and without password")
+    @Description(value = "Checking the correct server response")
     @Test
     public void withoutEmailAndPassword() {
         requestBody.put("password", password);
