@@ -18,7 +18,6 @@ public class WrongCreatePostTest extends SetUp {
 
     String emptyField = "";
 
-    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
     @Epic("News-controller")

@@ -39,7 +39,7 @@ public class DeleteUserTest {
         softAssert.assertAll();
     }
 
-    @Epic("DELETE")
+    @Epic("User-controller")
     @Feature("Delete user")
     @Story("With empty token")
     @Description(value = "Checking correct response")

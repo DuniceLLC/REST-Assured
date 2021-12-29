@@ -42,5 +42,6 @@ public class SuccessRegistrationTest {
         softAssert.assertEquals(correctName,name, "Wrong \"name\"");
         softAssert.assertEquals(customStatusCode,1, "Wrong \"statusCode\"");
         softAssert.assertAll();
+        Methods.deleteUser(token);
     }
 }

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Command line test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>44/38/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>51/31/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 29 12:55:02 MSK 2021</td>
+<td>Started on:</td><td>Wed Dec 29 18:11:03 MSK 2021</td>
 </tr>
-<tr><td>Total time:</td><td>112 seconds (112233 ms)</td>
+<tr><td>Total time:</td><td>110 seconds (110975 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -74,6 +74,67 @@ function toggleAllBoxes() {
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
+<tr>
+<td title='WrongLoginTest.incorrectEmail4()'><b>incorrectEmail4</b><br>Test class: WrongLoginTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1602890186", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1602890186'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongLoginTest@575cabf0</td></tr>
 <tr>
 <td title='WrongCreatePostTest.createPostWithoutToken()'><b>createPostWithoutToken</b><br>Test class: WrongCreatePostTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
@@ -131,12 +192,16 @@ function toggleAllBoxes() {
 <td>WrongCreatePostTest@580fd26b</td></tr>
 <tr>
 <td title='WrongChangeUserInfoTest.withWrongEmail()'><b>withWrongEmail</b><br>Test class: WrongChangeUserInfoTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:67)
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false]
+	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:76)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1039022700", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1039022700'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:67)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1039022700", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1039022700'><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:76)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -179,13 +244,17 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
-<td title='WrongGetPostTest.getPostWithPerPageEqual0()'><b>getPostWithPerPageEqual0</b><br>Test class: WrongGetPostTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
+<td title='WrongGetSpecificPostTest.getPostWithoutPageTest()'><b>getPostWithoutPageTest</b><br>Test class: WrongGetSpecificPostTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1393446924", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1393446924'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2053728875", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2053728875'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -226,22 +295,73 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>0</td>
-<td>WrongGetPostTest@65c17e38</td></tr>
+<td>WrongGetSpecificPostTest@1e40fbb3</td></tr>
+<tr>
+<td title='WrongLoginTest.incorrectEmail1()'><b>incorrectEmail1</b><br>Test class: WrongLoginTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace878535710", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace878535710'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongLoginTest@575cabf0</td></tr>
 <tr>
 <td title='WrongLoginTest.incorrectEmail3()'><b>incorrectEmail3</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:99)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace831019851", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace831019851'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace165128275", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace165128275'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -249,6 +369,55 @@ function toggleAllBoxes() {
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
 	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongLoginTest@575cabf0</td></tr>
+<tr>
+<td title='WrongGetUserPostTest.getUserPostWithPageEqual0()'><b>getUserPostWithPageEqual0</b><br>Test class: WrongGetUserPostTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1833678351", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1833678351'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -289,33 +458,76 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>5</td>
-<td>WrongLoginTest@575cabf0</td></tr>
+<td>WrongGetUserPostTest@4ea56bdb</td></tr>
 <tr>
-<td title='WrongLoginTest.incorrectEmail5()'><b>incorrectEmail5</b><br>Test class: WrongLoginTest</td>
+<td title='WrongChangeUserInfoTest.withoutToken()'><b>withoutToken</b><br>Test class: WrongChangeUserInfoTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:53)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace5072587", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace5072587'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
+<tr>
+<td title='WrongLoginTest.incorrectEmail2()'><b>incorrectEmail2</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
+	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1895707642", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1895707642'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace267331432", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace267331432'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
+	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -358,35 +570,17 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongLoginTest@575cabf0</td></tr>
 <tr>
-<td title='WrongLoginTest.withoutEmailAndPassword()'><b>withoutEmailAndPassword</b><br>Test class: WrongLoginTest</td>
+<td title='WrongLoginTest.emptyEmailAndPassword()'><b>emptyEmailAndPassword</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
+	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1927610274", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1927610274'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1162358658", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1162358658'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
+	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -435,8 +629,8 @@ function toggleAllBoxes() {
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at WrongGetSpecificPostTest.getPostWithoutPerPageTest(WrongGetSpecificPostTest.java:63)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1257952957", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1257952957'><pre>java.lang.AssertionError: The following asserts failed:
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1961802533", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1961802533'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
@@ -481,24 +675,20 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
-<td>0</td>
+<td>5</td>
 <td>WrongGetSpecificPostTest@1e40fbb3</td></tr>
 <tr>
-<td title='WrongLoginTest.emptyPassword()'><b>emptyPassword</b><br>Test class: WrongLoginTest</td>
+<td title='WrongRegistrationTest.regWithoutRole()'><b>regWithoutRole</b><br>Test class: WrongRegistrationTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
+	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1573989401", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1573989401'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1009342118", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1009342118'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
+	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -539,25 +729,23 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>0</td>
-<td>WrongLoginTest@575cabf0</td></tr>
+<td>WrongRegistrationTest@6b37df8e</td></tr>
 <tr>
-<td title='WrongGetUserPostTest.getUserPostWithoutPerPage()'><b>getUserPostWithoutPerPage</b><br>Test class: WrongGetUserPostTest</td>
+<td title='WrongGetUserPostTest.getUserPostWithoutPage()'><b>getUserPostWithoutPage</b><br>Test class: WrongGetUserPostTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false],
 	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
+	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:37)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1892060750", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1892060750'><pre>java.lang.AssertionError: The following asserts failed:
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1431590087", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1431590087'><pre>java.lang.AssertionError: The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false],
 	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
+	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -600,367 +788,13 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongGetUserPostTest@4ea56bdb</td></tr>
 <tr>
-<td title='WrongLoginTest.incorrectEmail1()'><b>incorrectEmail1</b><br>Test class: WrongLoginTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
+<td title='WrongGetPostTest.getPostWithPerPageEqual0()'><b>getPostWithPerPageEqual0</b><br>Test class: WrongGetPostTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace582627504", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace582627504'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongLoginTest@575cabf0</td></tr>
-<tr>
-<td title='WrongLoginTest.emptyEmailAndPassword()'><b>emptyEmailAndPassword</b><br>Test class: WrongLoginTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace513755348", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace513755348'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongLoginTest@575cabf0</td></tr>
-<tr>
-<td title='WrongLoginTest.incorrectEmail4()'><b>incorrectEmail4</b><br>Test class: WrongLoginTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace696327501", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace696327501'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongLoginTest@575cabf0</td></tr>
-<tr>
-<td title='WrongChangeUserInfoTest.withoutName()'><b>withoutName</b><br>Test class: WrongChangeUserInfoTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at WrongChangeUserInfoTest.withoutName(WrongChangeUserInfoTest.java:159)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1447901504", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1447901504'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutName(WrongChangeUserInfoTest.java:159)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>5</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
-<tr>
-<td title='WrongLoginTest.emptyEmail()'><b>emptyEmail</b><br>Test class: WrongLoginTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.emptyEmail(WrongLoginTest.java:197)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace781600923", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace781600923'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyEmail(WrongLoginTest.java:197)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongLoginTest@575cabf0</td></tr>
-<tr>
-<td title='WrongChangeUserInfoTest.withoutToken()'><b>withoutToken</b><br>Test class: WrongChangeUserInfoTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:51)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace660673902", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace660673902'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:51)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
-<tr>
-<td title='WrongGetPostTest.getPostWithoutPerPage()'><b>getPostWithoutPerPage</b><br>Test class: WrongGetPostTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1165254118", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1165254118'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1710387431", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1710387431'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1003,22 +837,18 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongGetPostTest@65c17e38</td></tr>
 <tr>
-<td title='WrongLoginTest.userDoesNotExist()'><b>userDoesNotExist</b><br>Test class: WrongLoginTest</td>
+<td title='WrongLoginTest.incorrectEmail5()'><b>incorrectEmail5</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
+	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1547596072", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1547596072'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1529335869", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1529335869'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -1027,7 +857,7 @@ function toggleAllBoxes() {
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
+	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1070,13 +900,23 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongLoginTest@575cabf0</td></tr>
 <tr>
-<td title='WrongGetUserPostTest.getUserPostWithPageEqual0()'><b>getUserPostWithPageEqual0</b><br>Test class: WrongGetUserPostTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
+<td title='WrongGetUserPostTest.getUserPostWithoutToken()'><b>getUserPostWithoutToken</b><br>Test class: WrongGetUserPostTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace110205578", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace110205578'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2129057277", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2129057277'><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1172,17 +1012,23 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongCreatePostTest@580fd26b</td></tr>
 <tr>
-<td title='WrongGetSpecificPostTest.getPostWithoutPageTest()'><b>getPostWithoutPageTest</b><br>Test class: WrongGetSpecificPostTest</td>
+<td title='WrongGetPostTest.getPostWithoutPerPage()'><b>getPostWithoutPerPage</b><br>Test class: WrongGetPostTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
+	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1972440590", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1972440590'><pre>java.lang.AssertionError: The following asserts failed:
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1163148168", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1163148168'><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
+	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1223,68 +1069,15 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>0</td>
-<td>WrongGetSpecificPostTest@1e40fbb3</td></tr>
-<tr>
-<td title='WrongLoginTest.WithoutEmail()'><b>WithoutEmail</b><br>Test class: WrongLoginTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.WithoutEmail(WrongLoginTest.java:292)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace485807188", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace485807188'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.WithoutEmail(WrongLoginTest.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>5</td>
-<td>WrongLoginTest@575cabf0</td></tr>
+<td>WrongGetPostTest@65c17e38</td></tr>
 <tr>
 <td title='WrongRegistrationTest.regWithoutPassword()'><b>regWithoutPassword</b><br>Test class: WrongRegistrationTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:121)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace413557766", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace413557766'><pre>java.lang.AssertionError: The following asserts failed:
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace656274624", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace656274624'><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
@@ -1331,17 +1124,17 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongRegistrationTest@6b37df8e</td></tr>
 <tr>
-<td title='WrongChangeUserInfoTest.withWrongName()'><b>withWrongName</b><br>Test class: WrongChangeUserInfoTest</td>
+<td title='WrongLoginTest.emptyPassword()'><b>emptyPassword</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at WrongChangeUserInfoTest.withWrongName(WrongChangeUserInfoTest.java:87)
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace609825594", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace609825594'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1078290151", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1078290151'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withWrongName(WrongChangeUserInfoTest.java:87)
+	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1382,7 +1175,7 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>0</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
+<td>WrongLoginTest@575cabf0</td></tr>
 <tr>
 <td title='WrongCreatePostTest.createPostWithoutTitle()'><b>createPostWithoutTitle</b><br>Test class: WrongCreatePostTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
@@ -1437,21 +1230,13 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongCreatePostTest@580fd26b</td></tr>
 <tr>
-<td title='WrongGetUserPostTest.getUserPostWithoutPage()'><b>getUserPostWithoutPage</b><br>Test class: WrongGetUserPostTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:37)
+<td title='WrongGetUserPostTest.getUserPostWithPerPageEqual0()'><b>getUserPostWithPerPageEqual0</b><br>Test class: WrongGetUserPostTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1277271172", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1277271172'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:37)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1810392513", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1810392513'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1493,222 +1278,6 @@ function toggleAllBoxes() {
 </pre></div></td>
 <td>0</td>
 <td>WrongGetUserPostTest@4ea56bdb</td></tr>
-<tr>
-<td title='WrongChangeUserInfoTest.withoutRole()'><b>withoutRole</b><br>Test class: WrongChangeUserInfoTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at WrongChangeUserInfoTest.withoutRole(WrongChangeUserInfoTest.java:196)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace571497590", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace571497590'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutRole(WrongChangeUserInfoTest.java:196)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
-<tr>
-<td title='WrongGetPostTest.getPostWithPageEqual0()'><b>getPostWithPageEqual0</b><br>Test class: WrongGetPostTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace619101440", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace619101440'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongGetPostTest@65c17e38</td></tr>
-<tr>
-<td title='WrongLoginTest.incorrectEmail2()'><b>incorrectEmail2</b><br>Test class: WrongLoginTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace612958241", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace612958241'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongLoginTest@575cabf0</td></tr>
-<tr>
-<td title='WrongChangeUserInfoTest.withoutEmail()'><b>withoutEmail</b><br>Test class: WrongChangeUserInfoTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at WrongChangeUserInfoTest.withoutEmail(WrongChangeUserInfoTest.java:177)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1816986148", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1816986148'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutEmail(WrongChangeUserInfoTest.java:177)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
 <td title='WrongCreatePostTest.createPostWithEmptyImage()'><b>createPostWithEmptyImage</b><br>Test class: WrongCreatePostTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
@@ -1763,182 +1332,33 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongCreatePostTest@580fd26b</td></tr>
 <tr>
-<td title='WrongRegistrationTest.regWithoutRole()'><b>regWithoutRole</b><br>Test class: WrongRegistrationTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace635281078", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace635281078'><pre>java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongRegistrationTest@6b37df8e</td></tr>
-<tr>
-<td title='WrongChangeUserInfoTest.withoutAvatar()'><b>withoutAvatar</b><br>Test class: WrongChangeUserInfoTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at WrongChangeUserInfoTest.withoutAvatar(WrongChangeUserInfoTest.java:141)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1195525742", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1195525742'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutAvatar(WrongChangeUserInfoTest.java:141)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
-<tr>
-<td title='WrongGetPostTest.getPostWithoutPage()'><b>getPostWithoutPage</b><br>Test class: WrongGetPostTest</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace984588737", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace984588737'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>WrongGetPostTest@65c17e38</td></tr>
-<tr>
-<td title='WrongLoginTest.correctEmailWithoutPassword()'><b>correctEmailWithoutPassword</b><br>Test class: WrongLoginTest</td>
+<td title='WrongLoginTest.withoutEmailAndPassword()'><b>withoutEmailAndPassword</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:269)
+	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace930610244", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace930610244'><pre>java.lang.AssertionError: The following asserts failed:
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1524770385", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1524770385'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:269)
+	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2034,13 +1454,21 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>WrongCreatePostTest@580fd26b</td></tr>
 <tr>
-<td title='WrongGetUserPostTest.getUserPostWithPerPageEqual0()'><b>getUserPostWithPerPageEqual0</b><br>Test class: WrongGetUserPostTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
+<td title='WrongGetPostTest.getPostWithoutPage()'><b>getPostWithoutPage</b><br>Test class: WrongGetPostTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2090904149", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2090904149'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace46268345", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace46268345'><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2081,25 +1509,29 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>0</td>
-<td>WrongGetUserPostTest@4ea56bdb</td></tr>
+<td>WrongGetPostTest@65c17e38</td></tr>
 <tr>
-<td title='WrongGetUserPostTest.getUserPostWithoutToken()'><b>getUserPostWithoutToken</b><br>Test class: WrongGetUserPostTest</td>
+<td title='WrongLoginTest.userDoesNotExist()'><b>userDoesNotExist</b><br>Test class: WrongLoginTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
+	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1085226456", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1085226456'><pre>java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	Wrong &quot;success&quot; expected [true] but found [false],
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace485301524", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace485301524'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
+	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2140,7 +1572,7 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
 <td>5</td>
-<td>WrongGetUserPostTest@4ea56bdb</td></tr>
+<td>WrongLoginTest@575cabf0</td></tr>
 <tr>
 <td title='WrongCreatePostTest.createPostWithEmptyTitle()'><b>createPostWithEmptyTitle</b><br>Test class: WrongCreatePostTest</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
@@ -2194,6 +1626,179 @@ function toggleAllBoxes() {
 </pre></div></td>
 <td>0</td>
 <td>WrongCreatePostTest@580fd26b</td></tr>
+<tr>
+<td title='WrongLoginTest.withoutEmail()'><b>withoutEmail</b><br>Test class: WrongLoginTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.withoutEmail(WrongLoginTest.java:292)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace294599155", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace294599155'><pre>java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.withoutEmail(WrongLoginTest.java:292)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongLoginTest@575cabf0</td></tr>
+<tr>
+<td title='WrongGetPostTest.getPostWithPageEqual0()'><b>getPostWithPageEqual0</b><br>Test class: WrongGetPostTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace114947620", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace114947620'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongGetPostTest@65c17e38</td></tr>
+<tr>
+<td title='WrongGetUserPostTest.getUserPostWithoutPerPage()'><b>getUserPostWithoutPerPage</b><br>Test class: WrongGetUserPostTest</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1002212482", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1002212482'><pre>java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>WrongGetUserPostTest@4ea56bdb</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -2203,32 +1808,57 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='WrongRegistrationTest.regWithNullAllFields()'><b>regWithNullAllFields</b><br>Test class: WrongRegistrationTest</td>
+<td title='CreatePostTest.createPostTest()'><b>createPostTest</b><br>Test class: CreatePostTest</td>
 <td></td>
 <td>0</td>
-<td>WrongRegistrationTest@6b37df8e</td></tr>
+<td>CreatePostTest@1e225820</td></tr>
 <tr>
-<td title='SuccessRegistrationTest.registrationTest()'><b>registrationTest</b><br>Test class: SuccessRegistrationTest</td>
+<td title='DeleteUserTest.deleteWithEmptyToken()'><b>deleteWithEmptyToken</b><br>Test class: DeleteUserTest</td>
 <td></td>
-<td>5</td>
-<td>SuccessRegistrationTest@2801827a</td></tr>
+<td>1</td>
+<td>DeleteUserTest@5f08fe00</td></tr>
+<tr>
+<td title='WrongGetFileTest.getFileWithoutFileNameTest()'><b>getFileWithoutFileNameTest</b><br>Test class: WrongGetFileTest</td>
+<td></td>
+<td>0</td>
+<td>WrongGetFileTest@39da5e49</td></tr>
 <tr>
 <td title='WrongChangeUserInfoTest.withEmptyName()'><b>withEmptyName</b><br>Test class: WrongChangeUserInfoTest</td>
 <td></td>
 <td>0</td>
 <td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
-<td title='WrongGetUserInfoTest.withWrongUserId()'><b>withWrongUserId</b><br>Test class: WrongGetUserInfoTest</td>
+<td title='GetUserInfoTest.getUserInfoByIdTest()'><b>getUserInfoByIdTest</b><br>Test class: GetUserInfoTest</td>
 <td></td>
 <td>0</td>
-<td>WrongGetUserInfoTest@7fd99443</td></tr>
+<td>GetUserInfoTest@7741771e</td></tr>
 <tr>
-<td title='WrongChangePostTest.wrongChangePostTestWithWrongId()'><b>wrongChangePostTestWithWrongId</b><br>Test class: WrongChangePostTest</td>
+<td title='WrongGetUserPostTest.getPostTest()'><b>getPostTest</b><br>Test class: WrongGetUserPostTest</td>
 <td></td>
 <td>0</td>
-<td>WrongChangePostTest@73e1ecd0</td></tr>
+<td>WrongGetUserPostTest@4ea56bdb</td></tr>
 <tr>
-<td title='WrongChangePostTest.wrongChangePostTestWithoutImage()'><b>wrongChangePostTestWithoutImage</b><br>Test class: WrongChangePostTest</td>
+<td title='WrongDeletePostTest.deletePostTestWithWrongId()'><b>deletePostTestWithWrongId</b><br>Test class: WrongDeletePostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongDeletePostTest@c3719e5</td></tr>
+<tr>
+<td title='WrongLoginTest.correctEmailWithoutPassword()'><b>correctEmailWithoutPassword</b><br>Test class: WrongLoginTest</td>
+<td></td>
+<td>0</td>
+<td>WrongLoginTest@575cabf0</td></tr>
+<tr>
+<td title='WrongRegistrationTest.regWithWrongRole()'><b>regWithWrongRole</b><br>Test class: WrongRegistrationTest</td>
+<td></td>
+<td>0</td>
+<td>WrongRegistrationTest@6b37df8e</td></tr>
+<tr>
+<td title='SuccessAuthorizationTest.successAuthorizationTest()'><b>successAuthorizationTest</b><br>Test class: SuccessAuthorizationTest</td>
+<td></td>
+<td>0</td>
+<td>SuccessAuthorizationTest@17fede14</td></tr>
+<tr>
+<td title='WrongChangePostTest.wrongChangePostTestWithoutDescription()'><b>wrongChangePostTestWithoutDescription</b><br>Test class: WrongChangePostTest</td>
 <td></td>
 <td>0</td>
 <td>WrongChangePostTest@73e1ecd0</td></tr>
@@ -2238,190 +1868,200 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>UploadFileTest@7b351446</td></tr>
 <tr>
-<td title='DeleteUserTest.deleteUser()'><b>deleteUser</b><br>Test class: DeleteUserTest</td>
-<td></td>
-<td>0</td>
-<td>DeleteUserTest@5f08fe00</td></tr>
-<tr>
-<td title='DeleteUserTest.deleteWithEmptyToken()'><b>deleteWithEmptyToken</b><br>Test class: DeleteUserTest</td>
-<td></td>
-<td>0</td>
-<td>DeleteUserTest@5f08fe00</td></tr>
-<tr>
-<td title='WrongRegistrationTest.regWithEmptyAllFields()'><b>regWithEmptyAllFields</b><br>Test class: WrongRegistrationTest</td>
-<td></td>
-<td>0</td>
-<td>WrongRegistrationTest@6b37df8e</td></tr>
-<tr>
-<td title='WrongChangePostTest.wrongChangePostTestWithEmptyTitle()'><b>wrongChangePostTestWithEmptyTitle</b><br>Test class: WrongChangePostTest</td>
-<td></td>
-<td>0</td>
-<td>WrongChangePostTest@73e1ecd0</td></tr>
-<tr>
-<td title='WrongGetUserPostTest.getUserPostTest()'><b>getUserPostTest</b><br>Test class: WrongGetUserPostTest</td>
-<td></td>
-<td>0</td>
-<td>WrongGetUserPostTest@4ea56bdb</td></tr>
-<tr>
-<td title='AllNewsPageGetTest.allNewsPageGetTest()'><b>allNewsPageGetTest</b><br>Test class: AllNewsPageGetTest</td>
-<td></td>
-<td>0</td>
-<td>AllNewsPageGetTest@433d9680</td></tr>
-<tr>
-<td title='WrongRegistrationTest.regWithoutName()'><b>regWithoutName</b><br>Test class: WrongRegistrationTest</td>
-<td></td>
-<td>0</td>
-<td>WrongRegistrationTest@6b37df8e</td></tr>
-<tr>
-<td title='WrongGetSpecificPostTest.getPostTest()'><b>getPostTest</b><br>Test class: WrongGetSpecificPostTest</td>
-<td></td>
-<td>5</td>
-<td>WrongGetSpecificPostTest@1e40fbb3</td></tr>
-<tr>
-<td title='WrongChangePostTest.wrongChangePostTestWithEmptyTags()'><b>wrongChangePostTestWithEmptyTags</b><br>Test class: WrongChangePostTest</td>
-<td></td>
-<td>0</td>
-<td>WrongChangePostTest@73e1ecd0</td></tr>
-<tr>
-<td title='ChangePostTest.changePostTest()'><b>changePostTest</b><br>Test class: ChangePostTest</td>
-<td></td>
-<td>0</td>
-<td>ChangePostTest@551be9f6</td></tr>
-<tr>
 <td title='WrongRegistrationTest.regWithExistingEmail()'><b>regWithExistingEmail</b><br>Test class: WrongRegistrationTest</td>
 <td></td>
 <td>0</td>
 <td>WrongRegistrationTest@6b37df8e</td></tr>
 <tr>
-<td title='ChangeUserInfoTest.changeUserInfoSuccess()'><b>changeUserInfoSuccess</b><br>Test class: ChangeUserInfoTest</td>
+<td title='WrongGetUserInfoTest.withWrongUserId()'><b>withWrongUserId</b><br>Test class: WrongGetUserInfoTest</td>
 <td></td>
 <td>0</td>
-<td>ChangeUserInfoTest@497ed877</td></tr>
-<tr>
-<td title='DeletePostTest.deletePostTest()'><b>deletePostTest</b><br>Test class: DeletePostTest</td>
-<td></td>
-<td>0</td>
-<td>DeletePostTest@6ad1701a</td></tr>
-<tr>
-<td title='WrongChangePostTest.wrongChangePostTestWithEmptyDescription()'><b>wrongChangePostTestWithEmptyDescription</b><br>Test class: WrongChangePostTest</td>
-<td></td>
-<td>0</td>
-<td>WrongChangePostTest@73e1ecd0</td></tr>
-<tr>
-<td title='WrongRegistrationTest.regWithoutEmail()'><b>regWithoutEmail</b><br>Test class: WrongRegistrationTest</td>
-<td></td>
-<td>5</td>
-<td>WrongRegistrationTest@6b37df8e</td></tr>
-<tr>
-<td title='WrongGetFileTest.getFileWithoutFileNameTest()'><b>getFileWithoutFileNameTest</b><br>Test class: WrongGetFileTest</td>
-<td></td>
-<td>0</td>
-<td>WrongGetFileTest@39da5e49</td></tr>
-<tr>
-<td title='WrongGetUserPostTest.getPostTest()'><b>getPostTest</b><br>Test class: WrongGetUserPostTest</td>
-<td></td>
-<td>5</td>
-<td>WrongGetUserPostTest@4ea56bdb</td></tr>
-<tr>
-<td title='GetPostTest.getPostTest()'><b>getPostTest</b><br>Test class: GetPostTest</td>
-<td></td>
-<td>0</td>
-<td>GetPostTest@10b8b900</td></tr>
-<tr>
-<td title='DeleteUserTest.deleteWithoutToken()'><b>deleteWithoutToken</b><br>Test class: DeleteUserTest</td>
-<td></td>
-<td>0</td>
-<td>DeleteUserTest@5f08fe00</td></tr>
-<tr>
-<td title='SuccessAuthorizationTest.successAuthorizationTest()'><b>successAuthorizationTest</b><br>Test class: SuccessAuthorizationTest</td>
-<td></td>
-<td>5</td>
-<td>SuccessAuthorizationTest@17fede14</td></tr>
+<td>WrongGetUserInfoTest@7fd99443</td></tr>
 <tr>
 <td title='WrongChangePostTest.wrongChangePostTestWithoutToken()'><b>wrongChangePostTestWithoutToken</b><br>Test class: WrongChangePostTest</td>
 <td></td>
-<td>0</td>
-<td>WrongChangePostTest@73e1ecd0</td></tr>
-<tr>
-<td title='WrongUploadFileTest.uploadFileWithNonFormDataTest()'><b>uploadFileWithNonFormDataTest</b><br>Test class: WrongUploadFileTest</td>
-<td></td>
-<td>0</td>
-<td>WrongUploadFileTest@6b63abdc</td></tr>
-<tr>
-<td title='GetPostTest.getUserPostTest()'><b>getUserPostTest</b><br>Test class: GetPostTest</td>
-<td></td>
-<td>0</td>
-<td>GetPostTest@10b8b900</td></tr>
-<tr>
-<td title='GetFileTest.getFileTest()'><b>getFileTest</b><br>Test class: GetFileTest</td>
-<td></td>
-<td>0</td>
-<td>GetFileTest@3f6f3cc</td></tr>
-<tr>
-<td title='WrongChangePostTest.wrongChangePostTestWithoutDescription()'><b>wrongChangePostTestWithoutDescription</b><br>Test class: WrongChangePostTest</td>
-<td></td>
 <td>5</td>
 <td>WrongChangePostTest@73e1ecd0</td></tr>
-<tr>
-<td title='WrongChangeUserInfoTest.withEmptyEmail()'><b>withEmptyEmail</b><br>Test class: WrongChangeUserInfoTest</td>
-<td></td>
-<td>0</td>
-<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
 <td title='WrongGetSpecificPostTest.getUserPostTest()'><b>getUserPostTest</b><br>Test class: WrongGetSpecificPostTest</td>
 <td></td>
 <td>0</td>
 <td>WrongGetSpecificPostTest@1e40fbb3</td></tr>
 <tr>
-<td title='WrongRegistrationTest.regWithWrongRole()'><b>regWithWrongRole</b><br>Test class: WrongRegistrationTest</td>
-<td></td>
-<td>0</td>
-<td>WrongRegistrationTest@6b37df8e</td></tr>
-<tr>
-<td title='WrongCreatePostTest.createPostWithEmptyDescription()'><b>createPostWithEmptyDescription</b><br>Test class: WrongCreatePostTest</td>
+<td title='WrongChangeUserInfoTest.withEmptyEmail()'><b>withEmptyEmail</b><br>Test class: WrongChangeUserInfoTest</td>
 <td></td>
 <td>5</td>
-<td>WrongCreatePostTest@580fd26b</td></tr>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
-<td title='WrongDeletePostTest.deletePostTestWithoutToken()'><b>deletePostTestWithoutToken</b><br>Test class: WrongDeletePostTest</td>
+<td title='SuccessRegistrationTest.registrationTest()'><b>registrationTest</b><br>Test class: SuccessRegistrationTest</td>
 <td></td>
 <td>0</td>
-<td>WrongDeletePostTest@c3719e5</td></tr>
+<td>SuccessRegistrationTest@2801827a</td></tr>
+<tr>
+<td title='WrongChangePostTest.wrongChangePostTestWithEmptyTitle()'><b>wrongChangePostTestWithEmptyTitle</b><br>Test class: WrongChangePostTest</td>
+<td></td>
+<td>5</td>
+<td>WrongChangePostTest@73e1ecd0</td></tr>
+<tr>
+<td title='DeletePostTest.deletePostTest()'><b>deletePostTest</b><br>Test class: DeletePostTest</td>
+<td></td>
+<td>0</td>
+<td>DeletePostTest@6ad1701a</td></tr>
+<tr>
+<td title='WrongChangeUserInfoTest.withoutEmail()'><b>withoutEmail</b><br>Test class: WrongChangeUserInfoTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
+<tr>
+<td title='WrongChangeUserInfoTest.withoutName()'><b>withoutName</b><br>Test class: WrongChangeUserInfoTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
 <td title='WrongChangeUserInfoTest.withEmptyEmailName()'><b>withEmptyEmailName</b><br>Test class: WrongChangeUserInfoTest</td>
 <td></td>
 <td>0</td>
 <td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 <tr>
-<td title='CreatePostTest.createPostTest()'><b>createPostTest</b><br>Test class: CreatePostTest</td>
+<td title='ChangeUserInfoTest.changeUserInfoSuccess()'><b>changeUserInfoSuccess</b><br>Test class: ChangeUserInfoTest</td>
 <td></td>
 <td>0</td>
-<td>CreatePostTest@1e225820</td></tr>
+<td>ChangeUserInfoTest@497ed877</td></tr>
 <tr>
-<td title='GetUserInfoTest.getUsers()'><b>getUsers</b><br>Test class: GetUserInfoTest</td>
+<td title='DeleteUserTest.deleteWithoutToken()'><b>deleteWithoutToken</b><br>Test class: DeleteUserTest</td>
+<td></td>
+<td>5</td>
+<td>DeleteUserTest@5f08fe00</td></tr>
+<tr>
+<td title='AllNewsPageGetTest.allNewsPageGetTest()'><b>allNewsPageGetTest</b><br>Test class: AllNewsPageGetTest</td>
 <td></td>
 <td>0</td>
-<td>GetUserInfoTest@7741771e</td></tr>
+<td>AllNewsPageGetTest@433d9680</td></tr>
+<tr>
+<td title='WrongChangePostTest.wrongChangePostTestWithWrongId()'><b>wrongChangePostTestWithWrongId</b><br>Test class: WrongChangePostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangePostTest@73e1ecd0</td></tr>
 <tr>
 <td title='WrongChangePostTest.wrongChangePostTestWithoutTitle()'><b>wrongChangePostTestWithoutTitle</b><br>Test class: WrongChangePostTest</td>
 <td></td>
 <td>0</td>
 <td>WrongChangePostTest@73e1ecd0</td></tr>
 <tr>
-<td title='WrongDeletePostTest.deletePostTestWithWrongId()'><b>deletePostTestWithWrongId</b><br>Test class: WrongDeletePostTest</td>
+<td title='WrongChangeUserInfoTest.withoutRole()'><b>withoutRole</b><br>Test class: WrongChangeUserInfoTest</td>
+<td></td>
+<td>5</td>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
+<tr>
+<td title='WrongLoginTest.emptyEmail()'><b>emptyEmail</b><br>Test class: WrongLoginTest</td>
+<td></td>
+<td>5</td>
+<td>WrongLoginTest@575cabf0</td></tr>
+<tr>
+<td title='WrongRegistrationTest.regWithoutEmail()'><b>regWithoutEmail</b><br>Test class: WrongRegistrationTest</td>
 <td></td>
 <td>0</td>
+<td>WrongRegistrationTest@6b37df8e</td></tr>
+<tr>
+<td title='DeleteUserTest.deleteUser()'><b>deleteUser</b><br>Test class: DeleteUserTest</td>
+<td></td>
+<td>0</td>
+<td>DeleteUserTest@5f08fe00</td></tr>
+<tr>
+<td title='ChangePostTest.changePostTest()'><b>changePostTest</b><br>Test class: ChangePostTest</td>
+<td></td>
+<td>0</td>
+<td>ChangePostTest@551be9f6</td></tr>
+<tr>
+<td title='WrongGetUserPostTest.getUserPostTest()'><b>getUserPostTest</b><br>Test class: WrongGetUserPostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongGetUserPostTest@4ea56bdb</td></tr>
+<tr>
+<td title='WrongRegistrationTest.regWithNullAllFields()'><b>regWithNullAllFields</b><br>Test class: WrongRegistrationTest</td>
+<td></td>
+<td>0</td>
+<td>WrongRegistrationTest@6b37df8e</td></tr>
+<tr>
+<td title='WrongChangeUserInfoTest.withWrongName()'><b>withWrongName</b><br>Test class: WrongChangeUserInfoTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
+<tr>
+<td title='WrongDeletePostTest.deletePostTestWithoutToken()'><b>deletePostTestWithoutToken</b><br>Test class: WrongDeletePostTest</td>
+<td></td>
+<td>5</td>
 <td>WrongDeletePostTest@c3719e5</td></tr>
 <tr>
-<td title='GetUserInfoTest.getUserInfoByIdTest()'><b>getUserInfoByIdTest</b><br>Test class: GetUserInfoTest</td>
+<td title='WrongChangePostTest.wrongChangePostTestWithEmptyDescription()'><b>wrongChangePostTestWithEmptyDescription</b><br>Test class: WrongChangePostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangePostTest@73e1ecd0</td></tr>
+<tr>
+<td title='GetFileTest.getFileTest()'><b>getFileTest</b><br>Test class: GetFileTest</td>
+<td></td>
+<td>0</td>
+<td>GetFileTest@3f6f3cc</td></tr>
+<tr>
+<td title='WrongChangePostTest.wrongChangePostTestWithoutImage()'><b>wrongChangePostTestWithoutImage</b><br>Test class: WrongChangePostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangePostTest@73e1ecd0</td></tr>
+<tr>
+<td title='GetUserInfoTest.getUsers()'><b>getUsers</b><br>Test class: GetUserInfoTest</td>
 <td></td>
 <td>0</td>
 <td>GetUserInfoTest@7741771e</td></tr>
+<tr>
+<td title='WrongRegistrationTest.regWithoutName()'><b>regWithoutName</b><br>Test class: WrongRegistrationTest</td>
+<td></td>
+<td>0</td>
+<td>WrongRegistrationTest@6b37df8e</td></tr>
+<tr>
+<td title='WrongUploadFileTest.uploadFileWithNonFormDataTest()'><b>uploadFileWithNonFormDataTest</b><br>Test class: WrongUploadFileTest</td>
+<td></td>
+<td>0</td>
+<td>WrongUploadFileTest@6b63abdc</td></tr>
+<tr>
+<td title='WrongRegistrationTest.regWithEmptyAllFields()'><b>regWithEmptyAllFields</b><br>Test class: WrongRegistrationTest</td>
+<td></td>
+<td>0</td>
+<td>WrongRegistrationTest@6b37df8e</td></tr>
+<tr>
+<td title='GetPostTest.getPostTest()'><b>getPostTest</b><br>Test class: GetPostTest</td>
+<td></td>
+<td>0</td>
+<td>GetPostTest@10b8b900</td></tr>
+<tr>
+<td title='WrongCreatePostTest.createPostWithEmptyDescription()'><b>createPostWithEmptyDescription</b><br>Test class: WrongCreatePostTest</td>
+<td></td>
+<td>5</td>
+<td>WrongCreatePostTest@580fd26b</td></tr>
+<tr>
+<td title='WrongChangePostTest.wrongChangePostTestWithEmptyTags()'><b>wrongChangePostTestWithEmptyTags</b><br>Test class: WrongChangePostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangePostTest@73e1ecd0</td></tr>
+<tr>
+<td title='WrongGetSpecificPostTest.getPostTest()'><b>getPostTest</b><br>Test class: WrongGetSpecificPostTest</td>
+<td></td>
+<td>0</td>
+<td>WrongGetSpecificPostTest@1e40fbb3</td></tr>
 <tr>
 <td title='WrongRegistrationTest.regWithWrongName()'><b>regWithWrongName</b><br>Test class: WrongRegistrationTest</td>
 <td></td>
 <td>0</td>
 <td>WrongRegistrationTest@6b37df8e</td></tr>
+<tr>
+<td title='GetPostTest.getUserPostTest()'><b>getUserPostTest</b><br>Test class: GetPostTest</td>
+<td></td>
+<td>0</td>
+<td>GetPostTest@10b8b900</td></tr>
+<tr>
+<td title='WrongChangeUserInfoTest.withoutAvatar()'><b>withoutAvatar</b><br>Test class: WrongChangeUserInfoTest</td>
+<td></td>
+<td>0</td>
+<td>WrongChangeUserInfoTest@2272cbb0</td></tr>
 </table><p>
 </body>
 </html>

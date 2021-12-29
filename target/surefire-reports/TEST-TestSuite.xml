@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="82" failures="38" name="TestSuite" time="25.767" errors="0" skipped="0">
+<testsuite tests="82" failures="31" name="TestSuite" time="25.1" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.1+0"/>
@@ -61,8 +61,8 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyDescription" time="0.223"/>
-  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyImage" time="0.225">
+  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyDescription" time="0.233"/>
+  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyImage" time="0.203">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -71,7 +71,7 @@
 	at WrongCreatePostTest.createPostWithEmptyImage(WrongCreatePostTest.java:102)
 </failure>
   </testcase>
-  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyTitle" time="0.223">
+  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyTitle" time="0.239">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -80,7 +80,7 @@
 	at WrongCreatePostTest.createPostWithEmptyTitle(WrongCreatePostTest.java:83)
 </failure>
   </testcase>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutDescription" time="0.216">
+  <testcase classname="WrongCreatePostTest" name="createPostWithoutDescription" time="0.198">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -89,7 +89,7 @@
 	at WrongCreatePostTest.createPostWithoutDescription(WrongCreatePostTest.java:121)
 </failure>
   </testcase>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutImage" time="0.217">
+  <testcase classname="WrongCreatePostTest" name="createPostWithoutImage" time="0.215">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -98,7 +98,7 @@
 	at WrongCreatePostTest.createPostWithoutImage(WrongCreatePostTest.java:140)
 </failure>
   </testcase>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutTitle" time="0.226">
+  <testcase classname="WrongCreatePostTest" name="createPostWithoutTitle" time="0.202">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -107,7 +107,7 @@
 	at WrongCreatePostTest.createPostWithoutTitle(WrongCreatePostTest.java:159)
 </failure>
   </testcase>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutToken" time="0.212">
+  <testcase classname="WrongCreatePostTest" name="createPostWithoutToken" time="0.208">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
@@ -118,142 +118,63 @@
 	at WrongCreatePostTest.createPostWithoutToken(WrongCreatePostTest.java:45)
 </failure>
   </testcase>
-  <testcase classname="SuccessAuthorizationTest" name="successAuthorizationTest" time="0.422"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withEmptyEmail" time="0.201"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withEmptyEmailName" time="0.194"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withEmptyName" time="0.206"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withWrongEmail" time="0.218">
-    <failure message="Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:67)
-</failure>
-  </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withWrongName" time="0.194">
+  <testcase classname="SuccessAuthorizationTest" name="successAuthorizationTest" time="0.455"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withEmptyEmail" time="0.214"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withEmptyEmailName" time="0.214"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withEmptyName" time="0.205"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withWrongEmail" time="0.212">
     <failure message="The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withWrongName(WrongChangeUserInfoTest.java:87)
+	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:76)
 </failure>
-  </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutAvatar" time="0.208">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutAvatar(WrongChangeUserInfoTest.java:141)
-</failure>
-  </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutEmail" time="0.191">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutEmail(WrongChangeUserInfoTest.java:177)
-</failure>
-  </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutName" time="0.213">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutName(WrongChangeUserInfoTest.java:159)
-</failure>
-  </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutRole" time="0.198">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutRole(WrongChangeUserInfoTest.java:196)
-</failure>
-    <system-out>true
+    <system-out>Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
 </system-out>
   </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutToken" time="0.188">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:51)
-</failure>
-  </testcase>
-  <testcase classname="GetFileTest" name="getFileTest" time="0.401"/>
-  <testcase classname="CreatePostTest" name="createPostTest" time="0.377"/>
-  <testcase classname="GetUserInfoTest" name="getUserInfoByIdTest" time="0.265"/>
-  <testcase classname="GetUserInfoTest" name="getUsers" time="0.523"/>
-  <testcase classname="WrongLoginTest" name="WithoutEmail" time="0.206">
+  <testcase classname="WrongChangeUserInfoTest" name="withWrongName" time="0.195"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withoutAvatar" time="0.191"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withoutEmail" time="0.2"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withoutName" time="0.197"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withoutRole" time="0.243"/>
+  <testcase classname="WrongChangeUserInfoTest" name="withoutToken" time="0.34">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.WithoutEmail(WrongLoginTest.java:292)
+	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:53)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="correctEmailWithoutPassword" time="0.314">
+  <testcase classname="GetFileTest" name="getFileTest" time="0.35"/>
+  <testcase classname="CreatePostTest" name="createPostTest" time="0.386"/>
+  <testcase classname="GetUserInfoTest" name="getUserInfoByIdTest" time="0.272"/>
+  <testcase classname="GetUserInfoTest" name="getUsers" time="0.577"/>
+  <testcase classname="WrongLoginTest" name="correctEmailWithoutPassword" time="0.185"/>
+  <testcase classname="WrongLoginTest" name="emptyEmail" time="0.234"/>
+  <testcase classname="WrongLoginTest" name="emptyEmailAndPassword" time="0.191">
     <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.correctEmailWithoutPassword(WrongLoginTest.java:269)
-</failure>
-  </testcase>
-  <testcase classname="WrongLoginTest" name="emptyEmail" time="0.185">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyEmail(WrongLoginTest.java:197)
-</failure>
-  </testcase>
-  <testcase classname="WrongLoginTest" name="emptyEmailAndPassword" time="0.44">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
 	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="emptyPassword" time="0.315">
+  <testcase classname="WrongLoginTest" name="emptyPassword" time="0.323">
     <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
 	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail1" time="0.187">
+  <testcase classname="WrongLoginTest" name="incorrectEmail1" time="0.209">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
@@ -261,15 +182,11 @@
 	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail2" time="0.185">
+  <testcase classname="WrongLoginTest" name="incorrectEmail2" time="0.203">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -278,16 +195,12 @@
 	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail3" time="0.208">
+  <testcase classname="WrongLoginTest" name="incorrectEmail3" time="0.196">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -297,17 +210,13 @@
 	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:99)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail4" time="0.203">
+  <testcase classname="WrongLoginTest" name="incorrectEmail4" time="0.198">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -318,18 +227,14 @@
 	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail5" time="0.188">
+  <testcase classname="WrongLoginTest" name="incorrectEmail5" time="0.33">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -341,18 +246,14 @@
 	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="userDoesNotExist" time="0.195">
+  <testcase classname="WrongLoginTest" name="userDoesNotExist" time="0.201">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -364,7 +265,28 @@
 	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
 </failure>
   </testcase>
-  <testcase classname="WrongLoginTest" name="withoutEmailAndPassword" time="0.19">
+  <testcase classname="WrongLoginTest" name="withoutEmail" time="0.184">
+    <failure message="The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.withoutEmail(WrongLoginTest.java:292)
+</failure>
+  </testcase>
+  <testcase classname="WrongLoginTest" name="withoutEmailAndPassword" time="0.187">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -374,9 +296,7 @@
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
@@ -391,21 +311,21 @@
 	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
 </failure>
   </testcase>
-  <testcase classname="AllNewsPageGetTest" name="allNewsPageGetTest" time="0.354"/>
-  <testcase classname="DeletePostTest" name="deletePostTest" time="0.653"/>
-  <testcase classname="WrongGetUserPostTest" name="getPostTest" time="0.228"/>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostTest" time="0.277"/>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPageEqual0" time="0.205">
+  <testcase classname="AllNewsPageGetTest" name="allNewsPageGetTest" time="0.273"/>
+  <testcase classname="DeletePostTest" name="deletePostTest" time="0.627"/>
+  <testcase classname="WrongGetUserPostTest" name="getPostTest" time="0.238"/>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostTest" time="0.264"/>
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPageEqual0" time="0.199">
     <failure message="Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
 	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
 </failure>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPerPageEqual0" time="0.199">
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPerPageEqual0" time="0.21">
     <failure message="Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
 	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
 </failure>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutPage" time="0.199">
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutPage" time="0.202">
     <failure message="The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false],
 	Wrong &quot;success&quot; expected [true] but found [false],
@@ -433,7 +353,7 @@
 	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
 </failure>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutToken" time="0.203">
+  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutToken" time="0.19">
     <failure message="The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false],
 	Wrong &quot;success&quot; expected [true] but found [false],
@@ -448,20 +368,20 @@
 	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
 </failure>
   </testcase>
-  <testcase classname="WrongGetFileTest" name="getFileWithoutFileNameTest" time="0.479"/>
-  <testcase classname="WrongDeletePostTest" name="deletePostTestWithWrongId" time="0.495"/>
-  <testcase classname="WrongDeletePostTest" name="deletePostTestWithoutToken" time="0.572"/>
-  <testcase classname="WrongGetPostTest" name="getPostWithPageEqual0" time="0.222">
+  <testcase classname="WrongGetFileTest" name="getFileWithoutFileNameTest" time="0.44"/>
+  <testcase classname="WrongDeletePostTest" name="deletePostTestWithWrongId" time="0.376"/>
+  <testcase classname="WrongDeletePostTest" name="deletePostTestWithoutToken" time="0.555"/>
+  <testcase classname="WrongGetPostTest" name="getPostWithPageEqual0" time="0.188">
     <failure message="Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
 	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
 </failure>
   </testcase>
-  <testcase classname="WrongGetPostTest" name="getPostWithPerPageEqual0" time="0.199">
+  <testcase classname="WrongGetPostTest" name="getPostWithPerPageEqual0" time="0.187">
     <failure message="Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
 	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
 </failure>
   </testcase>
-  <testcase classname="WrongGetPostTest" name="getPostWithoutPage" time="0.194">
+  <testcase classname="WrongGetPostTest" name="getPostWithoutPage" time="0.185">
     <failure message="The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false],
 	Wrong &quot;success&quot; expected [true] but found [false],
@@ -474,7 +394,7 @@
 	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
 </failure>
   </testcase>
-  <testcase classname="WrongGetPostTest" name="getPostWithoutPerPage" time="0.214">
+  <testcase classname="WrongGetPostTest" name="getPostWithoutPerPage" time="0.179">
     <failure message="The following asserts failed:
 	Wrong &quot;success&quot; expected [true] but found [false],
 	Wrong &quot;success&quot; expected [true] but found [false],
@@ -489,14 +409,14 @@
 	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
 </failure>
   </testcase>
-  <testcase classname="WrongRegistrationTest" name="regWithEmptyAllFields" time="0.204"/>
-  <testcase classname="WrongRegistrationTest" name="regWithExistingEmail" time="0.461"/>
-  <testcase classname="WrongRegistrationTest" name="regWithNullAllFields" time="0.204"/>
-  <testcase classname="WrongRegistrationTest" name="regWithWrongName" time="0.199"/>
-  <testcase classname="WrongRegistrationTest" name="regWithWrongRole" time="0.265"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutEmail" time="0.216"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutName" time="0.249"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutPassword" time="0.287">
+  <testcase classname="WrongRegistrationTest" name="regWithEmptyAllFields" time="0.186"/>
+  <testcase classname="WrongRegistrationTest" name="regWithExistingEmail" time="0.456"/>
+  <testcase classname="WrongRegistrationTest" name="regWithNullAllFields" time="0.193"/>
+  <testcase classname="WrongRegistrationTest" name="regWithWrongName" time="0.197"/>
+  <testcase classname="WrongRegistrationTest" name="regWithWrongRole" time="0.181"/>
+  <testcase classname="WrongRegistrationTest" name="regWithoutEmail" time="0.194"/>
+  <testcase classname="WrongRegistrationTest" name="regWithoutName" time="0.199"/>
+  <testcase classname="WrongRegistrationTest" name="regWithoutPassword" time="0.19">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -505,7 +425,7 @@
 	at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:121)
 </failure>
   </testcase>
-  <testcase classname="WrongRegistrationTest" name="regWithoutRole" time="0.199">
+  <testcase classname="WrongRegistrationTest" name="regWithoutRole" time="0.194">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -514,16 +434,16 @@
 	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
 </failure>
   </testcase>
-  <testcase classname="WrongUploadFileTest" name="uploadFileWithNonFormDataTest" time="0.436"/>
-  <testcase classname="UploadFileTest" name="uploadFileTest" time="0.346"/>
-  <testcase classname="DeleteUserTest" name="deleteUser" time="0.476"/>
-  <testcase classname="DeleteUserTest" name="deleteWithEmptyToken" time="0.652"/>
-  <testcase classname="DeleteUserTest" name="deleteWithoutToken" time="0.688"/>
-  <testcase classname="WrongGetUserInfoTest" name="withWrongUserId" time="0.232"/>
-  <testcase classname="ChangePostTest" name="changePostTest" time="0.955"/>
-  <testcase classname="WrongGetSpecificPostTest" name="getPostTest" time="0.298"/>
-  <testcase classname="WrongGetSpecificPostTest" name="getUserPostTest" time="0.292"/>
-  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPageTest" time="0.214">
+  <testcase classname="WrongUploadFileTest" name="uploadFileWithNonFormDataTest" time="0.197"/>
+  <testcase classname="UploadFileTest" name="uploadFileTest" time="0.189"/>
+  <testcase classname="DeleteUserTest" name="deleteUser" time="0.526"/>
+  <testcase classname="DeleteUserTest" name="deleteWithEmptyToken" time="1.201"/>
+  <testcase classname="DeleteUserTest" name="deleteWithoutToken" time="0.691"/>
+  <testcase classname="WrongGetUserInfoTest" name="withWrongUserId" time="0.209"/>
+  <testcase classname="ChangePostTest" name="changePostTest" time="0.948"/>
+  <testcase classname="WrongGetSpecificPostTest" name="getPostTest" time="0.246"/>
+  <testcase classname="WrongGetSpecificPostTest" name="getUserPostTest" time="0.246"/>
+  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPageTest" time="0.184">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
@@ -532,7 +452,7 @@
 	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
 </failure>
   </testcase>
-  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPerPageTest" time="0.19">
+  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPerPageTest" time="0.206">
     <failure message="The following asserts failed:
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
 	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
@@ -543,16 +463,16 @@
 	at WrongGetSpecificPostTest.getPostWithoutPerPageTest(WrongGetSpecificPostTest.java:63)
 </failure>
   </testcase>
-  <testcase classname="GetPostTest" name="getPostTest" time="0.232"/>
-  <testcase classname="GetPostTest" name="getUserPostTest" time="0.295"/>
-  <testcase classname="SuccessRegistrationTest" name="registrationTest" time="0.366"/>
-  <testcase classname="ChangeUserInfoTest" name="changeUserInfoSuccess" time="0.236"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyDescription" time="0.586"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTags" time="0.543"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTitle" time="0.537"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithWrongId" time="0.359"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutDescription" time="0.567"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutImage" time="0.634"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutTitle" time="0.565"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutToken" time="0.546"/>
+  <testcase classname="GetPostTest" name="getPostTest" time="0.227"/>
+  <testcase classname="GetPostTest" name="getUserPostTest" time="0.242"/>
+  <testcase classname="SuccessRegistrationTest" name="registrationTest" time="0.483"/>
+  <testcase classname="ChangeUserInfoTest" name="changeUserInfoSuccess" time="0.221"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyDescription" time="0.547"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTags" time="0.544"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTitle" time="0.528"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithWrongId" time="0.385"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutDescription" time="0.555"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutImage" time="0.548"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutTitle" time="0.564"/>
+  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutToken" time="0.532"/>
 </testsuite>

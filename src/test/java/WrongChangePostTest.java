@@ -10,7 +10,6 @@ import static io.restassured.RestAssured.given;
 
 public class WrongChangePostTest extends SetUp {
     ErrorCode errorCode = new ErrorCode();
-    SoftAssert softAssert = new SoftAssert();
     String emptyField = "";
     String[] emptyTags = {emptyField};
     int wrongId = 0;

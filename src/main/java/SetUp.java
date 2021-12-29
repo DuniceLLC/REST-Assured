@@ -2,6 +2,7 @@ import io.restassured.response.*;
 import lombok.Getter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 
 @Getter
 public class SetUp {
@@ -14,9 +15,11 @@ public class SetUp {
     String token;
     Register user = new Register(avatar, correctEmail, correctName, correctPassword, correctRole);
     Response response;
+    SoftAssert softAssert;
 
     @BeforeMethod
     public void reg() {
+        softAssert = new SoftAssert();
         response = Methods.registration(user);
         token = response.jsonPath().getString("data.token");
     }

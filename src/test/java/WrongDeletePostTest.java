@@ -18,7 +18,6 @@ public class WrongDeletePostTest extends SetUp {
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image, tags, title);
 
-    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
     @Epic("News-controller")

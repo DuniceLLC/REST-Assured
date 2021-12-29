@@ -1,15 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [WrongLoginTest]" verbose="0">
+<suite name="Failed suite [Command line suite]" verbose="0">
   <test thread-count="5" name="Command line test(failed)" verbose="0">
     <classes>
       <class name="WrongLoginTest">
         <methods>
+          <include name="incorrectEmail2"/>
+          <include name="emptyEmailAndPassword"/>
           <include name="delete"/>
+          <include name="withoutEmail"/>
+          <include name="incorrectEmail3"/>
+          <include name="incorrectEmail4"/>
           <include name="userDoesNotExist"/>
+          <include name="incorrectEmail1"/>
+          <include name="withoutEmailAndPassword"/>
           <include name="reg"/>
+          <include name="emptyPassword"/>
+          <include name="incorrectEmail5"/>
         </methods>
       </class> <!-- WrongLoginTest -->
+      <class name="WrongRegistrationTest">
+        <methods>
+          <include name="regWithoutPassword"/>
+          <include name="regWithoutRole"/>
+        </methods>
+      </class> <!-- WrongRegistrationTest -->
+      <class name="WrongGetUserPostTest">
+        <methods>
+          <include name="getUserPostWithPageEqual0"/>
+          <include name="delete"/>
+          <include name="getUserPostWithPerPageEqual0"/>
+          <include name="getUserPostWithoutToken"/>
+          <include name="reg"/>
+          <include name="createPost"/>
+          <include name="getUserPostWithoutPage"/>
+          <include name="getUserPostWithoutPerPage"/>
+        </methods>
+      </class> <!-- WrongGetUserPostTest -->
+      <class name="WrongChangeUserInfoTest">
+        <methods>
+          <include name="withoutToken"/>
+          <include name="delete"/>
+          <include name="reg"/>
+          <include name="withWrongEmail"/>
+        </methods>
+      </class> <!-- WrongChangeUserInfoTest -->
+      <class name="WrongCreatePostTest">
+        <methods>
+          <include name="delete"/>
+          <include name="createPostWithEmptyTitle"/>
+          <include name="createPostWithEmptyImage"/>
+          <include name="createPostWithoutImage"/>
+          <include name="reg"/>
+          <include name="createPostWithoutDescription"/>
+          <include name="createPostWithoutTitle"/>
+          <include name="createPostWithoutToken"/>
+        </methods>
+      </class> <!-- WrongCreatePostTest -->
+      <class name="WrongGetSpecificPostTest">
+        <methods>
+          <include name="delete"/>
+          <include name="getPostWithoutPageTest"/>
+          <include name="reg"/>
+          <include name="getPostWithoutPerPageTest"/>
+          <include name="createPost"/>
+        </methods>
+      </class> <!-- WrongGetSpecificPostTest -->
+      <class name="WrongGetPostTest">
+        <methods>
+          <include name="getPostWithPerPageEqual0"/>
+          <include name="getPostWithoutPerPage"/>
+          <include name="getPostWithPageEqual0"/>
+          <include name="getPostWithoutPage"/>
+        </methods>
+      </class> <!-- WrongGetPostTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
-</suite> <!-- Failed suite [WrongLoginTest] -->
+</suite> <!-- Failed suite [Command line suite] -->

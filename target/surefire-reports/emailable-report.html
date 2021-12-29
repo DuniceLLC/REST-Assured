@@ -8,30 +8,261 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">WrongLoginTest</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">6 688</td><td></td><td></td></tr>
+<tr><th colspan="8">Command line suite</th></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">51</td><td class="num">0</td><td class="num">0</td><td class="num attn">31</td><td class="num">110 975</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">WrongLoginTest</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">WrongLoginTest</td><td><a href="#m0">userDoesNotExist</a></td><td rowspan="1">1640776916283</td><td rowspan="1">5425</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">WrongChangeUserInfoTest</td><td><a href="#m0">withWrongEmail</a></td><td rowspan="1">1640790682412</td><td rowspan="1">212</td></tr><tr class="failedeven"><td><a href="#m1">withoutToken</a></td><td rowspan="1">1640790691448</td><td rowspan="1">339</td></tr><tr class="failedodd"><td rowspan="6">WrongCreatePostTest</td><td><a href="#m2">createPostWithEmptyImage</a></td><td rowspan="1">1640790670319</td><td rowspan="1">200</td></tr><tr class="failedodd"><td><a href="#m3">createPostWithEmptyTitle</a></td><td rowspan="1">1640790671012</td><td rowspan="1">237</td></tr><tr class="failedodd"><td><a href="#m4">createPostWithoutDescription</a></td><td rowspan="1">1640790671728</td><td rowspan="1">199</td></tr><tr class="failedodd"><td><a href="#m5">createPostWithoutImage</a></td><td rowspan="1">1640790672397</td><td rowspan="1">214</td></tr><tr class="failedodd"><td><a href="#m6">createPostWithoutTitle</a></td><td rowspan="1">1640790673076</td><td rowspan="1">202</td></tr><tr class="failedodd"><td><a href="#m7">createPostWithoutToken</a></td><td rowspan="1">1640790673761</td><td rowspan="1">208</td></tr><tr class="failedeven"><td rowspan="4">WrongGetPostTest</td><td><a href="#m8">getPostWithPageEqual0</a></td><td rowspan="1">1640790733221</td><td rowspan="1">189</td></tr><tr class="failedeven"><td><a href="#m9">getPostWithPerPageEqual0</a></td><td rowspan="1">1640790733412</td><td rowspan="1">187</td></tr><tr class="failedeven"><td><a href="#m10">getPostWithoutPage</a></td><td rowspan="1">1640790733600</td><td rowspan="1">185</td></tr><tr class="failedeven"><td><a href="#m11">getPostWithoutPerPage</a></td><td rowspan="1">1640790733787</td><td rowspan="1">179</td></tr><tr class="failedodd"><td rowspan="2">WrongGetSpecificPostTest</td><td><a href="#m12">getPostWithoutPageTest</a></td><td rowspan="1">1640790747697</td><td rowspan="1">185</td></tr><tr class="failedodd"><td><a href="#m13">getPostWithoutPerPageTest</a></td><td rowspan="1">1640790748531</td><td rowspan="1">5208</td></tr><tr class="failedeven"><td rowspan="5">WrongGetUserPostTest</td><td><a href="#m14">getUserPostWithPageEqual0</a></td><td rowspan="1">1640790717068</td><td rowspan="1">5201</td></tr><tr class="failedeven"><td><a href="#m15">getUserPostWithPerPageEqual0</a></td><td rowspan="1">1640790722912</td><td rowspan="1">210</td></tr><tr class="failedeven"><td><a href="#m16">getUserPostWithoutPage</a></td><td rowspan="1">1640790723813</td><td rowspan="1">202</td></tr><tr class="failedeven"><td><a href="#m17">getUserPostWithoutPerPage</a></td><td rowspan="1">1640790724665</td><td rowspan="1">187</td></tr><tr class="failedeven"><td><a href="#m18">getUserPostWithoutToken</a></td><td rowspan="1">1640790725516</td><td rowspan="1">189</td></tr><tr class="failedodd"><td rowspan="10">WrongLoginTest</td><td><a href="#m19">emptyEmailAndPassword</a></td><td rowspan="1">1640790701622</td><td rowspan="1">190</td></tr><tr class="failedodd"><td><a href="#m20">emptyPassword</a></td><td rowspan="1">1640790702275</td><td rowspan="1">317</td></tr><tr class="failedodd"><td><a href="#m21">incorrectEmail1</a></td><td rowspan="1">1640790703053</td><td rowspan="1">208</td></tr><tr class="failedodd"><td><a href="#m22">incorrectEmail2</a></td><td rowspan="1">1640790703739</td><td rowspan="1">202</td></tr><tr class="failedodd"><td><a href="#m23">incorrectEmail3</a></td><td rowspan="1">1640790704396</td><td rowspan="1">196</td></tr><tr class="failedodd"><td><a href="#m24">incorrectEmail4</a></td><td rowspan="1">1640790705085</td><td rowspan="1">197</td></tr><tr class="failedodd"><td><a href="#m25">incorrectEmail5</a></td><td rowspan="1">1640790705758</td><td rowspan="1">329</td></tr><tr class="failedodd"><td><a href="#m26">userDoesNotExist</a></td><td rowspan="1">1640790706658</td><td rowspan="1">5206</td></tr><tr class="failedodd"><td><a href="#m27">withoutEmail</a></td><td rowspan="1">1640790712330</td><td rowspan="1">183</td></tr><tr class="failedodd"><td><a href="#m28">withoutEmailAndPassword</a></td><td rowspan="1">1640790712966</td><td rowspan="1">186</td></tr><tr class="failedeven"><td rowspan="2">WrongRegistrationTest</td><td><a href="#m29">regWithoutPassword</a></td><td rowspan="1">1640790735585</td><td rowspan="1">188</td></tr><tr class="failedeven"><td><a href="#m30">regWithoutRole</a></td><td rowspan="1">1640790735776</td><td rowspan="1">194</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">AllNewsPageGetTest</td><td><a href="#m31">allNewsPageGetTest</a></td><td rowspan="1">1640790713327</td><td rowspan="1">274</td></tr><tr class="passedodd"><td rowspan="1">ChangePostTest</td><td><a href="#m32">changePostTest</a></td><td rowspan="1">1640790744293</td><td rowspan="1">949</td></tr><tr class="passedeven"><td rowspan="1">ChangeUserInfoTest</td><td><a href="#m33">changeUserInfoSuccess</a></td><td rowspan="1">1640790756463</td><td rowspan="1">218</td></tr><tr class="passedodd"><td rowspan="1">CreatePostTest</td><td><a href="#m34">createPostTest</a></td><td rowspan="1">1640790692617</td><td rowspan="1">387</td></tr><tr class="passedeven"><td rowspan="1">DeletePostTest</td><td><a href="#m35">deletePostTest</a></td><td rowspan="1">1640790713911</td><td rowspan="1">629</td></tr><tr class="passedodd"><td rowspan="3">DeleteUserTest</td><td><a href="#m36">deleteUser</a></td><td rowspan="1">1640790736360</td><td rowspan="1">527</td></tr><tr class="passedodd"><td><a href="#m37">deleteWithEmptyToken</a></td><td rowspan="1">1640790736891</td><td rowspan="1">1205</td></tr><tr class="passedodd"><td><a href="#m38">deleteWithoutToken</a></td><td rowspan="1">1640790738098</td><td rowspan="1">5697</td></tr><tr class="passedeven"><td rowspan="1">GetFileTest</td><td><a href="#m39">getFileTest</a></td><td rowspan="1">1640790691978</td><td rowspan="1">351</td></tr><tr class="passedodd"><td rowspan="2">GetPostTest</td><td><a href="#m40">getPostTest</a></td><td rowspan="1">1640790754382</td><td rowspan="1">227</td></tr><tr class="passedodd"><td><a href="#m41">getUserPostTest</a></td><td rowspan="1">1640790755266</td><td rowspan="1">242</td></tr><tr class="passedeven"><td rowspan="2">GetUserInfoTest</td><td><a href="#m42">getUserInfoByIdTest</a></td><td rowspan="1">1640790693473</td><td rowspan="1">273</td></tr><tr class="passedeven"><td><a href="#m43">getUsers</a></td><td rowspan="1">1640790694241</td><td rowspan="1">578</td></tr><tr class="passedodd"><td rowspan="1">SuccessAuthorizationTest</td><td><a href="#m44">successAuthorizationTest</a></td><td rowspan="1">1640790674465</td><td rowspan="1">456</td></tr><tr class="passedeven"><td rowspan="1">SuccessRegistrationTest</td><td><a href="#m45">registrationTest</a></td><td rowspan="1">1640790755678</td><td rowspan="1">481</td></tr><tr class="passedodd"><td rowspan="1">UploadFileTest</td><td><a href="#m46">uploadFileTest</a></td><td rowspan="1">1640790736170</td><td rowspan="1">189</td></tr><tr class="passedeven"><td rowspan="8">WrongChangePostTest</td><td><a href="#m47">wrongChangePostTestWithEmptyDescription</a></td><td rowspan="1">1640790757136</td><td rowspan="1">547</td></tr><tr class="passedeven"><td><a href="#m48">wrongChangePostTestWithEmptyTags</a></td><td rowspan="1">1640790758131</td><td rowspan="1">544</td></tr><tr class="passedeven"><td><a href="#m49">wrongChangePostTestWithEmptyTitle</a></td><td rowspan="1">1640790759114</td><td rowspan="1">5529</td></tr><tr class="passedeven"><td><a href="#m50">wrongChangePostTestWithWrongId</a></td><td rowspan="1">1640790765121</td><td rowspan="1">386</td></tr><tr class="passedeven"><td><a href="#m51">wrongChangePostTestWithoutDescription</a></td><td rowspan="1">1640790765967</td><td rowspan="1">555</td></tr><tr class="passedeven"><td><a href="#m52">wrongChangePostTestWithoutImage</a></td><td rowspan="1">1640790766970</td><td rowspan="1">548</td></tr><tr class="passedeven"><td><a href="#m53">wrongChangePostTestWithoutTitle</a></td><td rowspan="1">1640790768085</td><td rowspan="1">565</td></tr><tr class="passedeven"><td><a href="#m54">wrongChangePostTestWithoutToken</a></td><td rowspan="1">1640790769122</td><td rowspan="1">5534</td></tr><tr class="passedodd"><td rowspan="8">WrongChangeUserInfoTest</td><td><a href="#m55">withEmptyEmail</a></td><td rowspan="1">1640790675390</td><td rowspan="1">5216</td></tr><tr class="passedodd"><td><a href="#m56">withEmptyEmailName</a></td><td rowspan="1">1640790681078</td><td rowspan="1">214</td></tr><tr class="passedodd"><td><a href="#m57">withEmptyName</a></td><td rowspan="1">1640790681752</td><td rowspan="1">206</td></tr><tr class="passedodd"><td><a href="#m58">withWrongName</a></td><td rowspan="1">1640790683077</td><td rowspan="1">195</td></tr><tr class="passedodd"><td><a href="#m59">withoutAvatar</a></td><td rowspan="1">1640790683728</td><td rowspan="1">192</td></tr><tr class="passedodd"><td><a href="#m60">withoutEmail</a></td><td rowspan="1">1640790684378</td><td rowspan="1">200</td></tr><tr class="passedodd"><td><a href="#m61">withoutName</a></td><td rowspan="1">1640790685057</td><td rowspan="1">195</td></tr><tr class="passedodd"><td><a href="#m62">withoutRole</a></td><td rowspan="1">1640790685714</td><td rowspan="1">5244</td></tr><tr class="passedeven"><td rowspan="1">WrongCreatePostTest</td><td><a href="#m63">createPostWithEmptyDescription</a></td><td rowspan="1">1640790664565</td><td rowspan="1">5269</td></tr><tr class="passedodd"><td rowspan="2">WrongDeletePostTest</td><td><a href="#m64">deletePostTestWithWrongId</a></td><td rowspan="1">1640790726618</td><td rowspan="1">381</td></tr><tr class="passedodd"><td><a href="#m65">deletePostTestWithoutToken</a></td><td rowspan="1">1640790727465</td><td rowspan="1">5561</td></tr><tr class="passedeven"><td rowspan="1">WrongGetFileTest</td><td><a href="#m66">getFileWithoutFileNameTest</a></td><td rowspan="1">1640790725877</td><td rowspan="1">437</td></tr><tr class="passedodd"><td rowspan="2">WrongGetSpecificPostTest</td><td><a href="#m67">getPostTest</a></td><td rowspan="1">1640790745902</td><td rowspan="1">239</td></tr><tr class="passedodd"><td><a href="#m68">getUserPostTest</a></td><td rowspan="1">1640790746801</td><td rowspan="1">246</td></tr><tr class="passedeven"><td rowspan="1">WrongGetUserInfoTest</td><td><a href="#m69">withWrongUserId</a></td><td rowspan="1">1640790743796</td><td rowspan="1">212</td></tr><tr class="passedodd"><td rowspan="2">WrongGetUserPostTest</td><td><a href="#m70">getPostTest</a></td><td rowspan="1">1640790715219</td><td rowspan="1">233</td></tr><tr class="passedodd"><td><a href="#m71">getUserPostTest</a></td><td rowspan="1">1640790716127</td><td rowspan="1">264</td></tr><tr class="passedeven"><td rowspan="2">WrongLoginTest</td><td><a href="#m72">correctEmailWithoutPassword</a></td><td rowspan="1">1640790695279</td><td rowspan="1">186</td></tr><tr class="passedeven"><td><a href="#m73">emptyEmail</a></td><td rowspan="1">1640790695925</td><td rowspan="1">5236</td></tr><tr class="passedodd"><td rowspan="7">WrongRegistrationTest</td><td><a href="#m74">regWithEmptyAllFields</a></td><td rowspan="1">1640790733968</td><td rowspan="1">186</td></tr><tr class="passedodd"><td><a href="#m75">regWithExistingEmail</a></td><td rowspan="1">1640790734155</td><td rowspan="1">456</td></tr><tr class="passedodd"><td><a href="#m76">regWithNullAllFields</a></td><td rowspan="1">1640790734612</td><td rowspan="1">193</td></tr><tr class="passedodd"><td><a href="#m77">regWithWrongName</a></td><td rowspan="1">1640790734806</td><td rowspan="1">198</td></tr><tr class="passedodd"><td><a href="#m78">regWithWrongRole</a></td><td rowspan="1">1640790735006</td><td rowspan="1">181</td></tr><tr class="passedodd"><td><a href="#m79">regWithoutEmail</a></td><td rowspan="1">1640790735189</td><td rowspan="1">194</td></tr><tr class="passedodd"><td><a href="#m80">regWithoutName</a></td><td rowspan="1">1640790735384</td><td rowspan="1">200</td></tr><tr class="passedeven"><td rowspan="1">WrongUploadFileTest</td><td><a href="#m81">uploadFileWithNonFormDataTest</a></td><td rowspan="1">1640790735971</td><td rowspan="1">198</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">WrongLoginTest#userDoesNotExist</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;400&gt; but was &lt;404&gt;.
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)
-	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
-	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:164)
+<h2>Command line test</h2><h3 id="m0">WrongChangeUserInfoTest#withWrongEmail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false]
+	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:76)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 47 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">WrongChangeUserInfoTest#withoutToken</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:53)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">WrongCreatePostTest#createPostWithEmptyImage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongCreatePostTest.createPostWithEmptyImage(WrongCreatePostTest.java:102)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">WrongCreatePostTest#createPostWithEmptyTitle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongCreatePostTest.createPostWithEmptyTitle(WrongCreatePostTest.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">WrongCreatePostTest#createPostWithoutDescription</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongCreatePostTest.createPostWithoutDescription(WrongCreatePostTest.java:121)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">WrongCreatePostTest#createPostWithoutImage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongCreatePostTest.createPostWithoutImage(WrongCreatePostTest.java:140)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">WrongCreatePostTest#createPostWithoutTitle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongCreatePostTest.createPostWithoutTitle(WrongCreatePostTest.java:159)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">WrongCreatePostTest#createPostWithoutToken</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongCreatePostTest.createPostWithoutToken(WrongCreatePostTest.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">WrongGetPostTest#getPostWithPageEqual0</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">WrongGetPostTest#getPostWithPerPageEqual0</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">WrongGetPostTest#getPostWithoutPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">WrongGetPostTest#getPostWithoutPerPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">WrongGetSpecificPostTest#getPostWithoutPageTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">WrongGetSpecificPostTest#getPostWithoutPerPageTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetSpecificPostTest.getPostWithoutPerPageTest(WrongGetSpecificPostTest.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">WrongGetUserPostTest#getUserPostWithPageEqual0</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">WrongGetUserPostTest#getUserPostWithPerPageEqual0</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
+	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">WrongGetUserPostTest#getUserPostWithoutPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">WrongGetUserPostTest#getUserPostWithoutPerPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">WrongGetUserPostTest#getUserPostWithoutToken</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Wrong &quot;success&quot; expected [true] but found [false],
+	Wrong &quot;success&quot; expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">WrongLoginTest#emptyEmailAndPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">WrongLoginTest#emptyPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">WrongLoginTest#incorrectEmail1</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">WrongLoginTest#incorrectEmail2</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">WrongLoginTest#incorrectEmail3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m24">WrongLoginTest#incorrectEmail4</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m25">WrongLoginTest#incorrectEmail5</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m26">WrongLoginTest#userDoesNotExist</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m27">WrongLoginTest#withoutEmail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.withoutEmail(WrongLoginTest.java:292)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m28">WrongLoginTest#withoutEmailAndPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m29">WrongRegistrationTest#regWithoutPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:121)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m30">WrongRegistrationTest#regWithoutRole</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m31">AllNewsPageGetTest#allNewsPageGetTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m32">ChangePostTest#changePostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m33">ChangeUserInfoTest#changeUserInfoSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m34">CreatePostTest#createPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m35">DeletePostTest#deletePostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m36">DeleteUserTest#deleteUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m37">DeleteUserTest#deleteWithEmptyToken</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m38">DeleteUserTest#deleteWithoutToken</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m39">GetFileTest#getFileTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m40">GetPostTest#getPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m41">GetPostTest#getUserPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m42">GetUserInfoTest#getUserInfoByIdTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m43">GetUserInfoTest#getUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m44">SuccessAuthorizationTest#successAuthorizationTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m45">SuccessRegistrationTest#registrationTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m46">UploadFileTest#uploadFileTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m47">WrongChangePostTest#wrongChangePostTestWithEmptyDescription</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m48">WrongChangePostTest#wrongChangePostTestWithEmptyTags</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m49">WrongChangePostTest#wrongChangePostTestWithEmptyTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m50">WrongChangePostTest#wrongChangePostTestWithWrongId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m51">WrongChangePostTest#wrongChangePostTestWithoutDescription</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m52">WrongChangePostTest#wrongChangePostTestWithoutImage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m53">WrongChangePostTest#wrongChangePostTestWithoutTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m54">WrongChangePostTest#wrongChangePostTestWithoutToken</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m55">WrongChangeUserInfoTest#withEmptyEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m56">WrongChangeUserInfoTest#withEmptyEmailName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m57">WrongChangeUserInfoTest#withEmptyName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m58">WrongChangeUserInfoTest#withWrongName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m59">WrongChangeUserInfoTest#withoutAvatar</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m60">WrongChangeUserInfoTest#withoutEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m61">WrongChangeUserInfoTest#withoutName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m62">WrongChangeUserInfoTest#withoutRole</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m63">WrongCreatePostTest#createPostWithEmptyDescription</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m64">WrongDeletePostTest#deletePostTestWithWrongId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m65">WrongDeletePostTest#deletePostTestWithoutToken</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m66">WrongGetFileTest#getFileWithoutFileNameTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m67">WrongGetSpecificPostTest#getPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m68">WrongGetSpecificPostTest#getUserPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m69">WrongGetUserInfoTest#withWrongUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m70">WrongGetUserPostTest#getPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m71">WrongGetUserPostTest#getUserPostTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m72">WrongLoginTest#correctEmailWithoutPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m73">WrongLoginTest#emptyEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m74">WrongRegistrationTest#regWithEmptyAllFields</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m75">WrongRegistrationTest#regWithExistingEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m76">WrongRegistrationTest#regWithNullAllFields</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m77">WrongRegistrationTest#regWithWrongName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m78">WrongRegistrationTest#regWithWrongRole</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m79">WrongRegistrationTest#regWithoutEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m80">WrongRegistrationTest#regWithoutName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m81">WrongUploadFileTest#uploadFileWithNonFormDataTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

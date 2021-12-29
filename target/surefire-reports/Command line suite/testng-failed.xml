@@ -7,18 +7,16 @@
         <methods>
           <include name="incorrectEmail2"/>
           <include name="emptyEmailAndPassword"/>
-          <include name="emptyEmail"/>
+          <include name="delete"/>
+          <include name="withoutEmail"/>
           <include name="incorrectEmail3"/>
           <include name="incorrectEmail4"/>
           <include name="userDoesNotExist"/>
           <include name="incorrectEmail1"/>
+          <include name="withoutEmailAndPassword"/>
           <include name="reg"/>
           <include name="emptyPassword"/>
-          <include name="correctEmailWithoutPassword"/>
-          <include name="delete"/>
-          <include name="withoutEmailAndPassword"/>
           <include name="incorrectEmail5"/>
-          <include name="WithoutEmail"/>
         </methods>
       </class> <!-- WrongLoginTest -->
       <class name="WrongRegistrationTest">
@@ -43,13 +41,8 @@
         <methods>
           <include name="withoutToken"/>
           <include name="delete"/>
-          <include name="withoutEmail"/>
-          <include name="withoutRole"/>
-          <include name="withWrongName"/>
           <include name="reg"/>
-          <include name="withoutName"/>
           <include name="withWrongEmail"/>
-          <include name="withoutAvatar"/>
         </methods>
       </class> <!-- WrongChangeUserInfoTest -->
       <class name="WrongCreatePostTest">

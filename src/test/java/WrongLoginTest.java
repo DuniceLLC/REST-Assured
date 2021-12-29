@@ -11,7 +11,6 @@ import org.testng.asserts.SoftAssert;
 import java.util.List;
 
 public class WrongLoginTest extends SetUp {
-    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
     JSONObject requestBody = new JSONObject();
     RequestSpecification request = RestAssured.given();
@@ -33,7 +32,7 @@ public class WrongLoginTest extends SetUp {
     @Test
     public void incorrectEmail1() {
         requestBody.put("email", wrongEmail1);
-        requestBody.put("password", password);
+        requestBody.put("password", correctPassword);
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
@@ -274,7 +273,7 @@ public class WrongLoginTest extends SetUp {
     @Story("Without email")
     @Description(value = "Checking the correct server response")
     @Test
-    public void WithoutEmail() {
+    public void withoutEmail() {
         requestBody.put("password", password);
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
