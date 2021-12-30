@@ -1,254 +1,228 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 82, Failures: 31, Errors: 0, Skipped: 0, Time elapsed: 120.274 sec <<< FAILURE!
-createPostWithEmptyImage(WrongCreatePostTest)  Time elapsed: 0.203 sec  <<< FAILURE!
+Tests run: 87, Failures: 26, Errors: 0, Skipped: 0, Time elapsed: 122.055 sec <<< FAILURE!
+createPostWithEmptyImage(WrongCreatePostTest)  Time elapsed: 0.211 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithEmptyImage(WrongCreatePostTest.java:102)
+	at WrongCreatePostTest.createPostWithEmptyImage(WrongCreatePostTest.java:101)
 
-createPostWithEmptyTitle(WrongCreatePostTest)  Time elapsed: 0.239 sec  <<< FAILURE!
+createPostWithoutToken(WrongCreatePostTest)  Time elapsed: 0.219 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithEmptyTitle(WrongCreatePostTest.java:83)
+	at WrongCreatePostTest.createPostWithoutToken(WrongCreatePostTest.java:44)
 
-createPostWithoutDescription(WrongCreatePostTest)  Time elapsed: 0.198 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithoutDescription(WrongCreatePostTest.java:121)
-
-createPostWithoutImage(WrongCreatePostTest)  Time elapsed: 0.215 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithoutImage(WrongCreatePostTest.java:140)
-
-createPostWithoutTitle(WrongCreatePostTest)  Time elapsed: 0.202 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithoutTitle(WrongCreatePostTest.java:159)
-
-createPostWithoutToken(WrongCreatePostTest)  Time elapsed: 0.208 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithoutToken(WrongCreatePostTest.java:45)
-
-withWrongEmail(WrongChangeUserInfoTest)  Time elapsed: 0.212 sec  <<< FAILURE!
+withWrongEmail(WrongChangeUserInfoTest)  Time elapsed: 0.221 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	Wrong "success" expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
 	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:76)
 
-withoutToken(WrongChangeUserInfoTest)  Time elapsed: 0.34 sec  <<< FAILURE!
+withoutToken(WrongChangeUserInfoTest)  Time elapsed: 0.188 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
 	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:53)
 
-emptyEmailAndPassword(WrongLoginTest)  Time elapsed: 0.191 sec  <<< FAILURE!
+emptyEmailAndPassword(WrongLoginTest)  Time elapsed: 0.19 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:246)
+	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:245)
 
-emptyPassword(WrongLoginTest)  Time elapsed: 0.323 sec  <<< FAILURE!
+incorrectEmail1(WrongLoginTest)  Time elapsed: 0.205 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyPassword(WrongLoginTest.java:221)
+	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:49)
 
-incorrectEmail1(WrongLoginTest)  Time elapsed: 0.209 sec  <<< FAILURE!
+incorrectEmail2(WrongLoginTest)  Time elapsed: 0.187 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:73)
+
+incorrectEmail3(WrongLoginTest)  Time elapsed: 0.188 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:98)
+
+incorrectEmail4(WrongLoginTest)  Time elapsed: 0.185 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:124)
+
+incorrectEmail5(WrongLoginTest)  Time elapsed: 0.201 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:148)
+
+withoutEmail(WrongLoginTest)  Time elapsed: 0.189 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongLoginTest.withoutEmail(WrongLoginTest.java:291)
+
+withoutEmailAndPassword(WrongLoginTest)  Time elapsed: 0.185 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false],
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:50)
+	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:315)
 
-incorrectEmail2(WrongLoginTest)  Time elapsed: 0.203 sec  <<< FAILURE!
+getUserPostWithPageEqual0(WrongGetUserPostTest)  Time elapsed: 0.194 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
+	Wrong "success" expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:74)
+	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:109)
 
-incorrectEmail3(WrongLoginTest)  Time elapsed: 0.196 sec  <<< FAILURE!
+getUserPostWithPerPageEqual0(WrongGetUserPostTest)  Time elapsed: 0.196 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
+	Wrong "success" expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:99)
+	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:138)
 
-incorrectEmail4(WrongLoginTest)  Time elapsed: 0.198 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:125)
-
-incorrectEmail5(WrongLoginTest)  Time elapsed: 0.33 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:149)
-
-userDoesNotExist(WrongLoginTest)  Time elapsed: 0.201 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.userDoesNotExist(WrongLoginTest.java:173)
-
-withoutEmail(WrongLoginTest)  Time elapsed: 0.184 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.withoutEmail(WrongLoginTest.java:292)
-
-withoutEmailAndPassword(WrongLoginTest)  Time elapsed: 0.187 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:316)
-
-getUserPostWithPageEqual0(WrongGetUserPostTest)  Time elapsed: 0.199 sec  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "java.util.List.contains(Object)" because "codes" is null
-	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:105)
-
-getUserPostWithPerPageEqual0(WrongGetUserPostTest)  Time elapsed: 0.21 sec  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "java.util.List.contains(Object)" because "codes" is null
-	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:129)
-
-getUserPostWithoutPage(WrongGetUserPostTest)  Time elapsed: 0.202 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	Wrong "success" expected [true] but found [false],
-	Wrong "success" expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:37)
-
-getUserPostWithoutPerPage(WrongGetUserPostTest)  Time elapsed: 0.188 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	Wrong "success" expected [true] but found [false],
-	Wrong "success" expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:60)
-
-getUserPostWithoutToken(WrongGetUserPostTest)  Time elapsed: 0.19 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	Wrong "success" expected [true] but found [false],
-	Wrong "success" expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutToken(WrongGetUserPostTest.java:83)
-
-getPostWithPageEqual0(WrongGetPostTest)  Time elapsed: 0.188 sec  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "java.util.List.contains(Object)" because "codes" is null
-	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:77)
-
-getPostWithPerPageEqual0(WrongGetPostTest)  Time elapsed: 0.187 sec  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "java.util.List.contains(Object)" because "codes" is null
-	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:99)
-
-getPostWithoutPage(WrongGetPostTest)  Time elapsed: 0.185 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	Wrong "success" expected [true] but found [false],
-	Wrong "success" expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:36)
-
-getPostWithoutPerPage(WrongGetPostTest)  Time elapsed: 0.179 sec  <<< FAILURE!
-java.lang.AssertionError: The following asserts failed:
-	Wrong "success" expected [true] but found [false],
-	Wrong "success" expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false],
-	"codes" does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:57)
-
-regWithoutPassword(WrongRegistrationTest)  Time elapsed: 0.19 sec  <<< FAILURE!
+getUserPostWithoutPage(WrongGetUserPostTest)  Time elapsed: 0.197 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongRegistrationTest.regWithoutPassword(WrongRegistrationTest.java:121)
+	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:35)
 
-regWithoutRole(WrongRegistrationTest)  Time elapsed: 0.194 sec  <<< FAILURE!
+getUserPostWithoutPerPage(WrongGetUserPostTest)  Time elapsed: 0.203 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:139)
+	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:58)
 
-getPostWithoutPageTest(WrongGetSpecificPostTest)  Time elapsed: 0.184 sec  <<< FAILURE!
+getPostWithPageEqual0(WrongGetPostTest)  Time elapsed: 0.202 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	Wrong "success" expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:88)
+
+getPostWithPerPageEqual0(WrongGetPostTest)  Time elapsed: 0.201 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	Wrong "success" expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:118)
+
+getPostWithoutPage(WrongGetPostTest)  Time elapsed: 0.244 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:37)
+
+getPostWithoutPerPage(WrongGetPostTest)  Time elapsed: 0.203 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:60)
+
+regWithEmptyPassword(WrongRegistrationTest)  Time elapsed: 0.291 sec  <<< FAILURE!
+java.lang.AssertionError: 1 expectation failed.
+Expected status code <400> but was <200>.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)
+	at jdk.internal.reflect.GeneratedMethodAccessor177.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)
+	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
+	at Methods.wrongRegistration(Methods.java:47)
+	at WrongRegistrationTest.regWithEmptyPassword(WrongRegistrationTest.java:173)
+
+regWithExistingEmail(WrongRegistrationTest)  Time elapsed: 0.169 sec  <<< FAILURE!
+java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <400>.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)
+	at jdk.internal.reflect.GeneratedMethodAccessor177.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)
+	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
+	at Methods.registration(Methods.java:36)
+	at WrongRegistrationTest.regWithExistingEmail(WrongRegistrationTest.java:245)
+
+regWithoutEmail(WrongRegistrationTest)  Time elapsed: 0.187 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongRegistrationTest.regWithoutEmail(WrongRegistrationTest.java:127)
+
+regWithoutRole(WrongRegistrationTest)  Time elapsed: 0.184 sec  <<< FAILURE!
+java.lang.AssertionError: The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:235)
+
+getPostWithoutPageTest(WrongGetSpecificPostTest)  Time elapsed: 0.263 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
 	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
 
-getPostWithoutPerPageTest(WrongGetSpecificPostTest)  Time elapsed: 0.206 sec  <<< FAILURE!
+getPostWithoutPerPageTest(WrongGetSpecificPostTest)  Time elapsed: 0.191 sec  <<< FAILURE!
 java.lang.AssertionError: The following asserts failed:
 	"codes" does not contain correct error code expected [true] but found [false],
 	"codes" does not contain correct error code expected [true] but found [false]

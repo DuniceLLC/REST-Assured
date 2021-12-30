@@ -13,7 +13,6 @@ public class AllNewsPageGetTest {
     int page = 1;
     int perPage = 7;
 
-    Routes routes = new Routes();
     SoftAssert softAssert = new SoftAssert();
 
     @Epic("News-controller")

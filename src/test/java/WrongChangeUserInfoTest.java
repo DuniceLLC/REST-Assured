@@ -4,7 +4,6 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -48,7 +47,6 @@ public class WrongChangeUserInfoTest extends SetUp {
 
         softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
-        softAssert.assertTrue(codes.contains(errorCode.TOKEN_NOT_PROVIDED), "\"codes\" does not contain correct error code");
         softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }

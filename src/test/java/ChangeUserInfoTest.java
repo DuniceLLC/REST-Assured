@@ -4,12 +4,10 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class ChangeUserInfoTest extends SetUp {
     String avatarPathForChange = "src/main/resources/avatar-2.jpeg";
     String avatar = Methods.uploadFile(avatarPathForChange).jsonPath().getString("data");
-    SoftAssert softAssert = new SoftAssert();
 
     @Epic("User-controller")
     @Feature("Change user info")

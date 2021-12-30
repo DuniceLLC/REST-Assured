@@ -4,12 +4,10 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import java.util.List;
 import static io.restassured.RestAssured.*;
 
 public class GetUserInfoTest extends SetUp {
-    SoftAssert softAssert = new SoftAssert();
 
     @Epic("User-controller")
     @Feature("Get user info")

@@ -4,7 +4,6 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class DeletePostTest extends SetUp {
     String imagePath = "src/main/resources/postPicture.jpeg";
@@ -14,8 +13,6 @@ public class DeletePostTest extends SetUp {
     String[] tags = {Methods.generateRandomHexString(5)};
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image, tags, title);
-
-    SoftAssert softAssert = new SoftAssert();
 
     @Epic("News-controller")
     @Feature("Delete news")

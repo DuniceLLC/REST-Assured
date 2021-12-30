@@ -4,10 +4,8 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class CreatePostTest extends SetUp {
-    SoftAssert softAssert = new SoftAssert();
 
     @Epic("News-controller")
     @Feature("Create news")

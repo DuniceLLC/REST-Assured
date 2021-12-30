@@ -17,7 +17,6 @@ public class DeleteUserTest {
     String correctRole = "user";
     String emptyToken = "";
 
-    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode =new ErrorCode();
 
     @Epic("User-controller")
@@ -26,6 +25,7 @@ public class DeleteUserTest {
     @Description(value = "Checking user deletion")
     @Test
     public void deleteUser() {
+        SoftAssert softAssert = new SoftAssert();
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
         Response response = Methods.registration(user);
 
@@ -45,6 +45,7 @@ public class DeleteUserTest {
     @Description(value = "Checking correct response")
     @Test
     public void deleteWithEmptyToken() {
+        SoftAssert softAssert = new SoftAssert();
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
         String token = Methods.registration(user).jsonPath().getString("data.token");
 
@@ -70,6 +71,7 @@ public class DeleteUserTest {
     @Description(value = "Checking correct response")
     @Test
     public void deleteWithoutToken() {
+        SoftAssert softAssert = new SoftAssert();
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
         String token = Methods.registration(user).jsonPath().getString("data.token");
 

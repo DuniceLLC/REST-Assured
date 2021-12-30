@@ -11,18 +11,19 @@
           <include name="withoutEmail"/>
           <include name="incorrectEmail3"/>
           <include name="incorrectEmail4"/>
-          <include name="userDoesNotExist"/>
           <include name="incorrectEmail1"/>
           <include name="withoutEmailAndPassword"/>
           <include name="reg"/>
-          <include name="emptyPassword"/>
           <include name="incorrectEmail5"/>
         </methods>
       </class> <!-- WrongLoginTest -->
       <class name="WrongRegistrationTest">
         <methods>
-          <include name="regWithoutPassword"/>
+          <include name="createSoftAssert"/>
           <include name="regWithoutRole"/>
+          <include name="regWithoutEmail"/>
+          <include name="regWithEmptyPassword"/>
+          <include name="regWithExistingEmail"/>
         </methods>
       </class> <!-- WrongRegistrationTest -->
       <class name="WrongGetUserPostTest">
@@ -30,7 +31,6 @@
           <include name="getUserPostWithPageEqual0"/>
           <include name="delete"/>
           <include name="getUserPostWithPerPageEqual0"/>
-          <include name="getUserPostWithoutToken"/>
           <include name="reg"/>
           <include name="createPost"/>
           <include name="getUserPostWithoutPage"/>
@@ -48,12 +48,8 @@
       <class name="WrongCreatePostTest">
         <methods>
           <include name="delete"/>
-          <include name="createPostWithEmptyTitle"/>
           <include name="createPostWithEmptyImage"/>
-          <include name="createPostWithoutImage"/>
           <include name="reg"/>
-          <include name="createPostWithoutDescription"/>
-          <include name="createPostWithoutTitle"/>
           <include name="createPostWithoutToken"/>
         </methods>
       </class> <!-- WrongCreatePostTest -->

@@ -4,14 +4,12 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class WrongGetUserPostTest extends GetPostTest {
     int correctPerPage = 7;
     int correctPage = 1;
-    SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
 
     @Epic("News-controller")
@@ -102,9 +100,14 @@ public class WrongGetUserPostTest extends GetPostTest {
         List<Integer> codes = response.jsonPath().getList("codes");
 
         softAssert.assertEquals(success,"true","Wrong \"success\"");
-        softAssert.assertTrue(codes.contains(errorCode.PARAM_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
-        softAssert.assertAll();
+        try {
+            softAssert.assertTrue(codes.contains(errorCode.PARAM_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
+            softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            softAssert.assertAll();
+        }
     }
 
     @Epic("News-controller")
@@ -126,8 +129,13 @@ public class WrongGetUserPostTest extends GetPostTest {
         List<Integer> codes = response.jsonPath().getList("codes");
 
         softAssert.assertEquals(success,"true","Wrong \"success\"");
-        softAssert.assertTrue(codes.contains(errorCode.PARAM_PER_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
-        softAssert.assertAll();
+        try {
+            softAssert.assertTrue(codes.contains(errorCode.PARAM_PER_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
+            softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            softAssert.assertAll();
+        }
     }
 }

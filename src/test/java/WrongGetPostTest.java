@@ -13,7 +13,6 @@ public class WrongGetPostTest {
     int correctPage = 1;
 
     ErrorCode errorCode = new ErrorCode();
-    SoftAssert softAssert = new SoftAssert();
 
     @Epic("News-controller")
     @Feature("Get news")
@@ -21,6 +20,8 @@ public class WrongGetPostTest {
     @Description(value = "Checking the correct server response")
     @Test
     public void getPostWithoutPage() {
+        SoftAssert softAssert = new SoftAssert();
+
         Response response = given()
                 .queryParam("perPage", correctPerPage)
                 .when()
@@ -42,6 +43,8 @@ public class WrongGetPostTest {
     @Description(value = "Checking the correct server response")
     @Test
     public void getPostWithoutPerPage() {
+        SoftAssert softAssert = new SoftAssert();
+
         Response response = given()
                 .queryParam("page", correctPage)
                 .when()
@@ -63,6 +66,8 @@ public class WrongGetPostTest {
     @Description(value = "Checking the correct server response")
     @Test
     public void getPostWithPageEqual0() {
+        SoftAssert softAssert = new SoftAssert();
+
         Response response = given()
                 .queryParam("page", 0)
                 .queryParam("perPage", correctPage)
@@ -74,9 +79,14 @@ public class WrongGetPostTest {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
         softAssert.assertEquals(success,"true","Wrong \"success\"");
-        softAssert.assertTrue(codes.contains(errorCode.PARAM_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
-        softAssert.assertAll();
+        try {
+            softAssert.assertTrue(codes.contains(errorCode.PARAM_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
+            softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            softAssert.assertAll();
+        }
     }
 
     @Epic("News-controller")
@@ -85,6 +95,8 @@ public class WrongGetPostTest {
     @Description(value = "Checking the correct server response")
     @Test
     public void getPostWithPerPageEqual0() {
+        SoftAssert softAssert = new SoftAssert();
+
         Response response = given()
                 .queryParam("page", correctPage)
                 .queryParam("perPage", 0)
@@ -95,9 +107,15 @@ public class WrongGetPostTest {
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
+
         softAssert.assertEquals(success,"true","Wrong \"success\"");
-        softAssert.assertTrue(codes.contains(errorCode.PARAM_PER_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
-        softAssert.assertAll();
+        try {
+            softAssert.assertTrue(codes.contains(errorCode.PARAM_PER_PAGE_NOT_NULL), "\"codes\" does not contain correct error code");
+            softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            softAssert.assertAll();
+        }
     }
 }

@@ -7,9 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-
 public class GetPostTest extends SetUp {
-    SoftAssert softAssert = new SoftAssert();
     String description = Methods.generateRandomHexString(5);
     String imagePath = "src/main/resources/postPicture.jpeg";
     String image = Methods.uploadFile(imagePath).jsonPath().getString("data");
@@ -22,6 +20,7 @@ public class GetPostTest extends SetUp {
 
     @BeforeMethod
     public void createPost() {
+        SoftAssert softAssert = new SoftAssert();
         author = response.jsonPath().getString("data.name");
         userId = response.jsonPath().getString("data.id");
         userName = response.jsonPath().getString("data.name");
