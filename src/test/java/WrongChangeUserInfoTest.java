@@ -20,7 +20,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     String newCorrectName = Methods.generateRandomHexString(6);
     String newCorrectRole = Methods.generateRandomHexString(6);
     String avatarPath = "src/main/resources/avatar.jpeg";
-    String newAvatar = Methods.uploadFile(avatarPath).jsonPath().getString("data");
+    String newAvatar = methods.uploadFile(avatarPath).jsonPath().getString("data");
 
     String emptyEmail = "";
     String emptyName = "";
@@ -37,7 +37,7 @@ public class WrongChangeUserInfoTest extends SetUp {
                 .spec(Specifications.setContentType())
                 .body(userNewData)
                 .when()
-                .put(Routes.user)
+                .put(routes.getUser())
                 .then().assertThat()
                 .spec(Specifications.checkStatusCode401AndContentType())
                 .extract().response();
@@ -59,7 +59,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withWrongEmail() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(wrongEmail).name(newCorrectName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -82,7 +82,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withWrongName() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(wrongName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -101,7 +101,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withEmptyEmail() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(emptyEmail).name(newCorrectName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -120,7 +120,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withEmptyName() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(emptyName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -139,7 +139,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withoutAvatar() {
 
         Register userNewData = Register.builder().email(newCorrectEmail).name(newCorrectName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -158,7 +158,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withoutName() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -177,7 +177,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withoutEmail() {
 
         Register userNewData = Register.builder().avatar(newAvatar).name(newCorrectName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -196,7 +196,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withoutRole() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(newCorrectEmail).name(newCorrectName).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -215,7 +215,7 @@ public class WrongChangeUserInfoTest extends SetUp {
     public void withEmptyEmailName() {
 
         Register userNewData = Register.builder().avatar(newAvatar).email(emptyEmail).name(emptyName).role(newCorrectRole).build();
-        Response response = Methods.wrongChangeUserInfo(token, userNewData);
+        Response response = methods.wrongChangeUserInfo(token, userNewData);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");

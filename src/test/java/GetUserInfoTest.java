@@ -22,7 +22,7 @@ public class GetUserInfoTest extends SetUp {
         String role = response.jsonPath().getString("data.role");
 
         Response responseInfo =
-                get(Routes.user + "/" + id)
+                get(routes.getUser() + "/" + id)
                         .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                         .extract().response();
 
@@ -52,7 +52,7 @@ public class GetUserInfoTest extends SetUp {
     public void getUsers() {
         Response response =given()
                 .header("Authorization", token)
-                .get(Routes.user)
+                .get(routes.getUser())
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
 

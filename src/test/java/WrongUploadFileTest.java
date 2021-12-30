@@ -11,6 +11,7 @@ import static io.restassured.RestAssured.given;
 public class WrongUploadFileTest {
     SoftAssert softAssert = new SoftAssert();
     ErrorCode errorCode = new ErrorCode();
+    Routes routes = new Routes();
 
     @Epic("File-controller")
     @Feature("Upload file")
@@ -19,7 +20,7 @@ public class WrongUploadFileTest {
     @Test
     public void uploadFileWithNonFormDataTest() {
         Response response = given()
-                .when().post(Routes.file)
+                .when().post(routes.getFile())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
 

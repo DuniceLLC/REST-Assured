@@ -8,6 +8,7 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class WrongGetUserPostTest extends GetPostTest {
+    Routes routes = new Routes();
     int correctPerPage = 7;
     int correctPage = 1;
     ErrorCode errorCode = new ErrorCode();
@@ -21,7 +22,7 @@ public class WrongGetUserPostTest extends GetPostTest {
         Response responseAfterGetPost = given()
                 .header("Authorization", token)
                 .queryParam("perPage", correctPerPage)
-                .get(Routes.news + "/user/" + userId)
+                .get(routes.getNews() + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
 
@@ -44,7 +45,7 @@ public class WrongGetUserPostTest extends GetPostTest {
         Response responseAfterGetPost = given()
                 .header("Authorization", token)
                 .queryParam("page", correctPage)
-                .get(Routes.news + "/user/" + userId)
+                .get(routes.getNews() + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
 
@@ -67,7 +68,7 @@ public class WrongGetUserPostTest extends GetPostTest {
         Response responseAfterGetPost = given()
                 .queryParam("page", correctPage)
                 .queryParam("perPage", correctPerPage)
-                .get(Routes.news + "/user/" + userId)
+                .get(routes.getNews() + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode401AndContentType())
                 .extract().response();
 
@@ -92,7 +93,7 @@ public class WrongGetUserPostTest extends GetPostTest {
                 .queryParam("page", 0)
                 .queryParam("perPage", correctPage)
                 .when()
-                .get(Routes.news + "/user/" + userId)
+                .get(routes.getNews() + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -121,7 +122,7 @@ public class WrongGetUserPostTest extends GetPostTest {
                 .queryParam("page", correctPage)
                 .queryParam("perPage", 0)
                 .when()
-                .get(Routes.news + "/user/" + userId)
+                .get(routes.getNews() + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");

@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: SuccessAuthorizationTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 10.031 s <<< FAILURE! - in SuccessAuthorizationTest
+SuccessAuthorizationTest.reg  Time elapsed: 9.802 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+

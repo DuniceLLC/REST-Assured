@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 public class GetFileTest {
+    Routes routes = new Routes();
+    Methods methods = new Methods();
 
     @Epic("File-controller")
     @Feature("Get file")
@@ -16,10 +18,10 @@ public class GetFileTest {
     @Test
     public void getFileTest() {
         String imagePath = "src/main/resources/postPicture.jpeg";
-        String fileName = Methods.uploadFile(imagePath).jsonPath().getString("data").split("/")[6];
+        String fileName = methods.uploadFile(imagePath).jsonPath().getString("data").split("/")[6];
         Response response = given()
                 .when()
-                .get(Routes.getFile + fileName)
+                .get(routes.getGetFile() + fileName)
                 .then().assertThat()
                 .extract().response();
 

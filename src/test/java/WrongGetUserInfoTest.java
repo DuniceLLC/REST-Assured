@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.*;
 
 public class WrongGetUserInfoTest {
     SoftAssert softAssert = new SoftAssert();
+    Routes routes = new Routes();
     ErrorCode errorCode = new ErrorCode();
     String wrongUserId = Methods.generateRandomHexString(8) + "-" +
             Methods.generateRandomHexString(4) + "-" +
@@ -23,7 +24,7 @@ public class WrongGetUserInfoTest {
     @Description(value = "Checking the correct server response")
     @Test
     public void withWrongUserId() {
-        Response response = get(Routes.user + "/" + wrongUserId)
+        Response response = get(routes.getUser() + "/" + wrongUserId)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
         String success = response.jsonPath().getString("success");

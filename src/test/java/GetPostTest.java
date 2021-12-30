@@ -10,7 +10,7 @@ import org.testng.asserts.SoftAssert;
 public class GetPostTest extends SetUp {
     String description = Methods.generateRandomHexString(5);
     String imagePath = "src/main/resources/postPicture.jpeg";
-    String image = Methods.uploadFile(imagePath).jsonPath().getString("data");
+    String image = methods.uploadFile(imagePath).jsonPath().getString("data");
     String[] tags = {Methods.generateRandomHexString(5)};
     String title = Methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image, tags, title);
@@ -24,7 +24,7 @@ public class GetPostTest extends SetUp {
         author = response.jsonPath().getString("data.name");
         userId = response.jsonPath().getString("data.id");
         userName = response.jsonPath().getString("data.name");
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
     }
 
     @Epic("News-controller")
@@ -33,7 +33,7 @@ public class GetPostTest extends SetUp {
     @Description(value = "Get news check")
     @Test
     public void getPostTest() {
-        Response responseGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseGetPost = methods.getPost(author, description, 1, 1, tags);
 
         int id = responseGetPost.jsonPath().getInt("content[0].id");
         String titleGetPost = responseGetPost.jsonPath().getString("content[0].title");
@@ -61,7 +61,7 @@ public class GetPostTest extends SetUp {
     @Description(value = "Get user news check")
     @Test
     public void getUserPostTest() {
-        Response responseGetUserPost = Methods.getUserPost(1, 1, userId, token);
+        Response responseGetUserPost = methods.getUserPost(1, 1, userId, token);
 
         String description = responseGetUserPost.jsonPath().getString("data.content[0].description");
         int id = responseGetUserPost.jsonPath().getInt("data.content[0].id");

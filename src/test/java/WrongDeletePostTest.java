@@ -4,13 +4,13 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+
 import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class WrongDeletePostTest extends SetUp {
     String imagePath = "src/main/resources/postPicture.jpeg";
-    String image = Methods.uploadFile(imagePath).jsonPath().getString("data");
+    String image = methods.uploadFile(imagePath).jsonPath().getString("data");
     int wrongId = 0;
 
     String description = Methods.generateRandomHexString(5);
@@ -26,10 +26,10 @@ public class WrongDeletePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void deletePostTestWithWrongId() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         Response responseAfterDeletePost = given()
                 .header("Authorization", token)
-                .when().delete(Routes.news + "/" + wrongId)
+                .when().delete(routes.getNews() + "/" + wrongId)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
 
@@ -48,12 +48,12 @@ public class WrongDeletePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void deletePostTestWithoutToken() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
         Response responseAfterDeletePost = given()
-                .when().delete(Routes.news + "/" + postId)
+                .when().delete(routes.getNews() + "/" + postId)
                 .then().assertThat().spec(Specifications.checkStatusCode401AndContentType())
                 .extract().response();
 

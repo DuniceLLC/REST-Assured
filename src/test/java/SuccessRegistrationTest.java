@@ -13,6 +13,7 @@ public class SuccessRegistrationTest {
     String correctName = Methods.generateRandomHexString(5);
     String correctRole = "user";
 
+    Methods methods = new Methods();
     SoftAssert softAssert = new SoftAssert();
 
     @Epic("Auth-controller")
@@ -22,7 +23,7 @@ public class SuccessRegistrationTest {
     @Test
     public void registrationTest() {
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
-        Response response = Methods.registration(user);
+        Response response = methods.registration(user);
 
         int customStatusCode = response.jsonPath().getInt("statusCode");
         String success = response.jsonPath().getString("success");
@@ -42,6 +43,6 @@ public class SuccessRegistrationTest {
         softAssert.assertEquals(correctName,name, "Wrong \"name\"");
         softAssert.assertEquals(customStatusCode,1, "Wrong \"statusCode\"");
         softAssert.assertAll();
-        Methods.deleteUser(token);
+        methods.deleteUser(token);
     }
 }

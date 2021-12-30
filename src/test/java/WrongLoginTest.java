@@ -7,7 +7,6 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import java.util.List;
 
 public class WrongLoginTest extends SetUp {
@@ -15,15 +14,15 @@ public class WrongLoginTest extends SetUp {
     JSONObject requestBody = new JSONObject();
     RequestSpecification request = RestAssured.given();
 
-    String wrongEmail1 = Methods.generateRandomHexString(5);
-    String wrongEmail2 = Methods.generateRandomHexString(5) + "@";
-    String wrongEmail3 = Methods.generateRandomHexString(5) + "@email";
-    String wrongEmail4 = Methods.generateRandomHexString(5) + "@email.";
-    String wrongEmail5 = Methods.generateRandomHexString(5) + "@email.c";
+    String wrongEmail1 = methods.generateRandomHexString(5);
+    String wrongEmail2 = methods.generateRandomHexString(5) + "@";
+    String wrongEmail3 = methods.generateRandomHexString(5) + "@email";
+    String wrongEmail4 = methods.generateRandomHexString(5) + "@email.";
+    String wrongEmail5 = methods.generateRandomHexString(5) + "@email.c";
     String emptyEmail = "";
     String emptyPassword = "";
-    String password = Methods.generateRandomHexString(6);
-    String randomEmail = Methods.generateRandomHexString(5) + "@gmail.com";
+    String password = methods.generateRandomHexString(6);
+    String randomEmail = methods.generateRandomHexString(5) + "@gmail.com";
 
     @Epic("Auth-controller")
     @Feature("Login")
@@ -36,7 +35,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then()
                 .assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
         String success = response.jsonPath().getString("success");
@@ -60,7 +59,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then()
                 .assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
         String success = response.jsonPath().getString("success");
@@ -84,7 +83,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then()
                 .assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
@@ -111,7 +110,7 @@ public class WrongLoginTest extends SetUp {
         request.body(requestBody.toString());
 
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -135,7 +134,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -159,7 +158,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -183,7 +182,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -207,7 +206,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -231,7 +230,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -255,7 +254,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -278,7 +277,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -301,7 +300,7 @@ public class WrongLoginTest extends SetUp {
         request.header("Content-Type", "application/json");
         request.body(requestBody.toString());
         Response response = request
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");

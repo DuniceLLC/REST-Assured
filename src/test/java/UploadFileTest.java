@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 public class UploadFileTest {
     SoftAssert softAssert = new SoftAssert();
+    Methods methods = new Methods();
 
     @Epic("File-controller")
     @Feature("Upload file")
@@ -15,7 +16,7 @@ public class UploadFileTest {
     @Description(value = "File upload check")
     @Test
     public void uploadFileTest() {
-        Response response = Methods.uploadFile("src/main/resources/postPicture.jpeg");
+        Response response = methods.uploadFile("src/main/resources/postPicture.jpeg");
 
         String image = response.jsonPath().getString("data");
         String success = response.jsonPath().getString("success");

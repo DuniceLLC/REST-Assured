@@ -17,7 +17,9 @@ public class DeleteUserTest {
     String correctRole = "user";
     String emptyToken = "";
 
-    ErrorCode errorCode =new ErrorCode();
+    ErrorCode errorCode = new ErrorCode();
+    Methods methods = new Methods();
+    Routes routes = new Routes();
 
     @Epic("User-controller")
     @Feature("Delete user")
@@ -27,15 +29,15 @@ public class DeleteUserTest {
     public void deleteUser() {
         SoftAssert softAssert = new SoftAssert();
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
-        Response response = Methods.registration(user);
+        Response response = methods.registration(user);
 
         String token = response.jsonPath().getString("data.token");
-        Response responseDelete = Methods.deleteUser(token);
+        Response responseDelete = methods.deleteUser(token);
         int customStatusCode = responseDelete.jsonPath().getInt("statusCode");
         String success = responseDelete.jsonPath().getString("success");
 
-        softAssert.assertEquals(success,"true","Wrong \"success\"");
-        softAssert.assertEquals(customStatusCode,1,"Wrong \"statusCode\"");
+        softAssert.assertEquals(success, "true", "Wrong \"success\"");
+        softAssert.assertEquals(customStatusCode, 1, "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
 
@@ -47,22 +49,22 @@ public class DeleteUserTest {
     public void deleteWithEmptyToken() {
         SoftAssert softAssert = new SoftAssert();
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
-        String token = Methods.registration(user).jsonPath().getString("data.token");
+        String token = methods.registration(user).jsonPath().getString("data.token");
 
         Response responseDelete = given()
                 .header("Authorization", emptyToken)
-                .delete(Routes.user)
+                .delete(routes.getUser())
                 .then().assertThat().spec(Specifications.checkStatusCode401AndContentType()).extract().response();
 
         int customStatusCode = responseDelete.jsonPath().getInt("statusCode");
         String success = responseDelete.jsonPath().getString("success");
         List<Integer> codes = responseDelete.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
+        softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
-        Methods.deleteUser(token);
+        methods.deleteUser(token);
     }
 
     @Epic("User-controller")
@@ -73,20 +75,20 @@ public class DeleteUserTest {
     public void deleteWithoutToken() {
         SoftAssert softAssert = new SoftAssert();
         Register user = new Register(avatarPath, correctEmail, correctName, correctPassword, correctRole);
-        String token = Methods.registration(user).jsonPath().getString("data.token");
+        String token = methods.registration(user).jsonPath().getString("data.token");
 
         Response responseDelete =
-                delete(Routes.user)
-                .then().assertThat().spec(Specifications.checkStatusCode401AndContentType()).extract().response();
+                delete(routes.getUser())
+                        .then().assertThat().spec(Specifications.checkStatusCode401AndContentType()).extract().response();
 
         int customStatusCode = responseDelete.jsonPath().getInt("statusCode");
         String success = responseDelete.jsonPath().getString("success");
         List<Integer> codes = responseDelete.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success,"true","Wrong \"success\"");
+        softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
-        softAssert.assertEquals(customStatusCode,codes.get(0).intValue(),"Wrong \"statusCode\"");
+        softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
-        Methods.deleteUser(token);
+        methods.deleteUser(token);
     }
 }

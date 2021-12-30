@@ -11,21 +11,22 @@ import java.util.List;
 
 public class WrongRegistrationTest {
     SoftAssert softAssert;
+    Methods methods = new Methods();
     ErrorCode errorCode = new ErrorCode();
-    String correctEmail = Methods.generateRandomHexString(5) + "@gmail.com";
-    String correctName = Methods.generateRandomHexString(5);
-    String correctRole = Methods.generateRandomHexString(5);
-    String correctPassword = Methods.generateRandomHexString(6);
+    String correctEmail = methods.generateRandomHexString(5) + "@gmail.com";
+    String correctName = methods.generateRandomHexString(5);
+    String correctRole = methods.generateRandomHexString(5);
+    String correctPassword = methods.generateRandomHexString(6);
     String avatarPath = "src/main/resources/avatar.jpeg";
-    String avatar = Methods.uploadFile(avatarPath).jsonPath().getString("data");
+    String avatar = methods.uploadFile(avatarPath).jsonPath().getString("data");
 
     String emptyRole = "";
     String emptyAvatar = "";
     String emptyEmail = "";
     String emptyName = "";
     String emptyPassword = "";
-    String wrongName = Methods.generateRandomHexString(101);
-    String wrongRole = Methods.generateRandomHexString(2);
+    String wrongName = methods.generateRandomHexString(101);
+    String wrongRole = methods.generateRandomHexString(2);
 
     @BeforeMethod
     public void createSoftAssert() {
@@ -39,7 +40,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithEmptyAllFields() {
         Register user = new Register(emptyAvatar, emptyEmail, emptyName, emptyPassword, emptyRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -59,7 +60,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithNullAllFields() {
         Register user = new Register(null, null, null, null, null);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -80,7 +81,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithEmptyEmail() {
         Register user = new Register(avatar, emptyEmail, correctName, correctPassword, correctRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -98,7 +99,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithoutAvatar() {
         Register user = Register.builder().email(correctEmail).name(correctName).password(correctPassword).role(correctRole).build();
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -116,7 +117,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithoutEmail() {
         Register user = Register.builder().avatar(avatar).name(correctName).password(correctPassword).role(correctRole).build();
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -134,7 +135,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithEmptyName() {
         Register user = new Register(avatar, correctEmail, emptyName, correctPassword, correctRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -152,7 +153,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithoutName() {
         Register user = Register.builder().avatar(avatar).email(correctEmail).password(correctPassword).role(correctRole).build();
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -170,7 +171,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithEmptyPassword() {
         Register user = new Register(avatar, correctEmail, correctName, emptyPassword, correctRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -188,7 +189,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithoutPassword() {
         Register user = Register.builder().avatar(avatar).email(correctEmail).name(correctName).role(correctRole).build();
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -206,7 +207,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithEmptyRole() {
         Register user = new Register(avatar, correctEmail, correctName, correctPassword, emptyRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -224,7 +225,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithoutRole() {
         Register user = Register.builder().avatar(avatar).email(correctEmail).name(correctName).password(correctPassword).build();
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -242,8 +243,8 @@ public class WrongRegistrationTest {
     @Test
     public void regWithExistingEmail() {
         Register user = new Register(avatar, correctEmail, correctName, correctPassword, correctRole);
-        Methods.registration(user);
-        Response response2 = Methods.wrongRegistration(user);
+        methods.registration(user);
+        Response response2 = methods.wrongRegistration(user);
         String success = response2.jsonPath().getString("success");
         int customStatusCode = response2.jsonPath().getInt("statusCode");
         List<Integer> codes = response2.jsonPath().getList("codes");
@@ -261,7 +262,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithWrongName() {
         Register user = new Register(avatar, correctEmail, wrongName, correctPassword, correctRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
@@ -279,7 +280,7 @@ public class WrongRegistrationTest {
     @Test
     public void regWithWrongRole() {
         Register user = new Register(avatar, correctEmail, correctName, correctPassword, wrongRole);
-        Response response = Methods.wrongRegistration(user);
+        Response response = methods.wrongRegistration(user);
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");

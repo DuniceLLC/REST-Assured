@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.is;
 
 public class AllNewsPageGetTest {
+    Routes routes = new Routes();
     int page = 1;
     int perPage = 7;
 
@@ -25,7 +26,7 @@ public class AllNewsPageGetTest {
                 .queryParam("page", page)
                 .queryParam("perPage", perPage)
                 .when()
-                .get(Routes.news)
+                .get(routes.getNews())
                 .then().assertThat().statusCode(200)
                 .and().body("success", is(true))
                 .and().body("statusCode", is(1))

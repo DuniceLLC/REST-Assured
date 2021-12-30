@@ -1,13 +1,10 @@
 import io.restassured.response.Response;
-
 import java.io.File;
 import java.util.Random;
-
 import static io.restassured.RestAssured.*;
 
 public class Methods {
     Routes routes = new Routes();
-
     public static String generateRandomHexString(int length) {
         Random r = new Random();
         StringBuffer sb = new StringBuffer();
@@ -17,151 +14,151 @@ public class Methods {
         return sb.toString().substring(0, length);
     }
 
-    public static Response deleteUser(String token) {
+    public Response deleteUser(String token) {
         return given()
                 .header("Authorization", token)
                 .when()
-                .delete(Routes.user)
+                .delete(routes.getUser())
                 .then().assertThat()
                 .statusCode(200).extract().response();
     }
 
-    public static Response registration(Object obj) {
+    public Response registration(Object obj) {
         return given()
                 .spec(Specifications.setContentType())
                 .body(obj)
                 .when()
-                .post(Routes.registration)
+                .post(routes.getRegistration())
                 .then().assertThat()
                 .spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response wrongRegistration(Object obj) {
+    public Response wrongRegistration(Object obj) {
         return given()
                 .spec(Specifications.setContentType())
                 .body(obj)
                 .when()
-                .post(Routes.registration)
+                .post(routes.getRegistration())
                 .then().assertThat()
                 .spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
     }
 
-    public static Response login(Object obj) {
+    public Response login(Object obj) {
         return given()
                 .spec(Specifications.setContentType())
                 .body(obj)
-                .post(Routes.login)
+                .post(routes.getLogin())
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response getPost(String author, String keywords, int page, int perPage, String[] tags) {
+    public Response getPost(String author, String keywords, int page, int perPage, String[] tags) {
         return given()
                 .queryParam("author", author)
                 .queryParam("keywords", keywords)
                 .queryParam("page", page)
                 .queryParam("perPage", perPage)
                 .queryParam("tags", tags)
-                .get(Routes.news + "/find")
+                .get(routes.getNews() + "/find")
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response getPostsWithPagination(int page, int perPage) {
+    public Response getPostsWithPagination(int page, int perPage) {
         return given()
                 .queryParam("page", page)
                 .queryParam("perPage", perPage)
-                .get(Routes.news)
+                .get(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType()).extract().response();
     }
 
-    public static Response getUserPost(int page, int perPage, String userId, String token) {
+    public Response getUserPost(int page, int perPage, String userId, String token) {
         return given()
                 .header("Authorization", token)
                 .queryParam("page", page)
                 .queryParam("perPage", perPage)
-                .get(Routes.news + "/user/" + userId)
+                .get(routes.getNews() + "/user/" + userId)
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response uploadFile(String path) {
+    public Response uploadFile(String path) {
         return given()
                 .multiPart(new File(path))
-                .when().post(Routes.file)
+                .when().post(routes.getFile())
                 .then().assertThat().statusCode(200)
                 .extract().response();
     }
 
-    public static Response createPost(String token, Object obj) {
+    public Response createPost(String token, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
-                .when().post(Routes.news)
+                .when().post(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response wrongCreatePost(String token, Object obj) {
+    public Response wrongCreatePost(String token, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
-                .when().post(Routes.news)
+                .when().post(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
     }
 
-    public static Response changePost(String token, int id, Object obj) {
+    public Response changePost(String token, int id, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
-                .when().put(Routes.news + "/" + id)
+                .when().put(routes.getNews() + "/" + id)
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response wrongChangePost(String token, int id, Object obj) {
+    public Response wrongChangePost(String token, int id, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
-                .when().put(Routes.news + "/" + id)
+                .when().put(routes.getNews() + "/" + id)
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
     }
 
-    public static Response deletePost(String token, int postId) {
+    public Response deletePost(String token, int postId) {
         return given()
                 .header("Authorization", token)
-                .when().delete(Routes.news + "/" + postId)
+                .when().delete(routes.getNews() + "/" + postId)
                 .then().assertThat().spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response changeUserInfo(String token, Object obj) {
+    public Response changeUserInfo(String token, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
                 .when()
-                .put(Routes.user)
+                .put(routes.getUser())
                 .then().assertThat()
                 .spec(Specifications.checkStatusCode200AndContentType())
                 .extract().response();
     }
 
-    public static Response wrongChangeUserInfo(String token, Object obj) {
+    public Response wrongChangeUserInfo(String token, Object obj) {
         return given()
                 .header("Authorization", token)
                 .spec(Specifications.setContentType())
                 .body(obj)
                 .when()
-                .put(Routes.user)
+                .put(routes.getUser())
                 .then().assertThat()
                 .spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();

@@ -13,6 +13,7 @@ public class WrongGetPostTest {
     int correctPage = 1;
 
     ErrorCode errorCode = new ErrorCode();
+    Routes routes = new Routes();
 
     @Epic("News-controller")
     @Feature("Get news")
@@ -25,7 +26,7 @@ public class WrongGetPostTest {
         Response response = given()
                 .queryParam("perPage", correctPerPage)
                 .when()
-                .get(Routes.news)
+                .get(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -48,7 +49,7 @@ public class WrongGetPostTest {
         Response response = given()
                 .queryParam("page", correctPage)
                 .when()
-                .get(Routes.news)
+                .get(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -72,7 +73,7 @@ public class WrongGetPostTest {
                 .queryParam("page", 0)
                 .queryParam("perPage", correctPage)
                 .when()
-                .get(Routes.news)
+                .get(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");
@@ -101,7 +102,7 @@ public class WrongGetPostTest {
                 .queryParam("page", correctPage)
                 .queryParam("perPage", 0)
                 .when()
-                .get(Routes.news)
+                .get(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType()).extract().response();
 
         String success = response.jsonPath().getString("success");

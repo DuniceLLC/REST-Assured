@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class ChangeUserInfoTest extends SetUp {
     String avatarPathForChange = "src/main/resources/avatar-2.jpeg";
-    String avatar = Methods.uploadFile(avatarPathForChange).jsonPath().getString("data");
+    String avatar = methods.uploadFile(avatarPathForChange).jsonPath().getString("data");
 
     @Epic("User-controller")
     @Feature("Change user info")
@@ -16,8 +16,8 @@ public class ChangeUserInfoTest extends SetUp {
     @Test
     public void changeUserInfoSuccess() {
         String idReg = response.jsonPath().getString("data.id");
-        String newEmail = Methods.generateRandomHexString(5) + "@gmail.com";
-        String newName = Methods.generateRandomHexString(5);
+        String newEmail = methods.generateRandomHexString(5) + "@gmail.com";
+        String newName = methods.generateRandomHexString(5);
 
         Register userNewData = Register.builder()
                 .avatar(avatar)
@@ -26,7 +26,7 @@ public class ChangeUserInfoTest extends SetUp {
                 .role(correctRole)
                 .build();
 
-        Response responseChange = Methods.changeUserInfo(token, userNewData);
+        Response responseChange = methods.changeUserInfo(token, userNewData);
 
         String success = responseChange.jsonPath().getString("success");
         String avatar = responseChange.jsonPath().getString("data.avatar");

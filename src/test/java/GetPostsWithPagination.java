@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class GetPostsWithPagination {
+    Methods methods = new Methods();
     SoftAssert softAssert = new SoftAssert();
     int perPage = 7;
 
@@ -16,7 +17,7 @@ public class GetPostsWithPagination {
     @Description(value = "Get news with pagination check")
     @Test
     public void getPostTest() {
-        Response response = Methods.getPostsWithPagination(1, perPage);
+        Response response = methods.getPostsWithPagination(1, perPage);
         int countPostsOnPage = response.jsonPath().getList("data.content").size();
         String success = response.jsonPath().getString("success");
         int customStatusCode = response.jsonPath().getInt("statusCode");

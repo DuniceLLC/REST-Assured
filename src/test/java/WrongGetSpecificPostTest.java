@@ -25,7 +25,7 @@ public class WrongGetSpecificPostTest extends GetPostTest {
                 .queryParam("keywords", description)
                 .queryParam("perPage", correctPerPage)
                 .queryParam("tags", tags)
-                .get(Routes.news + "/find")
+                .get(routes.getNews() + "/find")
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
 
@@ -49,7 +49,7 @@ public class WrongGetSpecificPostTest extends GetPostTest {
                 .queryParam("keywords", description)
                 .queryParam("page", correctPage)
                 .queryParam("tags", tags)
-                .get(Routes.news + "/find")
+                .get(routes.getNews() + "/find")
                 .then().assertThat().spec(Specifications.checkStatusCode400AndContentType())
                 .extract().response();
 

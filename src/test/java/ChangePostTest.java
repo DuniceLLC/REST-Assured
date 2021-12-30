@@ -9,11 +9,11 @@ public class ChangePostTest extends SetUp {
 
     String imagePath = "src/main/resources/postPicture.jpeg";
     String imagePathForChange = "src/main/resources/postPicture-2.jpeg";
-    String image1 = Methods.uploadFile(imagePath).jsonPath().getString("data");
+    String image1 = methods.uploadFile(imagePath).jsonPath().getString("data");
 
-    String description = Methods.generateRandomHexString(5);
-    String[] tags = {Methods.generateRandomHexString(5)};
-    String title = Methods.generateRandomHexString(5);
+    String description = methods.generateRandomHexString(5);
+    String[] tags = {methods.generateRandomHexString(5)};
+    String title = methods.generateRandomHexString(5);
     Post newsDto = new Post(description, image1, tags, title);
 
     @Epic("News-controller")
@@ -22,16 +22,16 @@ public class ChangePostTest extends SetUp {
     @Description(value = "Checking change news")
     @Test
     public void changePostTest() {
-        Methods.createPost(token, newsDto);
-        String image2 = Methods.uploadFile(imagePathForChange).jsonPath().getString("data");
+        methods.createPost(token, newsDto);
+        String image2 = methods.uploadFile(imagePathForChange).jsonPath().getString("data");
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
-        String newDescription = Methods.generateRandomHexString(5);
-        String[] newTags = {Methods.generateRandomHexString(5)};
-        String mewTitle = Methods.generateRandomHexString(5);
+        String newDescription = methods.generateRandomHexString(5);
+        String[] newTags = {methods.generateRandomHexString(5)};
+        String mewTitle = methods.generateRandomHexString(5);
         Post newDtoForChange = new Post(newDescription, image2, newTags, mewTitle);
-        Response responseAfterChangePost = Methods.changePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.changePost(token, postId, newDtoForChange);
 
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
         String success = responseAfterChangePost.jsonPath().getString("success");

@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 public class SuccessAuthorizationTest extends SetUp {
+    Methods methods = new Methods();
 
     @Epic("Auth-controller")
     @Feature("Login")
@@ -25,7 +26,7 @@ public class SuccessAuthorizationTest extends SetUp {
                 .email(correctEmail)
                 .password(correctPassword)
                 .build();
-        Response responseLogin = Methods.login(userLogin);
+        Response responseLogin = methods.login(userLogin);
 
         int loginCustomStatusCode = responseLogin.jsonPath().getInt("statusCode");
         String loginSuccess = responseLogin.jsonPath().getString("success");

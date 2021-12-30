@@ -1,419 +1,842 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="87" failures="26" name="TestSuite" time="25.802" errors="0" skipped="0">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="36.762" tests="218" errors="0" skipped="177" failures="33">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="17.0.1+0"/>
-    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/17.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/dunice/Projects/RestAssured"/>
-    <property name="java.vm.vendor" value="Homebrew"/>
-    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="path.separator" value=":"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="user.country" value="RU"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/dunice/Projects/RestAssured"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
-    <property name="java.runtime.version" value="17.0.1+0"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/vh/yn_xcpnx0cd6qwtfs_v555km0000gn/T/"/>
-    <property name="line.separator" value="
-"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.8.3/libexec/bin/m2.conf"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/dunice/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="maven.conf" value="/usr/local/Cellar/maven/3.8.3/libexec/conf"/>
-    <property name="jdk.debug" value="release"/>
-    <property name="java.class.version" value="61.0"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="11.6"/>
-    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.8.3/libexec/lib/jansi-native"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/dunice"/>
-    <property name="user.timezone" value="Europe/Moscow"/>
-    <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="17"/>
-    <property name="user.name" value="dunice"/>
-    <property name="java.class.path" value="/usr/local/Cellar/maven/3.8.3/libexec/boot/plexus-classworlds-2.6.0.jar"/>
-    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/dunice/Projects/RestAssured/target/test-classes:/Users/dunice/Projects/RestAssured/target/classes:/Users/dunice/.m2/repository/org/assertj/assertj-core/3.18.1/assertj-core-3.18.1.jar:/Users/dunice/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/dunice/.m2/repository/org/slf4j/slf4j-simple/1.7.30/slf4j-simple-1.7.30.jar:/Users/dunice/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/Users/dunice/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/Users/dunice/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/Users/dunice/.m2/repository/org/json/json/20210307/json-20210307.jar:/Users/dunice/.m2/repository/io/rest-assured/rest-assured/4.3.3/rest-assured-4.3.3.jar:/Users/dunice/.m2/repository/org/codehaus/groovy/groovy/3.0.7/groovy-3.0.7.jar:/Users/dunice/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.7/groovy-xml-3.0.7.jar:/Users/dunice/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/dunice/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/dunice/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/dunice/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/dunice/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/dunice/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/dunice/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/dunice/.m2/repository/io/rest-assured/json-path/4.3.3/json-path-4.3.3.jar:/Users/dunice/.m2/repository/org/codehaus/groovy/groovy-json/3.0.7/groovy-json-3.0.7.jar:/Users/dunice/.m2/repository/io/rest-assured/rest-assured-common/4.3.3/rest-assured-common-4.3.3.jar:/Users/dunice/.m2/repository/io/rest-assured/xml-path/4.3.3/xml-path-4.3.3.jar:/Users/dunice/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/dunice/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/dunice/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/dunice/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:/Users/dunice/.m2/repository/io/rest-assured/json-schema-validator/4.3.3/json-schema-validator-4.3.3.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/Users/dunice/.m2/repository/com/google/guava/guava/28.2-android/guava-28.2-android.jar:/Users/dunice/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/dunice/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/dunice/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/Users/dunice/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/Users/dunice/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/Users/dunice/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/Users/dunice/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/Users/dunice/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/dunice/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/Users/dunice/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/dunice/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/dunice/.m2/repository/io/rest-assured/spring-mock-mvc/4.3.3/spring-mock-mvc-4.3.3.jar:/Users/dunice/.m2/repository/io/rest-assured/spring-commons/4.3.3/spring-commons-4.3.3.jar:/Users/dunice/.m2/repository/org/springframework/spring-test/4.3.23.RELEASE/spring-test-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-core/4.3.23.RELEASE/spring-core-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-webmvc/4.3.23.RELEASE/spring-webmvc-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-aop/4.3.23.RELEASE/spring-aop-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-beans/4.3.23.RELEASE/spring-beans-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-expression/4.3.23.RELEASE/spring-expression-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-web/4.3.23.RELEASE/spring-web-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/io/rest-assured/spring-web-test-client/4.3.3/spring-web-test-client-4.3.3.jar:/Users/dunice/.m2/repository/org/springframework/spring-context/5.1.0.RELEASE/spring-context-5.1.0.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-webflux/5.1.0.RELEASE/spring-webflux-5.1.0.RELEASE.jar:/Users/dunice/.m2/repository/io/projectreactor/reactor-core/3.2.0.RELEASE/reactor-core-3.2.0.RELEASE.jar:/Users/dunice/.m2/repository/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar:/Users/dunice/.m2/repository/org/synchronoss/cloud/nio-multipart-parser/1.1.0/nio-multipart-parser-1.1.0.jar:/Users/dunice/.m2/repository/org/synchronoss/cloud/nio-stream-storage/1.1.3/nio-stream-storage-1.1.3.jar:/Users/dunice/.m2/repository/io/rest-assured/scala-support/4.3.3/scala-support-4.3.3.jar:/Users/dunice/.m2/repository/org/scala-lang/scala-library/2.13.0/scala-library-2.13.0.jar:/Users/dunice/.m2/repository/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M5/maven-surefire-plugin-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/maven-surefire-common/3.0.0-M5/maven-surefire-common-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-extensions-api/3.0.0-M5/surefire-extensions-api-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/maven-toolchain/3.0-alpha-2/maven-toolchain-3.0-alpha-2.jar:/Users/dunice/.m2/repository/org/apache/maven/shared/maven-artifact-transfer/0.11.0/maven-artifact-transfer-0.11.0.jar:/Users/dunice/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar:/Users/dunice/.m2/repository/org/apache/maven/maven-model/3.0/maven-model-3.0.jar:/Users/dunice/.m2/repository/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar:/Users/dunice/.m2/repository/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar:/Users/dunice/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar:/Users/dunice/.m2/repository/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar:/Users/dunice/.m2/repository/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar:/Users/dunice/.m2/repository/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar:/Users/dunice/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar:/Users/dunice/.m2/repository/org/codehaus/plexus/plexus-java/1.0.5/plexus-java-1.0.5.jar:/Users/dunice/.m2/repository/org/ow2/asm/asm/7.2/asm-7.2.jar:/Users/dunice/.m2/repository/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-testng/2.17.2/allure-testng-2.17.2.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-java-commons/2.17.2/allure-java-commons-2.17.2.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-model/2.17.2/allure-model-2.17.2.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-test-filter/2.17.2/allure-test-filter-2.17.2.jar:/Users/dunice/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar:/Users/dunice/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/Users/dunice/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/dunice/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
-    <property name="java.home" value="/usr/local/Cellar/openjdk/17.0.1/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/17.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/dunice/Projects/RestAssured/target/surefire/surefirebooter6550267888592666266.jar /Users/dunice/Projects/RestAssured/target/surefire 2021-12-30T11-13-31_411-jvmRun1 surefire1592767678928733399tmp surefire_09560170464741051882tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/dunice/Projects/RestAssured/target/test-classes:/Users/dunice/Projects/RestAssured/target/classes:/Users/dunice/.m2/repository/org/assertj/assertj-core/3.18.1/assertj-core-3.18.1.jar:/Users/dunice/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/dunice/.m2/repository/org/slf4j/slf4j-simple/1.7.30/slf4j-simple-1.7.30.jar:/Users/dunice/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/Users/dunice/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/Users/dunice/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/Users/dunice/.m2/repository/org/json/json/20210307/json-20210307.jar:/Users/dunice/.m2/repository/io/rest-assured/rest-assured/4.3.3/rest-assured-4.3.3.jar:/Users/dunice/.m2/repository/org/codehaus/groovy/groovy/3.0.7/groovy-3.0.7.jar:/Users/dunice/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.7/groovy-xml-3.0.7.jar:/Users/dunice/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/dunice/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/dunice/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/dunice/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/dunice/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/dunice/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/dunice/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/dunice/.m2/repository/io/rest-assured/json-path/4.3.3/json-path-4.3.3.jar:/Users/dunice/.m2/repository/org/codehaus/groovy/groovy-json/3.0.7/groovy-json-3.0.7.jar:/Users/dunice/.m2/repository/io/rest-assured/rest-assured-common/4.3.3/rest-assured-common-4.3.3.jar:/Users/dunice/.m2/repository/io/rest-assured/xml-path/4.3.3/xml-path-4.3.3.jar:/Users/dunice/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/dunice/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/dunice/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/dunice/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:/Users/dunice/.m2/repository/io/rest-assured/json-schema-validator/4.3.3/json-schema-validator-4.3.3.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/Users/dunice/.m2/repository/com/google/guava/guava/28.2-android/guava-28.2-android.jar:/Users/dunice/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/dunice/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/dunice/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/Users/dunice/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/Users/dunice/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/Users/dunice/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/Users/dunice/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/Users/dunice/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/Users/dunice/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/Users/dunice/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/Users/dunice/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/dunice/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/dunice/.m2/repository/io/rest-assured/spring-mock-mvc/4.3.3/spring-mock-mvc-4.3.3.jar:/Users/dunice/.m2/repository/io/rest-assured/spring-commons/4.3.3/spring-commons-4.3.3.jar:/Users/dunice/.m2/repository/org/springframework/spring-test/4.3.23.RELEASE/spring-test-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-core/4.3.23.RELEASE/spring-core-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-webmvc/4.3.23.RELEASE/spring-webmvc-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-aop/4.3.23.RELEASE/spring-aop-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-beans/4.3.23.RELEASE/spring-beans-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-expression/4.3.23.RELEASE/spring-expression-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-web/4.3.23.RELEASE/spring-web-4.3.23.RELEASE.jar:/Users/dunice/.m2/repository/io/rest-assured/spring-web-test-client/4.3.3/spring-web-test-client-4.3.3.jar:/Users/dunice/.m2/repository/org/springframework/spring-context/5.1.0.RELEASE/spring-context-5.1.0.RELEASE.jar:/Users/dunice/.m2/repository/org/springframework/spring-webflux/5.1.0.RELEASE/spring-webflux-5.1.0.RELEASE.jar:/Users/dunice/.m2/repository/io/projectreactor/reactor-core/3.2.0.RELEASE/reactor-core-3.2.0.RELEASE.jar:/Users/dunice/.m2/repository/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar:/Users/dunice/.m2/repository/org/synchronoss/cloud/nio-multipart-parser/1.1.0/nio-multipart-parser-1.1.0.jar:/Users/dunice/.m2/repository/org/synchronoss/cloud/nio-stream-storage/1.1.3/nio-stream-storage-1.1.3.jar:/Users/dunice/.m2/repository/io/rest-assured/scala-support/4.3.3/scala-support-4.3.3.jar:/Users/dunice/.m2/repository/org/scala-lang/scala-library/2.13.0/scala-library-2.13.0.jar:/Users/dunice/.m2/repository/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M5/maven-surefire-plugin-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/maven-surefire-common/3.0.0-M5/maven-surefire-common-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-extensions-api/3.0.0-M5/surefire-extensions-api-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar:/Users/dunice/.m2/repository/org/apache/maven/maven-toolchain/3.0-alpha-2/maven-toolchain-3.0-alpha-2.jar:/Users/dunice/.m2/repository/org/apache/maven/shared/maven-artifact-transfer/0.11.0/maven-artifact-transfer-0.11.0.jar:/Users/dunice/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar:/Users/dunice/.m2/repository/org/apache/maven/maven-model/3.0/maven-model-3.0.jar:/Users/dunice/.m2/repository/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar:/Users/dunice/.m2/repository/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar:/Users/dunice/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar:/Users/dunice/.m2/repository/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar:/Users/dunice/.m2/repository/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar:/Users/dunice/.m2/repository/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar:/Users/dunice/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar:/Users/dunice/.m2/repository/org/codehaus/plexus/plexus-java/1.0.5/plexus-java-1.0.5.jar:/Users/dunice/.m2/repository/org/ow2/asm/asm/7.2/asm-7.2.jar:/Users/dunice/.m2/repository/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar:/Users/dunice/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-testng/2.17.2/allure-testng-2.17.2.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-java-commons/2.17.2/allure-java-commons-2.17.2.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-model/2.17.2/allure-model-2.17.2.jar:/Users/dunice/.m2/repository/io/qameta/allure/allure-test-filter/2.17.2/allure-test-filter-2.17.2.jar:/Users/dunice/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar:/Users/dunice/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/Users/dunice/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/dunice/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/dunice"/>
     <property name="user.language" value="ru"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="17.0.1"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.vendor" value="Homebrew"/>
-    <property name="sun.stderr.encoding" value="UTF-8"/>
-    <property name="maven.home" value="/usr/local/Cellar/maven/3.8.3/libexec"/>
-    <property name="file.separator" value="/"/>
     <property name="java.version.date" value="2021-10-19"/>
-    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="sun.cpu.endian" value="little"/>
-    <property name="java.vendor.version" value="Homebrew"/>
-    <property name="sun.stdout.encoding" value="UTF-8"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/17.0.1/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/dunice/Projects/RestAssured"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/Users/dunice/Projects/RestAssured/target/surefire/surefirebooter6550267888592666266.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.1+0"/>
+    <property name="user.name" value="dunice"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="11.6"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/dunice/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/vh/yn_xcpnx0cd6qwtfs_v555km0000gn/T/"/>
+    <property name="java.version" value="17.0.1"/>
+    <property name="user.dir" value="/Users/dunice/Projects/RestAssured"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/dunice/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="17.0.1+0"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="INTERNSHIP_NGROK" value="auth/login"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="argLine" value="-DINTERNSHIP_NGROK=auth/register"/>
   </properties>
-  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyDescription" time="0.22"/>
-  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyImage" time="0.211">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithEmptyImage(WrongCreatePostTest.java:101)
-</failure>
+  <testcase name="reg" classname="WrongCreatePostTest" time="9.761">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
   </testcase>
-  <testcase classname="WrongCreatePostTest" name="createPostWithEmptyTitle" time="0.219"/>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutDescription" time="0.205"/>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutImage" time="0.193"/>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutTitle" time="0.203"/>
-  <testcase classname="WrongCreatePostTest" name="createPostWithoutToken" time="0.219">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongCreatePostTest.createPostWithoutToken(WrongCreatePostTest.java:44)
-</failure>
+  <testcase name="reg" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="SuccessAuthorizationTest" name="successAuthorizationTest" time="0.457"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withEmptyEmail" time="0.207"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withEmptyEmailName" time="0.191"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withEmptyName" time="0.203"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withWrongEmail" time="0.221">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withWrongEmail(WrongChangeUserInfoTest.java:76)
-</failure>
-    <system-out>Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-</system-out>
+  <testcase name="reg" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongChangeUserInfoTest" name="withWrongName" time="0.195"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutAvatar" time="0.19"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutEmail" time="0.192"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutName" time="0.198"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutRole" time="0.199"/>
-  <testcase classname="WrongChangeUserInfoTest" name="withoutToken" time="0.188">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongChangeUserInfoTest.withoutToken(WrongChangeUserInfoTest.java:53)
-</failure>
+  <testcase name="reg" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="GetFileTest" name="getFileTest" time="0.362"/>
-  <testcase classname="CreatePostTest" name="createPostTest" time="0.37"/>
-  <testcase classname="GetUserInfoTest" name="getUserInfoByIdTest" time="0.286"/>
-  <testcase classname="GetUserInfoTest" name="getUsers" time="0.646"/>
-  <testcase classname="WrongLoginTest" name="correctEmailWithoutPassword" time="0.192"/>
-  <testcase classname="WrongLoginTest" name="emptyEmail" time="0.202"/>
-  <testcase classname="WrongLoginTest" name="emptyEmailAndPassword" time="0.19">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.emptyEmailAndPassword(WrongLoginTest.java:245)
-</failure>
+  <testcase name="reg" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="emptyPassword" time="0.3"/>
-  <testcase classname="WrongLoginTest" name="incorrectEmail1" time="0.205">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail1(WrongLoginTest.java:49)
-</failure>
+  <testcase name="reg" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail2" time="0.187">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail2(WrongLoginTest.java:73)
-</failure>
+  <testcase name="reg" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail3" time="0.188">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail3(WrongLoginTest.java:98)
-</failure>
+  <testcase name="createPostWithEmptyDescription" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail4" time="0.185">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail4(WrongLoginTest.java:124)
-</failure>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="incorrectEmail5" time="0.201">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.incorrectEmail5(WrongLoginTest.java:148)
-</failure>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="userDoesNotExist" time="0.21"/>
-  <testcase classname="WrongLoginTest" name="withoutEmail" time="0.189">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.withoutEmail(WrongLoginTest.java:291)
-</failure>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongLoginTest" name="withoutEmailAndPassword" time="0.185">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongLoginTest.withoutEmailAndPassword(WrongLoginTest.java:315)
-</failure>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="AllNewsPageGetTest" name="allNewsPageGetTest" time="0.274"/>
-  <testcase classname="DeletePostTest" name="deletePostTest" time="0.601"/>
-  <testcase classname="WrongGetUserPostTest" name="getPostTest" time="0.241"/>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostTest" time="0.266"/>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPageEqual0" time="0.194">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithPageEqual0(WrongGetUserPostTest.java:109)
-</failure>
-    <system-out>Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-</system-out>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithPerPageEqual0" time="0.196">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithPerPageEqual0(WrongGetUserPostTest.java:138)
-</failure>
-    <system-out>Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-</system-out>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutPage" time="0.197">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutPage(WrongGetUserPostTest.java:35)
-</failure>
+  <testcase name="delete" classname="WrongCreatePostTest" time="0">
+    <skipped/>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutPerPage" time="0.203">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetUserPostTest.getUserPostWithoutPerPage(WrongGetUserPostTest.java:58)
-</failure>
+  <testcase name="createPostWithEmptyImage" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
   </testcase>
-  <testcase classname="WrongGetUserPostTest" name="getUserPostWithoutToken" time="0.213"/>
-  <testcase classname="WrongGetFileTest" name="getFileWithoutFileNameTest" time="0.437"/>
-  <testcase classname="WrongDeletePostTest" name="deletePostTestWithWrongId" time="0.391"/>
-  <testcase classname="WrongDeletePostTest" name="deletePostTestWithoutToken" time="0.636"/>
-  <testcase classname="WrongGetPostTest" name="getPostWithPageEqual0" time="0.202">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+  <testcase name="createPostWithEmptyTitle" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="createPostWithoutDescription" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="createPostWithoutImage" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="createPostWithoutTitle" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="createPostWithoutToken" classname="WrongCreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="reg" classname="SuccessAuthorizationTest" time="0.206">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="successAuthorizationTest" classname="SuccessAuthorizationTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="SuccessAuthorizationTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0.201">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="withEmptyEmail" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="withEmptyEmailName" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withEmptyName" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withWrongEmail" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withWrongName" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutAvatar" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutEmail" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutName" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutRole" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutToken" classname="WrongChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getFileTest" classname="GetFileTest" time="0.37"/>
+  <testcase name="reg" classname="CreatePostTest" time="0.548">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="createPostTest" classname="CreatePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="CreatePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="GetUserInfoTest" time="0.18">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="GetUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getUserInfoByIdTest" classname="GetUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="GetUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="GetUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getUsers" classname="GetUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0.186">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="correctEmailWithoutPassword" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongLoginTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="emptyEmail" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="emptyEmailAndPassword" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="emptyPassword" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="incorrectEmail1" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="incorrectEmail2" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="incorrectEmail3" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="incorrectEmail4" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="incorrectEmail5" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="userDoesNotExist" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutEmail" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="withoutEmailAndPassword" classname="WrongLoginTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="allNewsPageGetTest" classname="AllNewsPageGetTest" time="0.333"/>
+  <testcase name="reg" classname="DeletePostTest" time="0.516">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="deletePostTest" classname="DeletePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="DeletePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0.184">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getPostTest" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetUserPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getUserPostTest" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getUserPostWithPageEqual0" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getUserPostWithPerPageEqual0" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getUserPostWithoutPage" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getUserPostWithoutPerPage" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getUserPostWithoutToken" classname="WrongGetUserPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getFileWithoutFileNameTest" classname="WrongGetFileTest" time="0.482"/>
+  <testcase name="reg" classname="WrongDeletePostTest" time="0.668">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="WrongDeletePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="deletePostTestWithWrongId" classname="WrongDeletePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="WrongDeletePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongDeletePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="deletePostTestWithoutToken" classname="WrongDeletePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getPostWithPageEqual0" classname="WrongGetPostTest" time="0.212">
+    <failure message="The following asserts failed:&#10;	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	Wrong "success" expected [true] but found [false]
 	at WrongGetPostTest.getPostWithPageEqual0(WrongGetPostTest.java:88)
-</failure>
-    <system-out>Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-</system-out>
+]]></failure>
+    <system-out><![CDATA[Cannot invoke "java.util.List.contains(Object)" because "codes" is null
+]]></system-out>
   </testcase>
-  <testcase classname="WrongGetPostTest" name="getPostWithPerPageEqual0" time="0.201">
-    <failure message="The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	Wrong &quot;success&quot; expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+  <testcase name="getPostWithPerPageEqual0" classname="WrongGetPostTest" time="0.204">
+    <failure message="The following asserts failed:&#10;	Wrong &quot;success&quot; expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	Wrong "success" expected [true] but found [false]
 	at WrongGetPostTest.getPostWithPerPageEqual0(WrongGetPostTest.java:118)
-</failure>
-    <system-out>Cannot invoke &quot;java.util.List.contains(Object)&quot; because &quot;codes&quot; is null
-</system-out>
+]]></failure>
+    <system-out><![CDATA[Cannot invoke "java.util.List.contains(Object)" because "codes" is null
+]]></system-out>
   </testcase>
-  <testcase classname="WrongGetPostTest" name="getPostWithoutPage" time="0.244">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+  <testcase name="getPostWithoutPage" classname="WrongGetPostTest" time="0.208">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
 	at WrongGetPostTest.getPostWithoutPage(WrongGetPostTest.java:37)
-</failure>
+]]></failure>
   </testcase>
-  <testcase classname="WrongGetPostTest" name="getPostWithoutPerPage" time="0.203">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+  <testcase name="getPostWithoutPerPage" classname="WrongGetPostTest" time="0.188">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
 	at WrongGetPostTest.getPostWithoutPerPage(WrongGetPostTest.java:60)
-</failure>
+]]></failure>
   </testcase>
-  <testcase classname="WrongRegistrationTest" name="regWithEmptyAllFields" time="0.197"/>
-  <testcase classname="WrongRegistrationTest" name="regWithEmptyEmail" time="0.196"/>
-  <testcase classname="WrongRegistrationTest" name="regWithEmptyName" time="0.191"/>
-  <testcase classname="WrongRegistrationTest" name="regWithEmptyPassword" time="0.291">
-    <failure message="1 expectation failed.
-Expected status code &lt;400&gt; but was &lt;200&gt;.
-" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;400&gt; but was &lt;200&gt;.
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor177.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)
-	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
-	at Methods.wrongRegistration(Methods.java:47)
-	at WrongRegistrationTest.regWithEmptyPassword(WrongRegistrationTest.java:173)
-</failure>
+  <testcase name="regWithEmptyAllFields" classname="WrongRegistrationTest" time="0.23">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false],&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false],
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithEmptyAllFields(WrongRegistrationTest.java:52)
+]]></failure>
   </testcase>
-  <testcase classname="WrongRegistrationTest" name="regWithEmptyRole" time="0.184"/>
-  <testcase classname="WrongRegistrationTest" name="regWithExistingEmail" time="0.169">
-    <failure message="1 expectation failed.
-Expected status code &lt;200&gt; but was &lt;400&gt;.
-" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;200&gt; but was &lt;400&gt;.
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor177.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)
-	at io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)
-	at Methods.registration(Methods.java:36)
+  <testcase name="regWithEmptyEmail" classname="WrongRegistrationTest" time="0.203"/>
+  <testcase name="regWithEmptyName" classname="WrongRegistrationTest" time="0.23">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithEmptyName(WrongRegistrationTest.java:145)
+]]></failure>
+  </testcase>
+  <testcase name="regWithEmptyPassword" classname="WrongRegistrationTest" time="0.208">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithEmptyPassword(WrongRegistrationTest.java:181)
+]]></failure>
+  </testcase>
+  <testcase name="regWithEmptyRole" classname="WrongRegistrationTest" time="0.199">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithEmptyRole(WrongRegistrationTest.java:217)
+]]></failure>
+  </testcase>
+  <testcase name="regWithExistingEmail" classname="WrongRegistrationTest" time="0.178">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
 	at WrongRegistrationTest.regWithExistingEmail(WrongRegistrationTest.java:245)
-</failure>
+]]></failure>
   </testcase>
-  <testcase classname="WrongRegistrationTest" name="regWithNullAllFields" time="0.182"/>
-  <testcase classname="WrongRegistrationTest" name="regWithWrongName" time="0.195"/>
-  <testcase classname="WrongRegistrationTest" name="regWithWrongRole" time="0.187"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutAvatar" time="0.185"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutEmail" time="0.187">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+  <testcase name="regWithNullAllFields" classname="WrongRegistrationTest" time="0.572">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false],&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false],
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithNullAllFields(WrongRegistrationTest.java:73)
+]]></failure>
+  </testcase>
+  <testcase name="regWithWrongName" classname="WrongRegistrationTest" time="0.269">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithWrongName(WrongRegistrationTest.java:272)
+]]></failure>
+  </testcase>
+  <testcase name="regWithWrongRole" classname="WrongRegistrationTest" time="0.238">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithWrongRole(WrongRegistrationTest.java:290)
+]]></failure>
+  </testcase>
+  <testcase name="regWithoutAvatar" classname="WrongRegistrationTest" time="0.209">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithoutAvatar(WrongRegistrationTest.java:109)
+]]></failure>
+  </testcase>
+  <testcase name="regWithoutEmail" classname="WrongRegistrationTest" time="0.254">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
 	at WrongRegistrationTest.regWithoutEmail(WrongRegistrationTest.java:127)
-</failure>
+]]></failure>
   </testcase>
-  <testcase classname="WrongRegistrationTest" name="regWithoutName" time="0.182"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutPassword" time="0.185"/>
-  <testcase classname="WrongRegistrationTest" name="regWithoutRole" time="0.184">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+  <testcase name="regWithoutName" classname="WrongRegistrationTest" time="0.259">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
+	at WrongRegistrationTest.regWithoutName(WrongRegistrationTest.java:163)
+]]></failure>
+  </testcase>
+  <testcase name="regWithoutPassword" classname="WrongRegistrationTest" time="0.249"/>
+  <testcase name="regWithoutRole" classname="WrongRegistrationTest" time="0.272">
+    <failure message="The following asserts failed:&#10;	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	"codes" does not contain correct error code expected [true] but found [false]
 	at WrongRegistrationTest.regWithoutRole(WrongRegistrationTest.java:235)
-</failure>
+]]></failure>
   </testcase>
-  <testcase classname="WrongUploadFileTest" name="uploadFileWithNonFormDataTest" time="0.188"/>
-  <testcase classname="UploadFileTest" name="uploadFileTest" time="0.185"/>
-  <testcase classname="DeleteUserTest" name="deleteUser" time="0.505"/>
-  <testcase classname="DeleteUserTest" name="deleteWithEmptyToken" time="0.659"/>
-  <testcase classname="DeleteUserTest" name="deleteWithoutToken" time="0.819"/>
-  <testcase classname="WrongGetUserInfoTest" name="withWrongUserId" time="0.201"/>
-  <testcase classname="ChangePostTest" name="changePostTest" time="0.947"/>
-  <testcase classname="WrongGetSpecificPostTest" name="getPostTest" time="0.237"/>
-  <testcase classname="WrongGetSpecificPostTest" name="getUserPostTest" time="0.231"/>
-  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPageTest" time="0.263">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetSpecificPostTest.getPostWithoutPageTest(WrongGetSpecificPostTest.java:38)
-</failure>
+  <testcase name="uploadFileWithNonFormDataTest" classname="WrongUploadFileTest" time="0.273"/>
+  <testcase name="uploadFileTest" classname="UploadFileTest" time="0.239"/>
+  <testcase name="deleteUser" classname="DeleteUserTest" time="0.292">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at DeleteUserTest.deleteUser(DeleteUserTest.java:30)
+]]></failure>
   </testcase>
-  <testcase classname="WrongGetSpecificPostTest" name="getPostWithoutPerPageTest" time="0.191">
-    <failure message="The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: The following asserts failed:
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false],
-	&quot;codes&quot; does not contain correct error code expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at WrongGetSpecificPostTest.getPostWithoutPerPageTest(WrongGetSpecificPostTest.java:63)
-</failure>
+  <testcase name="deleteWithEmptyToken" classname="DeleteUserTest" time="0.214">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at DeleteUserTest.deleteWithEmptyToken(DeleteUserTest.java:50)
+]]></failure>
   </testcase>
-  <testcase classname="GetPostTest" name="getPostTest" time="0.232"/>
-  <testcase classname="GetPostTest" name="getUserPostTest" time="0.237"/>
-  <testcase classname="SuccessRegistrationTest" name="registrationTest" time="0.485"/>
-  <testcase classname="ChangeUserInfoTest" name="changeUserInfoSuccess" time="0.208"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyDescription" time="0.534"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTags" time="0.546"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithEmptyTitle" time="0.888"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithWrongId" time="0.366"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutDescription" time="0.59"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutImage" time="0.568"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutTitle" time="0.546"/>
-  <testcase classname="WrongChangePostTest" name="wrongChangePostTestWithoutToken" time="0.753"/>
+  <testcase name="deleteWithoutToken" classname="DeleteUserTest" time="0.197">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at DeleteUserTest.deleteWithoutToken(DeleteUserTest.java:76)
+]]></failure>
+  </testcase>
+  <testcase name="withWrongUserId" classname="WrongGetUserInfoTest" time="0.204"/>
+  <testcase name="reg" classname="ChangePostTest" time="0.53">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="changePostTest" classname="ChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="ChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetSpecificPostTest" time="0.214">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getPostTest" classname="WrongGetSpecificPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongGetSpecificPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getUserPostTest" classname="WrongGetSpecificPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getPostWithoutPageTest" classname="WrongGetSpecificPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="getPostWithoutPerPageTest" classname="WrongGetSpecificPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="reg" classname="GetPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="GetPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="GetPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="createPost" classname="GetPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getPostTest" classname="GetPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="GetPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="GetPostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="getUserPostTest" classname="GetPostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="registrationTest" classname="SuccessRegistrationTest" time="0.2">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+	at SuccessRegistrationTest.registrationTest(SuccessRegistrationTest.java:25)
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="ChangeUserInfoTest" time="0.412">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="changeUserInfoSuccess" classname="ChangeUserInfoTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="ChangeUserInfoTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0.24">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <400>.
+
+]]></failure>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="reg" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithEmptyDescription" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="delete" classname="WrongChangePostTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithEmptyTags" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithEmptyTitle" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithWrongId" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithoutDescription" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithoutImage" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithoutTitle" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
+  <testcase name="wrongChangePostTestWithoutToken" classname="WrongChangePostTest" time="0">
+    <skipped message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;400&gt;.&#10;"/>
+  </testcase>
 </testsuite>

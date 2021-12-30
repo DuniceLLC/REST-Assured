@@ -4,7 +4,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+
 import java.util.List;
 import static io.restassured.RestAssured.given;
 
@@ -15,8 +15,8 @@ public class WrongChangePostTest extends SetUp {
     int wrongId = 0;
     String imagePath = "src/main/resources/postPicture.jpeg";
     String imagePathForChange = "src/main/resources/postPicture-2.jpeg";
-    String image1 = Methods.uploadFile(imagePath).jsonPath().getString("data");
-    String image2 = Methods.uploadFile(imagePathForChange).jsonPath().getString("data");
+    String image1 = methods.uploadFile(imagePath).jsonPath().getString("data");
+    String image2 = methods.uploadFile(imagePathForChange).jsonPath().getString("data");
 
     String newDescription = Methods.generateRandomHexString(5);
     String[] newTags = {Methods.generateRandomHexString(5)};
@@ -33,13 +33,13 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutDescription() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
 
         Post newDtoForChange = Post.builder().image(image2).tags(newTags).title(newTitle).build();
-        Response responseAfterChangePost = Methods.wrongChangePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, postId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
@@ -57,13 +57,13 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutImage() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
 
         Post newDtoForChange = Post.builder().description(newDescription).tags(newTags).title(newTitle).build();
-        Response responseAfterChangePost = Methods.wrongChangePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, postId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
@@ -81,13 +81,13 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutTitle() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
 
         Post newDtoForChange = Post.builder().description(newDescription).tags(newTags).image(image2).build();
-        Response responseAfterChangePost = Methods.wrongChangePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, postId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
@@ -105,16 +105,16 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithoutToken() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         String postId = responseAfterGetPost.jsonPath().getString("content[0].id");
 
         Post newDtoForChange = new Post(newDescription, image2, newTags, newTitle);
         Response responseAfterChangePost = given()
                 .spec(Specifications.setContentType())
                 .body(newDtoForChange)
-                .when().put(Routes.news + "/" + postId)
+                .when().put(routes.getNews() + "/" + postId)
                 .then().assertThat().spec(Specifications.checkStatusCode401AndContentType())
                 .extract().response();
 
@@ -134,10 +134,10 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithWrongId() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
 
         Post newDtoForChange = new Post(newDescription, image2, newTags, newTitle);
-        Response responseAfterChangePost = Methods.wrongChangePost(token, wrongId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, wrongId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
@@ -155,13 +155,13 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithEmptyDescription() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
 
         Post newDtoForChange = new Post(emptyField, image2, newTags, newTitle);
-        Response responseAfterChangePost = Methods.wrongChangePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, postId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
@@ -179,13 +179,13 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithEmptyTitle() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
 
         Post newDtoForChange = new Post(newDescription, image2, newTags, emptyField);
-        Response responseAfterChangePost = Methods.wrongChangePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, postId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");
@@ -203,13 +203,13 @@ public class WrongChangePostTest extends SetUp {
     @Description(value = "Checking the correct server response")
     @Test
     public void wrongChangePostTestWithEmptyTags() {
-        Methods.createPost(token, newsDto);
+        methods.createPost(token, newsDto);
         String author = response.jsonPath().getString("data.name");
-        Response responseAfterGetPost = Methods.getPost(author, description, 1, 1, tags);
+        Response responseAfterGetPost = methods.getPost(author, description, 1, 1, tags);
         int postId = responseAfterGetPost.jsonPath().getInt("content[0].id");
 
         Post newDtoForChange = new Post(newDescription, image2, emptyTags, newTitle);
-        Response responseAfterChangePost = Methods.wrongChangePost(token, postId, newDtoForChange);
+        Response responseAfterChangePost = methods.wrongChangePost(token, postId, newDtoForChange);
 
         String success = responseAfterChangePost.jsonPath().getString("success");
         int customStatusCode = responseAfterChangePost.jsonPath().getInt("statusCode");

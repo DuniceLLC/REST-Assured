@@ -14,13 +14,13 @@ public class CreatePostTest extends SetUp {
     @Test
     public void createPostTest() {
         String imagePath = "src/main/resources/postPicture.jpeg";
-        Response imageData = Methods.uploadFile(imagePath);
+        Response imageData = methods.uploadFile(imagePath);
         String image = imageData.jsonPath().getString("data");
-        String description = Methods.generateRandomHexString(5);
-        String[] tags = {Methods.generateRandomHexString(5)};
-        String title = Methods.generateRandomHexString(5);
+        String description = methods.generateRandomHexString(5);
+        String[] tags = {methods.generateRandomHexString(5)};
+        String title = methods.generateRandomHexString(5);
         Post newsDto = new Post(description, image, tags, title);
-        Response responseAfterCreatePost = Methods.createPost(token, newsDto);
+        Response responseAfterCreatePost = methods.createPost(token, newsDto);
 
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
         String success = responseAfterCreatePost.jsonPath().getString("success");

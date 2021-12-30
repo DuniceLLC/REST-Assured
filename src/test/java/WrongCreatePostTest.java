@@ -3,14 +3,13 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
-import org.testng.asserts.SoftAssert;
 import org.testng.annotations.*;
 import java.util.List;
 import static io.restassured.RestAssured.*;
 
 public class WrongCreatePostTest extends SetUp {
     String imagePath = "src/main/resources/postPicture.jpeg";
-    Response imageData = Methods.uploadFile(imagePath);
+    Response imageData = methods.uploadFile(imagePath);
     String image = imageData.jsonPath().getString("data");
     String description = Methods.generateRandomHexString(5);
     String[] tags = {Methods.generateRandomHexString(5)};
@@ -30,7 +29,7 @@ public class WrongCreatePostTest extends SetUp {
         Response responseAfterCreatePost = given()
                 .body(newsDto)
                 .when()
-                .post(Routes.news)
+                .post(routes.getNews())
                 .then().assertThat().spec(Specifications.checkStatusCode401AndContentType()).extract().response();
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
@@ -51,7 +50,7 @@ public class WrongCreatePostTest extends SetUp {
     @Test
     public void createPostWithEmptyDescription() {
         Post newsDto = new Post(emptyField, image, tags, title);
-        Response responseAfterCreatePost = Methods.wrongCreatePost(token, newsDto);
+        Response responseAfterCreatePost = methods.wrongCreatePost(token, newsDto);
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
@@ -70,7 +69,7 @@ public class WrongCreatePostTest extends SetUp {
     @Test
     public void createPostWithEmptyTitle() {
         Post newsDto = new Post(description, image, tags, emptyField);
-        Response responseAfterCreatePost = Methods.wrongCreatePost(token, newsDto);
+        Response responseAfterCreatePost = methods.wrongCreatePost(token, newsDto);
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
@@ -89,7 +88,7 @@ public class WrongCreatePostTest extends SetUp {
     @Test
     public void createPostWithEmptyImage() {
         Post newsDto = new Post(description, emptyField, tags, title);
-        Response responseAfterCreatePost = Methods.wrongCreatePost(token, newsDto);
+        Response responseAfterCreatePost = methods.wrongCreatePost(token, newsDto);
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
@@ -108,7 +107,7 @@ public class WrongCreatePostTest extends SetUp {
     @Test
     public void createPostWithoutDescription() {
         Post newsDto = Post.builder().image(image).title(title).tags(tags).build();
-        Response responseAfterCreatePost = Methods.wrongCreatePost(token, newsDto);
+        Response responseAfterCreatePost = methods.wrongCreatePost(token, newsDto);
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
@@ -127,7 +126,7 @@ public class WrongCreatePostTest extends SetUp {
     @Test
     public void createPostWithoutImage() {
         Post newsDto = Post.builder().description(description).title(title).tags(tags).build();
-        Response responseAfterCreatePost = Methods.wrongCreatePost(token, newsDto);
+        Response responseAfterCreatePost = methods.wrongCreatePost(token, newsDto);
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");
@@ -146,7 +145,7 @@ public class WrongCreatePostTest extends SetUp {
     @Test
     public void createPostWithoutTitle() {
         Post newsDto = Post.builder().description(description).image(image).tags(tags).build();
-        Response responseAfterCreatePost = Methods.wrongCreatePost(token, newsDto);
+        Response responseAfterCreatePost = methods.wrongCreatePost(token, newsDto);
 
         String success = responseAfterCreatePost.jsonPath().getString("success");
         int customStatusCode = responseAfterCreatePost.jsonPath().getInt("statusCode");

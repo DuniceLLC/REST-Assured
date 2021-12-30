@@ -6,10 +6,12 @@ import org.testng.asserts.SoftAssert;
 
 @Getter
 public class SetUp {
+    Methods methods = new Methods();
+    Routes routes = new Routes();
     String correctEmail = Methods.generateRandomHexString(5) + "@gmail.com";
     String correctPassword = Methods.generateRandomHexString(5);
     String avatarPath = "src/main/resources/avatar.jpeg";
-    String avatar = Methods.uploadFile(avatarPath).jsonPath().getString("data");
+    String avatar = methods.uploadFile(avatarPath).jsonPath().getString("data");
     String correctName = Methods.generateRandomHexString(5);
     String correctRole = "user";
     String token;
@@ -20,12 +22,12 @@ public class SetUp {
     @BeforeMethod
     public void reg() {
         softAssert = new SoftAssert();
-        response = Methods.registration(user);
+        response = methods.registration(user);
         token = response.jsonPath().getString("data.token");
     }
 
     @AfterMethod
     public void delete() {
-        Methods.deleteUser(token);
+        methods.deleteUser(token);
     }
 }

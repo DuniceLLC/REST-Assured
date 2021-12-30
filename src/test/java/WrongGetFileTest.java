@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 public class WrongGetFileTest {
+    Methods methods = new Methods();
+    Routes routes = new Routes();
     String emptyFileName = "";
 
     @Epic("File-controller")
@@ -18,10 +20,10 @@ public class WrongGetFileTest {
     @Test
     public void getFileWithoutFileNameTest() {
         String imagePath = "src/main/resources/postPicture.jpeg";
-        Methods.uploadFile(imagePath);
+        methods.uploadFile(imagePath);
         Response response = given()
                 .when()
-                .get(Routes.getFile + emptyFileName)
+                .get(routes.getGetFile() + emptyFileName)
                 .then()
                 .extract().response();
 
