@@ -64,9 +64,9 @@ public class WrongChangeUserInfoTest extends SetUp {
         int customStatusCode = response.jsonPath().getInt("statusCode");
         List<Integer> codes = response.jsonPath().getList("codes");
 
-        softAssert.assertEquals(success, "true", "Wrong \"success\"");
+        softAssert.assertEquals(success, "false", "Wrong \"success\"");
         try {
-            softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+            softAssert.assertFalse(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
             softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         } catch (NullPointerException e) {
             System.out.println(e.getMessage());

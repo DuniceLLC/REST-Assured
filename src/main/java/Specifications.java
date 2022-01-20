@@ -25,6 +25,12 @@ public class Specifications {
                 expectContentType(ContentType.JSON).
                 build();
     }
+    public static ResponseSpecification checkStatusCode17AndContentType() {
+        return new ResponseSpecBuilder().
+                expectStatusCode(17).
+                expectContentType(ContentType.JSON).
+                build();
+    }
 
     public static RequestSpecification setContentType() {
         return new RequestSpecBuilder()

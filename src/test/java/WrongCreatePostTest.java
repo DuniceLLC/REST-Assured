@@ -38,7 +38,7 @@ public class WrongCreatePostTest extends SetUp {
 
         softAssert.assertEquals(success, "true", "Wrong \"success\"");
         softAssert.assertTrue(codes.contains(errorCode.UNAUTHORIZED), "\"codes\" does not contain correct error code");
-        softAssert.assertTrue(codes.contains(errorCode.TOKEN_NOT_PROVIDED), "\"codes\" does not contain correct error code");
+        softAssert.assertFalse(codes.contains(errorCode.TOKEN_NOT_PROVIDED), "\"codes\" does not contain correct error code");
         softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
@@ -95,7 +95,7 @@ public class WrongCreatePostTest extends SetUp {
         List<Integer> codes = responseAfterCreatePost.jsonPath().getList("codes");
 
         softAssert.assertEquals(success,"true", "Wrong \"success\"");
-        softAssert.assertTrue(codes.contains(errorCode.NEWS_IMAGE_HAS_TO_BE_PRESENT), "\"codes\" does not contain correct error code");
+        softAssert.assertFalse(codes.contains(errorCode.NEWS_IMAGE_HAS_TO_BE_PRESENT), "\"codes\" does not contain correct error code");
         softAssert.assertEquals(customStatusCode,codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
