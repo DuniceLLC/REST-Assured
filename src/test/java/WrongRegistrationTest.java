@@ -123,7 +123,7 @@ public class WrongRegistrationTest {
         List<Integer> codes = response.jsonPath().getList("codes");
 
         softAssert.assertEquals(success, "true", "Wrong \"success\"");
-        softAssert.assertFalse(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
+        softAssert.assertTrue(codes.contains(errorCode.USER_EMAIL_NOT_VALID), "\"codes\" does not contain correct error code");
         softAssert.assertEquals(customStatusCode, codes.get(0).intValue(), "Wrong \"statusCode\"");
         softAssert.assertAll();
     }
